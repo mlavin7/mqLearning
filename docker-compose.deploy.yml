@@ -15,7 +15,7 @@ services:
       - /etc/letsencrypt:/etc/letsencrypt
 
   backend:
-    image: //add image
+    image: registry.gitlab.propulsion-home.ch/full-stack/batch-13-aug-2020/final-projects/booking-seminars/mq-learning:latest
     restart: always
     env_file:
       - ./envs/prod.env
