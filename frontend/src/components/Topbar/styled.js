@@ -1,14 +1,14 @@
 import styled from 'styled-components';
 import { colors, fontSizes } from '../../style/theme';
 
+
 export const TopBarHeader = styled.div`
     width:100vw;
     height: 6rem;
     display: flex;
-    background-color: rgba(255, 255, 255, 0.3);
-    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2), 0px 10px 20px rgba(0, 0, 0, 0.05);
+    background-color: rgba(255, 255, 255, 0);
     z-index: 2;
-    position: absolute;
+    /* position: absolute; */
 `;
 
 export const TopBarLeft = styled.div`
@@ -36,8 +36,8 @@ export const MQLogoWrapper = styled.div`
 
 export const MQLogo = styled.img`
     width: 5rem;
-    height: 3rem;
-    border-radius: 0.5rem;
+    height: 5rem;
+    margin-left: 2.5rem;
     align-self: center;
 `;
 
@@ -60,7 +60,7 @@ export const UserProfileContainer = styled.div`
 `;
 
 export const UserWelcome = styled.p`
-    color: #000000;
+    color: ${colors.white};
     font-size: ${fontSizes.normal};
     line-height: 2rem;
     text-decoration: none;
@@ -90,13 +90,13 @@ export const ViewProfileBtn = styled.button`
 
 export const TokensValidText = styled.p`
     font-size: ${fontSizes.normal};
-    color: #000000;
+    color: ${colors.white};
     align-self: center; 
 `;
 
 export const CompanyText = styled.p`
     font-size: ${fontSizes.normal};
-    color: #000000;
+    color: ${colors.white};
     align-self: center;
 `;
 

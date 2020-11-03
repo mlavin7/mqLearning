@@ -1,8 +1,23 @@
 import React from 'react';
-import {ViewProfileBtnWrapper, ViewProfileBtn, TopBarHeader, TopBarLeft, TopBarCenter, TopBarRight, AvatarContainer, Avatar, UserProfileContainer, UserWelcome, TokensValidText, CompanyText} from './styled';
-// import {Button} from '../../style/Button'
 import avatar from '../../assets/svgs/avatar.svg';
 import {Container} from '../../style/Container';
+// import {mqlogo} from '../../assets/images/mq-logo.jpg';
+import {
+    ViewProfileBtnWrapper,
+    ViewProfileBtn,
+    TopBarHeader,
+    TopBarLeft,
+    TopBarCenter,
+    TopBarRight,
+    AvatarContainer,
+    Avatar,
+    UserProfileContainer,
+    UserWelcome,
+    TokensValidText,
+    CompanyText,
+    MQLogoWrapper,
+    MQLogo
+} from './styled';
 
 const TopBar = () => {
 
@@ -10,7 +25,9 @@ const TopBar = () => {
         <>
         <TopBarHeader>
             <TopBarLeft>
-                
+                <MQLogoWrapper>
+                    <MQLogo></MQLogo>
+                </MQLogoWrapper>
             </TopBarLeft>
             <TopBarCenter>
                 <TokensValidText>
@@ -27,7 +44,7 @@ const TopBar = () => {
                     <UserWelcome>Welcome, User</UserWelcome>
                     <CompanyText>Company: Zurich</CompanyText>
                     <ViewProfileBtnWrapper>
-                    <ViewProfileBtn>View Profile</ViewProfileBtn>
+                    <ViewProfileBtn>View Your Profile</ViewProfileBtn>
                     </ViewProfileBtnWrapper>
                 </UserProfileContainer>
             </TopBarRight>
