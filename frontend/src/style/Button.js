@@ -2,7 +2,6 @@ import styled, { css } from 'styled-components';
 import { colors, fontSizes } from '../style/theme';
 
 export const Button = styled.button`
-	margin: 160px 50px;
 	padding: 0.5rem 2rem;
 	font-size: ${fontSizes.normal};
 	background: ${colors.purpleMain};
