@@ -13,7 +13,6 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 import ast
 import os
 from datetime import timedelta
-from pathlib import Path
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -40,6 +39,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # Third Party Apps
+    'rest_framework',
+    'corsheaders',
+    # Own Apps
+    'users',
+    'registrations',
+    'companies',
+    'workshops',
 ]
 
 MIDDLEWARE = [
@@ -77,12 +84,6 @@ WSGI_APPLICATION = 'app.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#     }
-# }
 
 DATABASES = {
     "default": {
@@ -148,11 +149,11 @@ REST_FRAMEWORK = {
 }
 
 SIMPLE_JWT = {
-    'ACCESS_TOKEN_LIFETIME': timedelta(days=2),
-    'REFRESH_TOKEN_LIFETIME': timedelta(days=4)
+    'ACCESS_TOKEN_LIFETIME': timedelta(days=5),
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=5)
 }
 
-# AUTH_USER_MODEL = 'users.User'
+AUTH_USER_MODEL = 'users.User'
 
 DEFAULT_FROM_EMAIL = os.environ.get('DEFAULT_FROM_EMAIL')
 EMAIL_USE_TLS = os.environ.get('EMAIL_USE_TLS')
