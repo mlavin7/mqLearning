@@ -5,6 +5,7 @@ import { GlobalStyle } from './style/theme';
 import * as theme from './style/theme';
 import Routes from './routes';
 
+
 const root = document.getElementById('root');
 ReactDOM.render(
 	<ThemeProvider theme={theme}>

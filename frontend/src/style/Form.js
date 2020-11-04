@@ -1,21 +1,22 @@
 import styled, { css } from 'styled-components';
-import { fontSizes } from '../style/theme';
+import { colors, fontSizes } from '../style/theme';
 
 export const Form = styled.input`
-	width: 80%;
-	height: 3rem;
+	width: 65%;
+	height: 2.3rem;
 	padding: 0.8rem;
-	font-size: ${fontSizes.normal};
+	font-size: ${fontSizes.small};
+	font-weight: light;
 	outline: none;
 	border: 1px solid transparent;
 	border-radius: 0.3rem;
+	color: ${colors.dimGray};
 	margin: 1rem 0;
-
 
 	${props =>
 		props.regHalfInput &&
 		css`
-			width: 50%;
+			width: 40%;
 			margin: 1rem 0.2rem;
 		`}
 

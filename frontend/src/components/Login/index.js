@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import Footer from '../../components/Footer';
 import { Container } from '../../style/Container';
 import { Form } from '../../style/Form';
 import { Button } from '../../style/Button';
+
 import {
 	LoginContainer,
 	LeftSide,
@@ -72,7 +72,7 @@ const LoginPage = () => {
 						</InputsContainer>
 					) : null}
 
-					{/* Third Step of Registration - Code verification/validation*/}
+					{/* Third Step of Registration - Code verification/validation */}
 					{currentStage === 2 ? (
 						<InputsContainer registrationVerifyCode>
 							<div>
