@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'registrations',
     'companies',
     'workshops',
+    'wallet',
 ]
 
 MIDDLEWARE = [
