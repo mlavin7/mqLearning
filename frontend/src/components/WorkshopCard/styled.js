@@ -12,6 +12,13 @@ export const CardWrapper = styled.div`
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
-    border-radius: 10px;
+    border-radius: 1.5rem;
     padding: 3rem 2rem;
+`;
+
+export const ContentWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    color: ${colors.white};
 `;

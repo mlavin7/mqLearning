@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container } from '../../style/Container';
-import { CardWrapper } from './styled';
+import { CardWrapper, ContentWrapper } from './styled';
 import { useHistory } from 'react-router-dom';
 
 const WorkshopCard = ({ workshop }) => {
@@ -10,7 +10,9 @@ const WorkshopCard = ({ workshop }) => {
     return (
         <Container workshopCardContainer>
             <CardWrapper>
-                <p>CONTENT</p>
+                <ContentWrapper>
+                    <p>CONTENT</p>
+                </ContentWrapper>
             </CardWrapper>
         </Container>
     )
