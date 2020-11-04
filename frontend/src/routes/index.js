@@ -1,6 +1,5 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import NavigateDashboard from '../components/NavDashboard';
 import Login from '../components/Login';
 
 
