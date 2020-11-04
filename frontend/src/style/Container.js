@@ -14,4 +14,13 @@ export const Container = styled.section`
 			justify-content: center;
 			height: 95vh;
 		`}
+	
+	${props =>
+		props.workshopCardContainer &&
+		css`
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			height: 80vh;
+		`}
 `;

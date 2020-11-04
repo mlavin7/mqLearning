@@ -9,10 +9,14 @@ export const GlobalStyle = createGlobalStyle`
     } 
 
 	body {
+<<<<<<< HEAD
         font-family: Poppins, Helvetica, sans-serif, Tahoma, sans-serif;
+=======
+        font-family: Poppins, Tahoma, sans-serif;
+>>>>>>> 1248c5675e093215076d7ee6e339f860bebf8b37
 		font-size: 1rem;
         line-height: 1.6;
-        background: url(${mainBg});
+       	background: url(${mainBg}); 
 		background-position: center;
 		background-repeat: no-repeat;
 		background-size: cover;
@@ -30,7 +34,7 @@ export const colors = {
 	white: '#FFF',
 	black: '#000',
 	gray: '#d6d6d6',
-	dimGray: 'rgba(0, 0, 0, .25)',
+	dimGray: 'rgba(0, 0, 0, .55)',
 	// gradientBtn: 'linear-gradient(90deg, #ff64ba 0%, #7478f6)',
 	navLink: '#FFEBFD',
 	navLinkHover: '#FFBDEE',

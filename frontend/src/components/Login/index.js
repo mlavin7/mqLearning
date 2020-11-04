@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Container } from '../../style/Container';
 import { Form } from '../../style/Form';
 import { Button } from '../../style/Button';
+
 import {
 	LoginContainer,
 	LeftSide,
@@ -67,10 +68,10 @@ const LoginPage = () => {
 					{currentStage === 1 ? (
 						<InputsContainer registration>
 							<RegMessage>
-								<h3>
+								<p>
 									Thanks for your registration. We've sent a code to your email
 									address.
-								</h3>
+								</p>
 							</RegMessage>
 							<Button registerLoginBtn onClick={handleRegistration}>
 								Verification
@@ -78,7 +79,7 @@ const LoginPage = () => {
 						</InputsContainer>
 					) : null}
 
-					{/* Third Step of Registration - Code verification/validation*/}
+					{/* Third Step of Registration - Code verification/validation */}
 					{currentStage === 2 ? (
 						<InputsContainer registrationVerifyCode>
 							<div>
@@ -99,7 +100,7 @@ const LoginPage = () => {
 					{currentStage === 3 ? (
 						<InputsContainer registrationVerifyCode>
 							<RegMessage>
-								<h3>Your code was successfully verified. You can now login.</h3>
+								<p>Your code was successfully verified. You can now login.</p>
 							</RegMessage>
 						</InputsContainer>
 					) : null}

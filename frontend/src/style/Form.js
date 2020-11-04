@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { fontSizes } from '../style/theme';
+import { colors, fontSizes } from '../style/theme';
 
 export const Form = styled.input`
 	width: 65%;
@@ -9,6 +9,7 @@ export const Form = styled.input`
 	outline: none;
 	border: 1px solid transparent;
 	border-radius: 0.3rem;
+	color: ${colors.dimGray};
 	margin: 1rem 0;
 	transition: all 0.3s ease-in-out;
 	:focus {

@@ -1,6 +1,6 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
-
+import uuid
 from companies.models import Company
 
 
@@ -13,8 +13,14 @@ class User(AbstractUser):
     REQUIRED_FIELDS = ['username']
     email = models.EmailField(unique=True)
     avatar = models.ImageField(upload_to=user_directory_path, blank=True, null=True)
+    address = models.CharField(max_length=50, blank=True)
+    zip_code = models.CharField(max_length=8, blank=True)
+    city = models.CharField(max_length=50, blank=True)
+    country = models.CharField(max_length=50, blank=True)
     isAdmin = models.BooleanField(default=False)
-    company = models.ForeignKey(to=Company, related_name='fk_user_company', on_delete=models.CASCADE, null=True, blank=True)
+    company = models.ForeignKey(to=Company, related_name='fk_user_company', verbose_name='employees',
+                                on_delete=models.CASCADE, null=True, blank=True)
+    account_id = models.UUIDField(default=uuid.uuid4, editable=False, unique=True)
 
     def __str__(self):
         return f'ID {self.pk}: {self.email}'
