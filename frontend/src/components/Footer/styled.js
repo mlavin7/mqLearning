@@ -2,9 +2,10 @@ import styled from 'styled-components';
 import { colors, fontSizes } from '../../style/theme';
 
 export const FooterWrapper = styled.footer`
+	margin-top: -0.1rem;
 	height: 2rem;
 	width: 100%;
-	padding: 1rem 2.5rem;
+	padding: 1.25rem 0;
 	display: flex;
 	align-items: center;
 	flex-direction: row;
@@ -25,6 +26,6 @@ export const RightSide = styled.div`
 		cursor: pointer;
 	}
 	i:nth-child(4) {
-		margin-right: 0;
+		margin: 0;
 	}
 `;

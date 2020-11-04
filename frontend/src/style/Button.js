@@ -8,7 +8,8 @@ export const Button = styled.button`
 	color: ${colors.white};
 	outline: none;
 	border: none;
-	border-radius: 0.5rem;
+	border-radius: 0.3rem;
+	letter-spacing: 0.1rem;
 	transition: linear 0.15s;
 	cursor: pointer;
 
@@ -20,14 +21,39 @@ export const Button = styled.button`
 		props.registerLoginBtn &&
 		css`
 			padding: 0.7rem 1.5rem;
-			letter-spacing: 0.1rem;
-			margin-top: 1.3rem;
+			margin-top: 1.5rem;
+			font-weight: 400;
+			color: ${colors.white};
 			font-size: ${fontSizes.small};
-			font-weight: 300;
-			border-radius: 1.5rem;
+			background: ${colors.purpleMain};
 			:hover {
-				background: ${colors.white};
-				color: ${colors.purpleMain};
+				background: ${colors.purpleMainHover};
+			}
+		`}
+
+	${props =>
+		props.reserveBtn &&
+		css`
+			padding: 1rem 2rem;
+			font-size: ${fontSizes.small};
+			font-weight: 400;
+			color: ${colors.white};
+			background: ${colors.purpleMain};
+			:hover {
+				background: ${colors.purpleMainHover};
+			}
+		`}
+	
+		${props =>
+		props.backBtn &&
+		css`
+			padding: 1rem 2.8rem;
+			font-size: ${fontSizes.small};
+			font-weight: 400;
+			color: ${colors.white};
+			background: ${colors.purpleMain};
+			:hover {
+				background: ${colors.purpleMainHover};
 			}
 		`}
 `;

@@ -20,33 +20,31 @@ import {
 
 const TopBar = () => {
 	return (
-		<>
-			<TopBarHeader>
-				<TopBarLeft>
-					<MQLogoWrapper>
-						<MQLogo></MQLogo>
-					</MQLogoWrapper>
-				</TopBarLeft>
-				<TopBarCenter>
-					<TokensValidText>
-						Tokens Remaining: 3<br></br>
-						Valid Until: 31 / 12 / 2020
-					</TokensValidText>
-				</TopBarCenter>
-				<TopBarRight>
-					<AvatarContainer>
-						<Avatar src={avatar}></Avatar>
-					</AvatarContainer>
-					<UserProfileContainer>
-						<UserWelcome>Welcome, User</UserWelcome>
-						<CompanyText>Company: Zurich</CompanyText>
-						<ViewProfileBtnWrapper>
-							<ViewProfileBtn>View Your Profile</ViewProfileBtn>
-						</ViewProfileBtnWrapper>
-					</UserProfileContainer>
-				</TopBarRight>
-			</TopBarHeader>
-		</>
+		<TopBarHeader>
+			<TopBarLeft>
+				<MQLogoWrapper>
+					<MQLogo></MQLogo>
+				</MQLogoWrapper>
+			</TopBarLeft>
+			<TopBarCenter>
+				<TokensValidText>
+					Tokens Remaining: 3<br></br>
+					Valid Until: 31 / 12 / 2020
+				</TokensValidText>
+			</TopBarCenter>
+			<TopBarRight>
+				<AvatarContainer>
+					<Avatar src={avatar}></Avatar>
+				</AvatarContainer>
+				<UserProfileContainer>
+					<UserWelcome>Welcome, User</UserWelcome>
+					<CompanyText>Company: Zurich</CompanyText>
+					<ViewProfileBtnWrapper>
+						<ViewProfileBtn>View Your Profile</ViewProfileBtn>
+					</ViewProfileBtnWrapper>
+				</UserProfileContainer>
+			</TopBarRight>
+		</TopBarHeader>
 	);
 };
 

@@ -12,15 +12,14 @@ export const LoginContainer = styled.section`
 export const Title = styled.div`
 	text-align: center;
 	width: 100%;
-	margin: 8rem auto 0;
-	
+	margin: 8rem auto -2rem;
+
 	h1 {
-		color: ${colors.white};
+		color: ${colors.dimGray};
 		font-size: ${fontSizes.medium};
 		letter-spacing: 0.2rem;
-		font-weight: 300;
+		font-weight: 400;
 	}
-
 `;
 
 export const LeftSide = styled.div`
@@ -36,9 +35,9 @@ export const RegMessage = styled.div`
 	text-align: center;
 
 	p {
-		color: ${colors.white};
+		color: ${colors.dimGray};
 		padding: 1rem;
-		font-weight: 300;
+		font-weight: 400;
 	}
 `;
 
