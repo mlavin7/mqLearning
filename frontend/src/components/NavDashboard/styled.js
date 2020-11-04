@@ -32,12 +32,29 @@ export const NavbarDiV = styled.div`
 
 export const SectionWorkshop = styled.div`
 	display:flex;
+	
 	flex-direction:column; 
+	align-items: center; 
 	border: 0.2Rem solid yellow;
 	height: 40rem; 
-			
+	overflow-y: scroll;
+	scroll-snap-type: mandatory; 
+
+	
+	
+	
+	::-webkit-scrollbar {
+  	display: none;
+	}
+		
 			.Fragment.ul{
-				list-style-type: none;
+				padding-top: 20rem;
+				 
+				justify-items: center; 
+				list-style-type: none; 
+				scroll-snap-align: start;
+
+  				
 			}
 	
 `; 

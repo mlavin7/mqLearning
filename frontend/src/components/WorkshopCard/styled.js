@@ -15,6 +15,10 @@ export const CardWrapper = styled.div`
 	background-size: cover;
     border-radius: 1.5rem;
     padding: 1rem 1rem;
+
+
+    
+
 `;
 
 export const ContentWrapper = styled.div`
@@ -22,11 +26,19 @@ export const ContentWrapper = styled.div`
     /* flex-direction: column; */
     height: auto;
     color: ${colors.white};
+    & :hover{
+        zoom: 110%;
+        transition: 3s;
+    }
+
+    
 `;
 
 export const ReserveBtnWrapper = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
+    
+
 `;
 
