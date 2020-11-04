@@ -18,6 +18,7 @@ export const Title = styled.div`
 		color: ${colors.white};
 		font-size: ${fontSizes.medium};
 		letter-spacing: 0.2rem;
+		font-weight: 300;
 	}
 
 `;
@@ -34,7 +35,7 @@ export const RegMessage = styled.div`
 	margin: -3rem 0 2rem;
 	text-align: center;
 
-	h3 {
+	p {
 		color: ${colors.white};
 		padding: 1rem;
 		font-weight: 300;

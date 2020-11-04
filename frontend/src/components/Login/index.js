@@ -35,9 +35,15 @@ const LoginPage = () => {
 		<Container centerLoginContainer>
 			<LoginContainer>
 				<LeftSide>
-					<Title>
-						<h1>Registration</h1>
-					</Title>
+					{currentStage === 2 ? (
+						<Title>
+							<h1>Validation</h1>
+						</Title>
+					) : (
+						<Title>
+							<h1>Sign In</h1>
+						</Title>
+					)}
 
 					{/* First Step of Registration - User details */}
 					{currentStage === 0 ? (
@@ -51,7 +57,7 @@ const LoginPage = () => {
 							<Form placeholder='Company' />
 							{/* If the button is pressed, first step is done and user
 								should see a message */}
-							<Button registerBtn onClick={handleRegistration}>
+							<Button registerLoginBtn onClick={handleRegistration}>
 								Register
 							</Button>
 						</InputsContainer>
@@ -61,12 +67,12 @@ const LoginPage = () => {
 					{currentStage === 1 ? (
 						<InputsContainer registration>
 							<RegMessage>
-								<h3>
+								<p>
 									Thanks for your registration. We've sent a code to your email
 									address.
-								</h3>
+								</p>
 							</RegMessage>
-							<Button registerBtn onClick={handleRegistration}>
+							<Button registerLoginBtn onClick={handleRegistration}>
 								Verification
 							</Button>
 						</InputsContainer>
@@ -83,7 +89,7 @@ const LoginPage = () => {
 								<Form placeholder='Password' regHalfInput />
 								<Form placeholder='Repeat Password' regHalfInput />
 							</div>
-							<Button registerBtn onClick={handleRegistration}>
+							<Button registerLoginBtn onClick={handleRegistration}>
 								Validate Code
 							</Button>
 						</InputsContainer>
@@ -93,7 +99,7 @@ const LoginPage = () => {
 					{currentStage === 3 ? (
 						<InputsContainer registrationVerifyCode>
 							<RegMessage>
-								<h3>Your code was successfully verified. You can now login.</h3>
+								<p>Your code was successfully verified. You can now login.</p>
 							</RegMessage>
 						</InputsContainer>
 					) : null}
@@ -104,9 +110,9 @@ const LoginPage = () => {
 						<h1>Login</h1>
 					</Title>
 					<InputsContainer>
-						<Form loginForm placeholder='Email' required />
-						<Form loginForm placeholder='Password' required />
-						<Button loginBtn>Login</Button>
+						<Form placeholder='Email' required />
+						<Form placeholder='Password' required />
+						<Button registerLoginBtn>Login</Button>
 					</InputsContainer>
 				</RightSide>
 			</LoginContainer>
