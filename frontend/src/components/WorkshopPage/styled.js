@@ -55,7 +55,7 @@ export const TopBarWrapper = styled.section`
 export const Showcase = styled.section`
 	width: 100%;
 	height: 100%;
-	min-height: 30rgitem;
+	min-height: 30rem;
 	margin: 1rem 0;
 	background: url(${mockupBanner});
 	background-position: center;
