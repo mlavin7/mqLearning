@@ -1,7 +1,7 @@
 import React from 'react';
 import avatar from '../../assets/svgs/avatar.svg';
 import {Container} from '../../style/Container';
-// import {mqlogo} from '../../assets/images/mq-logo.jpg';
+import mqlogo from '../../assets/images/mq-logo.jpg';
 import {
     ViewProfileBtnWrapper,
     ViewProfileBtn,
@@ -26,7 +26,7 @@ const TopBar = () => {
         <TopBarHeader>
             <TopBarLeft>
                 <MQLogoWrapper>
-                    <MQLogo></MQLogo>
+                    <MQLogo src={mqlogo}/>
                 </MQLogoWrapper>
             </TopBarLeft>
             <TopBarCenter>
