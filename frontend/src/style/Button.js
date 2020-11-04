@@ -16,6 +16,20 @@ export const Button = styled.button`
 		background: ${colors.purpleMainHover};
 	}
 
+	${props => {
+		if (props.btnNavDashboard) {
+			return `
+			width: 15rem;
+			height: 4rem;
+		
+		`;
+	}
+	}}
+
+
+
+
+
 	${props =>
 		props.registerLoginBtn &&
 		css`
