@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Login from '../pages/Login';
 import MainPage from '../pages/MainPage';
 import Workshop from '../pages/Workshop';
+import TestPage from '../pages/Test'; 
 
 
 const Routes = () => {
@@ -12,6 +13,8 @@ const Routes = () => {
 				<Route exact path='/' component={Login} />
 				<Route exact path='/mainpage' component={MainPage} />
 				<Route exact path='/workshop-single' component={Workshop} />
+				<Route exact path='/test' component={TestPage} />
+
 			</Switch>
 		</Router>
 	);

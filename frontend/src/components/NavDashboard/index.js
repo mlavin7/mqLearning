@@ -6,12 +6,11 @@ import { NavbarDiV, SectionWorkshop, SectionInfo } from './styled';
 
 
 
+
 const NavigateDashboard  = () => {
 	
 	const [active, setActive] = useState('workshop');
-	//const [sheworkshop, setSheworkshop] = useState('ScheduledWorkshop');
-	//const [atworkshop, setAtworkshop] = useState('AttendedWorkshop');
-	//const [resourses, setResourses] = useState('Resourses');
+	// later onw the list will be replaced for fetching
 	
 
 	return (
