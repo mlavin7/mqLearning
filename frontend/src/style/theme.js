@@ -10,7 +10,11 @@ export const GlobalStyle = createGlobalStyle`
     } 
 
 	body {
+<<<<<<< HEAD
+        font-family: Poppins, Helvetica, sans-serif, Tahoma, sans-serif;
+=======
         font-family: Poppins, Tahoma, sans-serif;
+>>>>>>> 1248c5675e093215076d7ee6e339f860bebf8b37
 		font-size: 1rem;
         line-height: 1.6;
 		background-image: linear-gradient(to top, #9795f0 0%, #fbc8d4 100%);

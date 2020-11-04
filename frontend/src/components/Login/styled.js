@@ -17,6 +17,7 @@ export const Title = styled.div`
 	h1 {
 		color: ${colors.dimGray};
 		font-size: ${fontSizes.medium};
+		font-weight: 300;
 		letter-spacing: 0.2rem;
 		font-weight: 400;
 	}
