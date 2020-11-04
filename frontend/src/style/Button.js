@@ -26,12 +26,23 @@ export const Button = styled.button`
 	}
 	}}
 
-
-
-
-
 	${props =>
 		props.registerLoginBtn &&
+		css`
+			padding: 0.7rem 1.5rem;
+			letter-spacing: 0.1rem;
+			margin-top: 1.3rem;
+			font-size: ${fontSizes.small};
+			font-weight: 300;
+			border-radius: 1.5rem;
+			:hover {
+				background: ${colors.white};
+				color: ${colors.purpleMain};
+			}
+		`}
+
+	${props =>
+		props.ReserveBtn &&
 		css`
 			padding: 0.7rem 1.5rem;
 			letter-spacing: 0.1rem;
