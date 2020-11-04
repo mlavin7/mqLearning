@@ -5,11 +5,13 @@ User = get_user_model()
 
 
 class Workshop(models.Model):
-    title = models.CharField(max_length=50)
+    title = models.CharField(max_length=100)
+    subtitle = models.CharField(max_length=100, blank=True)
     description = models.TextField()
-    location = models.CharField(max_length=50)
-    date = models.DateTimeField()
-    duration = models.CharField(max_length=10)
+    location = models.CharField(max_length=100)
+    created = models.DateTimeField(auto_now=True)
+    date_start = models.DateTimeField()
+    date_end = models.DateTimeField()
     cost = models.IntegerField()
     attendees = models.ManyToManyField(to=User, related_name='m2m_workshops')
 
