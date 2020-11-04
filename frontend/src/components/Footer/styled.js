@@ -9,7 +9,7 @@ export const FooterWrapper = styled.footer`
 	display: flex;
 	align-items: center;
 	flex-direction: row;
-	color: ${colors.white};
+	color: ${colors.dimGray};
 	font-size: ${fontSizes.normal};
 `;
 
