@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Footer from '../../components/Footer';
 import { Container } from '../../style/Container';
 import { Form } from '../../style/Form';
 import { Button } from '../../style/Button';
@@ -35,9 +34,16 @@ const LoginPage = () => {
 		<Container centerLoginContainer>
 			<LoginContainer>
 				<LeftSide>
-					<Title>
-						<h1>Registration</h1>
-					</Title>
+					{/* Change title to Validation when validation step is reached */}
+					{currentStage === 2 ? (
+						<Title>
+							<h1>Validation</h1>
+						</Title>
+					) : (
+						<Title>
+							<h1>Sign in</h1>
+						</Title>
+					)}
 
 					{/* First Step of Registration - User details */}
 					{currentStage === 0 ? (
@@ -51,7 +57,7 @@ const LoginPage = () => {
 							<Form placeholder='Company' />
 							{/* If the button is pressed, first step is done and user
 								should see a message */}
-							<Button registerBtn onClick={handleRegistration}>
+							<Button registerLoginBtn onClick={handleRegistration}>
 								Register
 							</Button>
 						</InputsContainer>
@@ -66,7 +72,7 @@ const LoginPage = () => {
 									address.
 								</h3>
 							</RegMessage>
-							<Button registerBtn onClick={handleRegistration}>
+							<Button registerLoginBtn onClick={handleRegistration}>
 								Verification
 							</Button>
 						</InputsContainer>
@@ -83,7 +89,7 @@ const LoginPage = () => {
 								<Form placeholder='Password' regHalfInput />
 								<Form placeholder='Repeat Password' regHalfInput />
 							</div>
-							<Button registerBtn onClick={handleRegistration}>
+							<Button registerLoginBtn onClick={handleRegistration}>
 								Validate Code
 							</Button>
 						</InputsContainer>
@@ -104,9 +110,9 @@ const LoginPage = () => {
 						<h1>Login</h1>
 					</Title>
 					<InputsContainer>
-						<Form loginForm placeholder='Email' required />
-						<Form loginForm placeholder='Password' required />
-						<Button loginBtn>Login</Button>
+						<Form placeholder='Email' required />
+						<Form placeholder='Password' required />
+						<Button registerLoginBtn>Login</Button>
 					</InputsContainer>
 				</RightSide>
 			</LoginContainer>

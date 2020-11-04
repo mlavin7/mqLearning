@@ -9,7 +9,7 @@ export const GlobalStyle = createGlobalStyle`
     } 
 
 	body {
-        font-family: Raleway, Tahoma, sans-serif;
+        font-family: Poppins, Helvetica, sans-serif, Tahoma, sans-serif;
 		font-size: 1rem;
         line-height: 1.6;
         background: url(${mainBg});

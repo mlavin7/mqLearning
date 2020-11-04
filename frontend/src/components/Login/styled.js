@@ -17,6 +17,7 @@ export const Title = styled.div`
 	h1 {
 		color: ${colors.white};
 		font-size: ${fontSizes.medium};
+		font-weight: 300;
 		letter-spacing: 0.2rem;
 	}
 `;
@@ -36,6 +37,7 @@ export const RegMessage = styled.div`
 	h3 {
 		color: ${colors.white};
 		padding: 1rem;
+		font-weight: 300;
 	}
 `;
 
@@ -69,7 +71,7 @@ export const InputsContainer = styled.div`
 
 	div {
 		display: flex;
-		justify-content: space-between;
+		justify-content: center;
 		width: 80%;
 	}
 
