@@ -4,7 +4,6 @@ import Login from '../pages/Login';
 import MainPage from '../pages/MainPage';
 import Workshop from '../pages/Workshop';
 
-
 const Routes = () => {
 	return (
 		<Router>
