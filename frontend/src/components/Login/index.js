@@ -32,12 +32,6 @@ const LoginPage = () => {
 	}, [currentStage]);
 
 	return (
-<<<<<<< HEAD
-		<Container>
-			
-			OLA OLA OLA
-		</Container>
-=======
 		<Container centerLoginContainer>
 			<LoginContainer>
 				<LeftSide>
@@ -68,7 +62,6 @@ const LoginPage = () => {
 							</Button>
 						</InputsContainer>
 					) : null}
->>>>>>> development
 
 					{/* Second Step of Registration - Successful registration message */}
 					{currentStage === 1 ? (
