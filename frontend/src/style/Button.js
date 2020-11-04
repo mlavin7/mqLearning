@@ -15,4 +15,18 @@ export const Button = styled.button`
 	:hover {
 		background: ${colors.purpleMainHover};
 	}
-`;
+
+	${props => {
+		if (props.btnNavDashboard) {
+			return `
+			width: 15rem;
+			height: 4rem;
+		
+		`;
+	}
+}}
+
+
+`
+
+
