@@ -1,14 +1,14 @@
 import React, { Fragment } from 'react';
+import WorkshopPage from '../components/WorkshopPage';
 import Footer from '../components/Footer';
-import LoginPage from '../components/Login';
 
-const Login = () => {
+const Workshop = () => {
 	return (
 		<Fragment>
-			<LoginPage />
+			<WorkshopPage />
 			<Footer />
 		</Fragment>
 	);
 };
 
-export default Login;
+export default Workshop;
