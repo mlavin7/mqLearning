@@ -48,7 +48,7 @@ export const AvatarContainer = styled.div`
 
 export const Avatar = styled.img`
     width: 5rem;
-    height: 3rem;
+    height: 4rem;
     border-radius: 0.5rem;
     align-self: center;
 `;
@@ -57,12 +57,14 @@ export const UserProfileContainer = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin-right: 0.8rem;
 `;
 
 export const UserWelcome = styled.p`
     color: ${colors.white};
     font-size: ${fontSizes.normal};
-    line-height: 2rem;
+    padding-top: 1rem;
+    line-height: 1.5rem;
     text-decoration: none;
 `;
 
@@ -72,7 +74,7 @@ export const ViewProfileBtnWrapper = styled.div`
 `;
 
 export const ViewProfileBtn = styled.button`
-    padding: 0.4rem 0.4rem;
+    padding: 0.2rem 0.2rem;
 	font-size: ${fontSizes.small};
 	background: ${colors.purpleMain};
 	color: ${colors.white};

@@ -11,14 +11,16 @@ export const LoginContainer = styled.section`
 
 export const Title = styled.div`
 	text-align: center;
-	width: 20%;
+	width: 100%;
 	margin: 8rem auto 0;
-
+	
 	h1 {
 		color: ${colors.white};
 		font-size: ${fontSizes.medium};
 		letter-spacing: 0.2rem;
+		font-weight: 300;
 	}
+
 `;
 
 export const LeftSide = styled.div`
@@ -33,9 +35,10 @@ export const RegMessage = styled.div`
 	margin: -3rem 0 2rem;
 	text-align: center;
 
-	h3 {
+	p {
 		color: ${colors.white};
 		padding: 1rem;
+		font-weight: 300;
 	}
 `;
 
@@ -69,7 +72,7 @@ export const InputsContainer = styled.div`
 
 	div {
 		display: flex;
-		justify-content: space-between;
+		justify-content: center;
 		width: 80%;
 	}
 
@@ -83,7 +86,7 @@ export const InputsContainer = styled.div`
 	${props =>
 		props.registrationVerifyCode &&
 		css`
-			width: 85%;
+			width: 90%;
 			height: 45%;
 		`}
 `;
