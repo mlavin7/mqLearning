@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+// import AuthComponent from './HOC/' //add this once login actions are working and tokens are stored
 import Login from '../pages/Login';
 import MainPage from '../pages/MainPage';
 import UserProfile from '../pages/UserProfile';
