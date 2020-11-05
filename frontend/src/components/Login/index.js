@@ -35,13 +35,14 @@ const LoginPage = () => {
 		<Container centerLoginContainer>
 			<LoginContainer>
 				<LeftSide>
+					{/* Change title to Validation when validation step is reached */}
 					{currentStage === 2 ? (
 						<Title>
 							<h1>Validation</h1>
 						</Title>
 					) : (
 						<Title>
-							<h1>Sign Up</h1>
+							<h1>Sign in</h1>
 						</Title>
 					)}
 
