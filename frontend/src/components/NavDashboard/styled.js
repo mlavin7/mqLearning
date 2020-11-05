@@ -35,7 +35,6 @@ export const SectionWorkshop = styled.div`
 	
 	flex-direction:column; 
 	align-items: center; 
-	border: 0.2Rem solid yellow;
 	height: 40rem; 
 	overflow-y: scroll;
 	scroll-snap-type: mandatory; 

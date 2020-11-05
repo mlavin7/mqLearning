@@ -113,17 +113,7 @@ const NavigateDashboard  = () => {
 				{active === 'resourses' ?  (
 					<ul>
 						<WorkshopCard Zoom />
-						<WorkshopCard Zoom />
-						<WorkshopCard Zoom />
-						<WorkshopCard Zoom />
-						<WorkshopCard Zoom />
-						<WorkshopCard Zoom />
-						<WorkshopCard Zoom />
-						<WorkshopCard Zoom />
-						<WorkshopCard Zoom />
-						<WorkshopCard Zoom />
-						<WorkshopCard Zoom />
-						<WorkshopCard Zoom />
+						
 					</ul>
 				)
 				 : null}
@@ -137,3 +127,4 @@ const NavigateDashboard  = () => {
 };
 
 export default NavigateDashboard;
+git status
