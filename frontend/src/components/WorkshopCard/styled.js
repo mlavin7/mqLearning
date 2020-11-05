@@ -22,10 +22,7 @@ export const ContentWrapper = styled.div`
     /* flex-direction: column; */
     height: auto;
     color: ${colors.white};
-    & :hover{
-        zoom: 110%;
-        transition: 3s;
-    }
+  
 `;
 
 export const ReserveBtnWrapper = styled.div`
