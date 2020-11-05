@@ -23,11 +23,13 @@ export const ContentWrapper = styled.div`
     /* flex-direction: column; */
     height: auto;
     color: ${colors.white};
+  
 `;
 
 export const ReserveBtnWrapper = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
+
 `;
 

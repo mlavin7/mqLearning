@@ -2,12 +2,11 @@ import React, { useState, Fragment } from 'react';
 import { Container } from '../../style/Container';
 import { Button } from '../../style/Button';
 import { NavbarDiV, SectionWorkshop, SectionInfo } from './styled';
+import WorkshopCard from '../WorkshopCard';
 
 const NavigateDashboard = () => {
 	const [active, setActive] = useState('workshop');
-	//const [sheworkshop, setSheworkshop] = useState('ScheduledWorkshop');
-	//const [atworkshop, setAtworkshop] = useState('AttendedWorkshop');
-	//const [resourses, setResourses] = useState('Resourses');
+	// later onw the list will be replaced for fetching
 
 	return (
 		<Container>
@@ -30,63 +29,54 @@ const NavigateDashboard = () => {
 				<Fragment>
 					{active === 'workshop' ? (
 						<ul>
-							<SectionInfo>
-								<p> Workshop</p>
-							</SectionInfo>
-
-							<SectionInfo>
-								<p> Workshop</p>
-							</SectionInfo>
-
-							<SectionInfo>
-								<p> Workshop</p>
-							</SectionInfo>
-
-							<SectionInfo>
-								<p> Workshop</p>
-							</SectionInfo>
+							<WorkshopCard zoom />
+							<WorkshopCard zoom />
+							<WorkshopCard zoom />
+							<WorkshopCard zoom />
+							<WorkshopCard zoom />
+							<WorkshopCard zoom />
+							<WorkshopCard zoom />
+							<WorkshopCard zoom />
+							<WorkshopCard zoom />
+							<WorkshopCard zoom />
+							<WorkshopCard zoom />
+							<WorkshopCard zoom />
 						</ul>
 					) : null}
 				</Fragment>
 				<Fragment>
 					{active === 'scheduledWorkshop' ? (
 						<ul>
-							<SectionInfo>
-								<p> S Workshop</p>
-							</SectionInfo>
-
-							<SectionInfo>
-								<p> S Workshop</p>
-							</SectionInfo>
-
-							<SectionInfo>
-								<p> S Workshop</p>
-							</SectionInfo>
-
-							<SectionInfo>
-								<p> S Workshop</p>
-							</SectionInfo>
+							<WorkshopCard Zoom />
+							<WorkshopCard Zoom />
+							<WorkshopCard Zoom />
+							<WorkshopCard Zoom />
+							<WorkshopCard Zoom />
+							<WorkshopCard Zoom />
+							<WorkshopCard Zoom />
+							<WorkshopCard Zoom />
+							<WorkshopCard Zoom />
+							<WorkshopCard Zoom />
+							<WorkshopCard Zoom />
+							<WorkshopCard Zoom />
 						</ul>
 					) : null}
 				</Fragment>
 				<Fragment>
 					{active === 'attendedWorkshop' ? (
 						<ul>
-							<SectionInfo>
-								<p> A Workshop</p>
-							</SectionInfo>
-
-							<SectionInfo>
-								<p> A Workshop</p>
-							</SectionInfo>
-
-							<SectionInfo>
-								<p> A Workshop</p>
-							</SectionInfo>
-
-							<SectionInfo>
-								<p> A Workshop</p>
-							</SectionInfo>
+							<WorkshopCard Zoom />
+							<WorkshopCard Zoom />
+							<WorkshopCard Zoom />
+							<WorkshopCard Zoom />
+							<WorkshopCard Zoom />
+							<WorkshopCard Zoom />
+							<WorkshopCard Zoom />
+							<WorkshopCard Zoom />
+							<WorkshopCard Zoom />
+							<WorkshopCard Zoom />
+							<WorkshopCard Zoom />
+							<WorkshopCard Zoom />
 						</ul>
 					) : null}
 				</Fragment>
@@ -94,21 +84,7 @@ const NavigateDashboard = () => {
 				<Fragment>
 					{active === 'resourses' ? (
 						<ul>
-							<SectionInfo>
-								<p>Resourses</p>
-							</SectionInfo>
-
-							<SectionInfo>
-								<p> Resourses</p>
-							</SectionInfo>
-
-							<SectionInfo>
-								<p> Resourses</p>
-							</SectionInfo>
-
-							<SectionInfo>
-								<p> Resourses</p>
-							</SectionInfo>
+							<WorkshopCard Zoom />
 						</ul>
 					) : null}
 				</Fragment>
