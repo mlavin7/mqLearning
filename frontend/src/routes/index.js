@@ -5,7 +5,6 @@ import MainPage from '../pages/MainPage';
 import Workshop from '../pages/Workshop';
 import TestPage from '../pages/Test'; 
 
-
 const Routes = () => {
 	return (
 		<Router>

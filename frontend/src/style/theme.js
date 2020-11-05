@@ -1,5 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
-import mainBg from '../assets/images/main-bg.png';
+import rightTop from '../assets/images/right_top.png';
+import leftBottom from '../assets/images/left_bottom.png';
 
 export const GlobalStyle = createGlobalStyle`
     *{
@@ -12,13 +13,32 @@ export const GlobalStyle = createGlobalStyle`
         font-family: Poppins, Tahoma, sans-serif;
 		font-size: 1rem;
         line-height: 1.6;
-       	background: url(${mainBg}); 
-		background-position: center;
-		background-repeat: no-repeat;
-		background-size: cover;
-		height: 100vh;
+		background-image: linear-gradient(to top, #9795f0 0%, #fbc8d4 100%);
+		height: 100%;
 		margin: 0 auto;
         color: '#181818';
+		position: relative;
+		z-index: 2;
+		::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			right: 0;
+			width: 100%;
+			height: 100%;
+			background: url(${rightTop}) no-repeat right top;
+			z-index: -1;
+		}
+		::after {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: url(${leftBottom}) no-repeat left bottom;
+			z-index: -1;
+		}
     }
     
     a{
@@ -30,12 +50,11 @@ export const colors = {
 	white: '#FFF',
 	black: '#000',
 	gray: '#d6d6d6',
-	dimGray: 'rgba(0, 0, 0, .55)',
-	// gradientBtn: 'linear-gradient(90deg, #ff64ba 0%, #7478f6)',
+	dimGray: 'rgba(0, 0, 0, .85)',
 	navLink: '#FFEBFD',
 	navLinkHover: '#FFBDEE',
-	purpleMain: '#A5099D',
-	purpleMainHover: '#73066E',
+	purpleMain: '#c26cfc',
+	purpleMainHover: '#af38ff',
 	workshopSelf: '#F5D0FF',
 	workshopSelfHover: '#EEBDFC',
 	workshopWork: '#8DD6FF',
