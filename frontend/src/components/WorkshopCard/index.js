@@ -10,7 +10,6 @@ const WorkshopCard = ({ workshop }) => {
 
     return (
         <>
-            {/* <Container workshopCardContainer> */}
                 <CardWrapper>
                     <ContentWrapper>
                         <div className='workshop-info'>
@@ -26,10 +25,11 @@ const WorkshopCard = ({ workshop }) => {
                         </div>
                     </ContentWrapper>
                     <ReserveBtnWrapper>
-                        <Button moreInfoBtn>More Info</Button>
+                        <Button moreInfoBtn onClick={() => history.push('/workshop-single')}>
+                            More Info
+                        </Button>
                     </ReserveBtnWrapper>
                 </CardWrapper>
-            {/* </Container> */}
         </>
     )
 }
