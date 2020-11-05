@@ -1,11 +1,15 @@
-import React from 'react';
-import ProfilePage from '../components/NavDashboard';
+import React, { Fragment } from 'react';
+import UserProfilePage from '../components/UserProfilePage';
+import Footer from '../components/Footer';
+import { Container } from '../style/Container';
 
-
-const Profile = () => {
-	return <ProfilePage />;
+const UserProfile = () => {
+	return (
+		<Fragment>
+			<UserProfilePage />
+			<Footer />
+		</Fragment>
+	);
 };
 
-
-
-export default Profile;
+export default UserProfile;
