@@ -103,7 +103,7 @@ const WorkshopPage = () => {
 					</p>
 				</div>
 				<div className='action-btns-container'>
-					<Button backBtn onClick={() => history.push('/main-page')}>
+					<Button backBtn onClick={() => history.push('/mainpage')}>
 						Back
 					</Button>
 					<Button reserveBtn>Reserve</Button>

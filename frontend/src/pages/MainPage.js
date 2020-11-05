@@ -9,7 +9,7 @@ const MainPage = () => {
 	return (
 		<Fragment>
 			<TopBar />
-			<Container workshop>
+			<Container>
 				<NavigateDashboard />
 			</Container>
 			<Footer />
