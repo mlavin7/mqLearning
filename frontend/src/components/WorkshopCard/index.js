@@ -18,7 +18,6 @@ const WorkshopCard = ({ workshop }) => {
                             <p>Location</p>
                             <p>Start Date, Start Time</p>
                             <p>Description</p>
-                            <p>Details</p>
                             {/* <p>{workshop.title}</p>
                             <p>{workshop.location}</p>
                             <p>{workshop.scheduling.startDateFormatted}, {workshop.scheduling.startTimeFormatted}</p>
@@ -27,7 +26,7 @@ const WorkshopCard = ({ workshop }) => {
                         </div>
                     </ContentWrapper>
                     <ReserveBtnWrapper>
-                        <Button ReserveBtn>RESERVE</Button>
+                        <Button moreInfoBtn>More Info</Button>
                     </ReserveBtnWrapper>
                 </CardWrapper>
             {/* </Container> */}
