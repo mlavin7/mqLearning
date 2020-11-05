@@ -24,9 +24,10 @@ export const Button = styled.button`
 			height: 4rem;
 		
 		`;
-	}
+		}
 	}}
 
+	/* Login Page */
 	${props =>
 		props.registerLoginBtn &&
 		css`
@@ -41,6 +42,7 @@ export const Button = styled.button`
 			}
 		`}
 
+	/* single workshop page */
 	${props =>
 		props.reserveBtn &&
 		css`
@@ -53,8 +55,9 @@ export const Button = styled.button`
 				background: ${colors.purpleMainHover};
 			}
 		`}
-	
-		${props =>
+		
+	/* single workshop page */
+	${props =>
 		props.backBtn &&
 		css`
 			padding: 1rem 2.8rem;
@@ -71,7 +74,6 @@ export const Button = styled.button`
 		props.ReserveBtn &&
 		css`
 			padding: 0.7rem 1.5rem;
-			letter-spacing: 0.1rem;
 			font-size: ${fontSizes.small};
 			margin-top: 1.3rem;
 			font-size: ${fontSizes.small};
@@ -80,6 +82,18 @@ export const Button = styled.button`
 			:hover {
 				background: ${colors.white};
 				color: ${colors.purpleMain};
+			}
+		`}
+	/* User Profile Page */
+	${props =>
+		props.editProfileBtn &&
+		css`
+			padding: 0.5rem 1rem;
+			letter-spacing: 0.1rem;
+			font-size: ${fontSizes.small};
+			font-weight: 300;
+			:hover {
+				background: ${colors.purpleMainHover};
 			}
 		`}
 `;
