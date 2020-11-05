@@ -30,14 +30,14 @@ export const TopBarWrapper = styled.section`
 
 		h1 {
 			font-weight: 500;
-			font-size: ${fontSizes.Large};
+			font-size: ${fontSizes.exLarge};
 		}
 		p {
 			width: 70%;
 			margin: 0.2rem 0;
 		}
 		p:nth-child(2) {
-			font-size: 1.2rem;
+			font-size: 1rem;
 		}
 		p:nth-child(3) {
 			font-size: 1rem;

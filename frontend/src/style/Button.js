@@ -17,15 +17,14 @@ export const Button = styled.button`
 		background: ${colors.purpleMainHover};
 	}
 
-	${props => {
-		if (props.btnNavDashboard) {
-			return `
+	${props =>
+		props.btnNavDashboard &&
+		css`
 			width: 12rem;
 			height: 4rem;
-		
-		`;
-		}
-	}}
+			margin: 0.8rem 0;
+			font-size: ${fontSizes.normal};
+		`}
 
 	/* Login Page */
 	${props =>
