@@ -14,7 +14,13 @@ export const Container = styled.section`
 			justify-content: center;
 			height: 95vh;
 		`}
-	
+
+	${props =>
+		props.workshop &&
+		css`
+			max-width: 1100px;
+		`}
+
 	${props =>
 		props.workshopCardContainer &&
 		css`
