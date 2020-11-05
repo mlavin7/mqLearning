@@ -17,16 +17,16 @@ export const Button = styled.button`
 		background: ${colors.purpleMainHover};
 	}
 
-	${props => {
-		if (props.btnNavDashboard) {
-			return `
+	${props =>
+		props.btnNavDashboard &&
+		css`
 			width: 12rem;
 			height: 4rem;
-		
-		`;
-	}
-	}}
+			margin: 0.8rem 0;
+			font-size: ${fontSizes.normal};
+		`}
 
+	/* Login Page */
 	${props =>
 		props.registerLoginBtn &&
 		css`
@@ -41,6 +41,7 @@ export const Button = styled.button`
 			}
 		`}
 
+	/* single workshop page */
 	${props =>
 		props.reserveBtn &&
 		css`
@@ -53,8 +54,9 @@ export const Button = styled.button`
 				background: ${colors.purpleMainHover};
 			}
 		`}
-	
-		${props =>
+		
+	/* single workshop page */
+	${props =>
 		props.backBtn &&
 		css`
 			padding: 1rem 2.8rem;
@@ -70,8 +72,7 @@ export const Button = styled.button`
 	${props =>
 		props.moreInfoBtn &&
 		css`
-			padding: 0.5rem 1rem;
-			letter-spacing: 0.1rem;
+			padding: 0.7rem 1.5rem;
 			font-size: ${fontSizes.small};
 			margin-top: 1rem;
 			font-size: ${fontSizes.small};
@@ -82,6 +83,19 @@ export const Button = styled.button`
 			:hover {
 				background: ${colors.purpleMainHover};
 				color: ${colors.white};
+			}
+		`}
+		
+	/* User Profile Page */
+	${props =>
+		props.editProfileBtn &&
+		css`
+			padding: 0.5rem 1rem;
+			letter-spacing: 0.1rem;
+			font-size: ${fontSizes.small};
+			font-weight: 300;
+			:hover {
+				background: ${colors.purpleMainHover};
 			}
 		`}
 `;
