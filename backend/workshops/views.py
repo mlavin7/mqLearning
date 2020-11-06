@@ -38,7 +38,7 @@ class ReserveWorkshopView(GenericAPIView):
                 return Response(status=403, data="You can't unregister from past events")
             else:
                 user.m2m_workshops.remove(workshop)
-                balance = Account(owner=user, credit=workshop.cost)
+                balance = Account(owner=user, credit=workshop.cost, company=user.company)
                 balance.save()
                 return Response(status=200,
                                 data=f'You have successfully unregistered. {workshop.cost} credits have been credited back to your account')
@@ -52,7 +52,7 @@ class ReserveWorkshopView(GenericAPIView):
                 return Response(status=403, data="You can't register for past events")
             else:
                 user.m2m_workshops.add(workshop)
-                balance = Account(owner=user, debit=workshop.cost)
+                balance = Account(owner=user, debit=workshop.cost, company=user.company)
                 balance.save()
         return Response(status=200, data=f'Thank for registering for workshop: {workshop.title}')
 
