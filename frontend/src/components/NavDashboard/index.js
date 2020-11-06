@@ -1,12 +1,19 @@
-import React, { useState, Fragment } from 'react';
+import React, { useState, Fragment, useEffect } from 'react';
 import { Container } from '../../style/Container';
 import { Button } from '../../style/Button';
 import { NavbarDiV, SectionWorkshop, NavigationWrapper } from './styled';
 import WorkshopCard from '../WorkshopCard';
 
-const NavigateDashboard = () => {
-	const [active, setActive] = useState('workshop');
+const NavigateDashboard = ({ props }) => {
 	// later onw the list will be replaced for fetching
+	const [active, setActive] = useState('workshop');
+	const [workshop, setWorkshop] = useState([]);
+
+	useEffect(() => {
+		setWorkshop(props[0]);
+	}, [setWorkshop]);
+
+	console.log(props);
 
 	return (
 		<Container>
@@ -30,24 +37,17 @@ const NavigateDashboard = () => {
 				</NavbarDiV>
 
 				<SectionWorkshop>
-					<Fragment>
-						{active === 'workshop' ? (
-							<ul>
-								<WorkshopCard zoom />
-								<WorkshopCard zoom />
-								<WorkshopCard zoom />
-								<WorkshopCard zoom />
-								<WorkshopCard zoom />
-								<WorkshopCard zoom />
-								<WorkshopCard zoom />
-								<WorkshopCard zoom />
-								<WorkshopCard zoom />
-								<WorkshopCard zoom />
-								<WorkshopCard zoom />
-								<WorkshopCard zoom />
-							</ul>
-						) : null}
-					</Fragment>
+					{active === 'workshop' ? (
+						<Fragment>
+							{workshop.length !== 0 ? (
+								props.map(workshop => (
+									<WorkshopCard Zoom workshop={workshop} key={workshop.id} />
+								))
+							) : (
+								<h1>loading..</h1>
+							)}
+						</Fragment>
+					) : null}
 					<Fragment>
 						{active === 'scheduledWorkshop' ? (
 							<ul>

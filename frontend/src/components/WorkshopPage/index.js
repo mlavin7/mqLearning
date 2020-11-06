@@ -5,7 +5,7 @@ import { TopBarWrapper, Showcase, MainContent } from './styled';
 import mqlogo from '../../assets/images/mq-logo.jpg';
 import { Button } from '../../style/Button';
 
-const WorkshopPage = () => {
+const WorkshopPage = ({ workshop }) => {
 	const history = useHistory();
 
 	return (
@@ -34,72 +34,18 @@ const WorkshopPage = () => {
 				<div className='workshop-details-container'>
 					<h1>Details</h1>
 					<p>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia nobis
-						ea nisi facilis ab minima consequuntur omnis architecto. Recusandae
-						voluptatibus enim totam corporis modi tenetur obcaecati, et placeat
-						quod perspiciatis nisi debitis numquam neque amet suscipit pariatur
-						commodi sint incidunt odio repellendus beatae porro eius. Doloremque
-						animi tempore laboriosam veniam ipsam, cum rem sapiente nostrum
-						facilis deserunt mollitia sed placeat officia, sint id? Ullam nihil
-						modi quas ea consequatur! Odit hic illo sunt amet voluptate atque
-						autem iste nisi vitae esse. Eveniet dolorem fugiat in quo ea minus?
-						Nihil libero provident eum sed porro enim quisquam, consectetur
-						cumque deserunt fugiat. Nihil libero provident eum sed porro enim
-						quisquam, consectetur cumque deserunt fugiat.Nihil libero provident
-						eum sed porro enim quisquam, consectetur cumque deserunt
-						fugiat.Nihil libero provident eum sed porro enim quisquam,
-						consectetur cumque deserunt fugiat.Nihil libero provident eum sed
-						porro enim quisquam, consectetur cumque deserunt fugiat. Nihil
-						libero provident eum sed porro enim quisquam, consectetur cumque
-						deserunt fugiat.Nihil libero provident eum sed porro enim quisquam,
-						consectetur cumque deserunt fugiat.Nihil libero provident eum sed
-						porro enim quisquam, consectetur cumque deserunt fugiat.Nihil libero
-						provident eum sed porro enim quisquam, consectetur cumque deserunt
-						fugiat. Nihil libero provident eum sed porro enim quisquam,
-						consectetur cumque deserunt fugiat.Nihil libero provident eum sed
-						porro enim quisquam, consectetur cumque deserunt fugiat.Nihil libero
-						provident eum sed porro enim quisquam, consectetur cumque deserunt
-						fugiat.Nihil libero provident eum sed porro enim quisquam,
-						consectetur cumque deserunt fugiat. Nihil libero provident eum sed
-						porro enim quisquam, consectetur cumque deserunt fugiat.Nihil libero
-						provident eum sed porro enim quisquam, consectetur cumque deserunt
-						fugiat.Nihil libero provident eum sed porro enim quisquam,
-						consectetur cumque deserunt fugiat.Nihil libero provident eum sed
-						porro enim quisquam, consectetur cumque deserunt fugiat. Nihil
-						libero provident eum sed porro enim quisquam, consectetur cumque
-						deserunt fugiat.Nihil libero provident eum sed porro enim quisquam,
-						consectetur cumque deserunt fugiat.Nihil libero provident eum sed
-						porro enim quisquam, consectetur cumque deserunt fugiat.porro enim
-						quisquam, consectetur cumque deserunt fugiat. Nihil libero provident
-						eum sed porro enim quisquam, consectetur cumque deserunt
-						fugiat.Nihil libero provident eum sed porro enim quisquam,
-						consectetur cumque deserunt fugiat.Nihil libero provident eum sed
-						porro enim quisquam, consectetur cumque deserunt fugiat.porro enim
-						quisquam, consectetur cumque deserunt fugiat. Nihil libero provident
-						eum sed porro enim quisquam, consectetur cumque deserunt
-						fugiat.Nihil libero provident eum sed porro enim quisquam,
-						consectetur cumque deserunt fugiat.Nihil libero provident eum sed
-						porro enim quisquam, consectetur cumque deserunt fugiat.porro enim
-						quisquam, consectetur cumque deserunt fugiat. Nihil libero provident
-						eum sed porro enim quisquam, consectetur cumque deserunt
-						fugiat.Nihil libero provident eum sed porro enim quisquam,
-						consectetur cumque deserunt fugiat.Nihil libero provident eum sed
-						porro enim quisquam, consectetur cumque deserunt fugiat.porro enim
-						quisquam, consectetur cumque deserunt fugiat. Nihil libero provident
-						eum sed porro enim quisquam, consectetur cumque deserunt
-						fugiat.Nihil libero provident eum sed porro enim quisquam,
-						consectetur cumque deserunt fugiat.Nihil libero provident eum sed
-						porro enim quisquam, consectetur cumque deserunt fugiat.porro enim
-						quisquam, consectetur cumque deserunt fugiat. Nihil libero provident
-						eum sed porro enim quisquam, consectetur cumque deserunt
-						fugiat.Nihil libero provident eum sed porro enim quisquam,
-						consectetur cumque deserunt fugiat.Nihil libero provident eum sed
-						porro enim quisquam, consectetur cumque deserunt fugiat.porro enim
-						quisquam, consectetur cumque deserunt fugiat. Nihil libero provident
-						eum sed porro enim quisquam, consectetur cumque deserunt
-						fugiat.Nihil libero provident eum sed porro enim quisquam,
-						consectetur cumque deserunt fugiat.Nihil libero provident eum sed
-						porro enim quisquam, consectetur cumque deserunt fugiat.
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Error,
+						illo? Obcaecati modi fuga harum voluptates distinctio delectus vitae
+						doloribus cum rem illo? Perferendis, expedita illum? Ratione dolorum
+						repellendus neque eveniet, tenetur amet quaerat iure accusamus
+						corporis. Aspernatur pariatur eos, quis repellat necessitatibus
+						cumque vero. Ea, non eveniet placeat aliquam debitis ipsum sint
+						sapiente alias facere in amet temporibus corporis reiciendis, sunt
+						accusantium vero doloribus dolor, omnis velit qui laborum
+						perspiciatis assumenda. Impedit error quas consectetur dolorum
+						labore alias corporis sapiente, numquam voluptate ea voluptas
+						excepturi animi, ipsa laudantium molestias quidem expedita? Corrupti
+						doloremque nesciunt ducimus assumenda hic aliquid eum at.
 					</p>
 				</div>
 				<div className='action-btns-container'>
