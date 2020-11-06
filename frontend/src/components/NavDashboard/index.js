@@ -4,16 +4,8 @@ import { Button } from '../../style/Button';
 import { NavbarDiV, SectionWorkshop, NavigationWrapper } from './styled';
 import WorkshopCard from '../WorkshopCard';
 
-const NavigateDashboard = ({ props }) => {
-	// later onw the list will be replaced for fetching
+const NavigateDashboard = ({ workshops }) => {
 	const [active, setActive] = useState('workshop');
-	const [workshop, setWorkshop] = useState([]);
-
-	useEffect(() => {
-		setWorkshop(props[0]);
-	}, [setWorkshop]);
-
-	console.log(props);
 
 	return (
 		<Container>
@@ -39,8 +31,8 @@ const NavigateDashboard = ({ props }) => {
 				<SectionWorkshop>
 					{active === 'workshop' ? (
 						<Fragment>
-							{workshop.length !== 0 ? (
-								props.map(workshop => (
+							{workshops.length ? (
+								workshops.map(workshop => (
 									<WorkshopCard Zoom workshop={workshop} key={workshop.id} />
 								))
 							) : (
@@ -48,50 +40,41 @@ const NavigateDashboard = ({ props }) => {
 							)}
 						</Fragment>
 					) : null}
-					<Fragment>
-						{active === 'scheduledWorkshop' ? (
-							<ul>
-								<WorkshopCard Zoom />
-								<WorkshopCard Zoom />
-								<WorkshopCard Zoom />
-								<WorkshopCard Zoom />
-								<WorkshopCard Zoom />
-								<WorkshopCard Zoom />
-								<WorkshopCard Zoom />
-								<WorkshopCard Zoom />
-								<WorkshopCard Zoom />
-								<WorkshopCard Zoom />
-								<WorkshopCard Zoom />
-								<WorkshopCard Zoom />
-							</ul>
-						) : null}
-					</Fragment>
-					<Fragment>
-						{active === 'attendedWorkshop' ? (
-							<ul>
-								<WorkshopCard Zoom />
-								<WorkshopCard Zoom />
-								<WorkshopCard Zoom />
-								<WorkshopCard Zoom />
-								<WorkshopCard Zoom />
-								<WorkshopCard Zoom />
-								<WorkshopCard Zoom />
-								<WorkshopCard Zoom />
-								<WorkshopCard Zoom />
-								<WorkshopCard Zoom />
-								<WorkshopCard Zoom />
-								<WorkshopCard Zoom />
-							</ul>
-						) : null}
-					</Fragment>
+					{active === 'scheduledWorkshop' ? (
+						<Fragment>
+							{workshops.length !== 0 ? (
+								workshops.map(workshop => (
+									<WorkshopCard Zoom workshop={workshop} key={workshop.id} />
+								))
+							) : (
+								<h1>loading..</h1>
+							)}
+						</Fragment>
+					) : null}
+					{active === 'attendedWorkshop' ? (
+						<Fragment>
+							{workshops.length !== 0 ? (
+								workshops.map(workshop => (
+									<WorkshopCard Zoom workshop={workshop} key={workshop.id} />
+								))
+							) : (
+								<h1>loading..</h1>
+							)}
+						</Fragment>
+					) : null}
 
-					<Fragment>
-						{active === 'resources' ? (
-							<ul>
-								<WorkshopCard Zoom />
-							</ul>
-						) : null}
-					</Fragment>
+					{/* todo: create resources component */}
+					{active === 'resources' ? (
+						<Fragment>
+							{workshops.length !== 0 ? (
+								workshops.map(workshop => (
+									<WorkshopCard Zoom workshop={workshop} key={workshop.id} />
+								))
+							) : (
+								<h1>loading..</h1>
+							)}
+						</Fragment>
+					) : null}
 				</SectionWorkshop>
 			</NavigationWrapper>
 		</Container>

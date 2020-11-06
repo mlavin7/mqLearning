@@ -1,5 +1,4 @@
 import React from 'react';
-import { Container } from '../../style/Container';
 import { CardWrapper, ContentWrapper, ReserveBtnWrapper } from './styled';
 import { useHistory } from 'react-router-dom';
 import { Button } from '../../style/Button';
@@ -10,25 +9,21 @@ const WorkshopCard = ({ workshop }) => {
 	return (
 		<>
 			<CardWrapper>
-				<ContentWrapper
-				// onClick={() => history.push(`/workshop-single/${workshop.id}/`)}
-				>
+				<ContentWrapper>
 					<div className='workshop-info'>
 						<p>{workshop.title}</p>
 						<p>{workshop.location}</p>
 						<p>
 							{workshop.date_start} --- {workshop.date_end}
 						</p>
-						<p>Description</p>
-						{/* <p>{workshop.title}</p>
-                            <p>{workshop.location}</p>
-                            <p>{workshop.scheduling.startDateFormatted}, {workshop.scheduling.startTimeFormatted}</p>
-                            <p>{workshop.description}</p>
-                            <p>{workshop.details}</p> */}
+						<p>{workshop.subtitle}</p>
 					</div>
 				</ContentWrapper>
 				<ReserveBtnWrapper>
-					<Button moreInfoBtn onClick={() => history.push('/workshop-single')}>
+					<Button
+						moreInfoBtn
+						onClick={() => history.push(`/workshop-single/${workshop.id}/`)}
+					>
 						More Info
 					</Button>
 				</ReserveBtnWrapper>

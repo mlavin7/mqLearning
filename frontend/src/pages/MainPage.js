@@ -6,26 +6,36 @@ import Footer from '../components/Footer';
 import NavigateDashboard from '../components/NavDashboard';
 import { Container } from '../style/Container';
 import workshopAction from '../store/actions/workshopAction';
+import userAction from '../store/actions/userAction';
 
 const MainPage = () => {
 	const dispatch = useDispatch();
 	const [workshops, setWorkshops] = useState([]);
+	const [user, setUser] = useState([]);
 
 	useEffect(() => {
 		const getData = async () => {
 			const data = await dispatch(workshopAction());
-			console.log(data);
 			setWorkshops(data);
 		};
 		getData();
-	}, [setWorkshops]);
+	}, [dispatch]);
+	
+
+	useEffect(() => {
+		const getData = async () => {
+			const data = await dispatch(userAction());
+			setUser(data);
+		};
+		getData();
+	}, [dispatch]);
 
 	return (
 		<Fragment>
-			<TopBar />
+			<TopBar user={user} />
 			<Container>
 				{workshops.length !== 0 ? (
-					<NavigateDashboard props={workshops} />
+					<NavigateDashboard workshops={workshops} />
 				) : null}
 			</Container>
 			<Footer />
