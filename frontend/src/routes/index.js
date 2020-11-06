@@ -15,11 +15,6 @@ const Routes = () => {
 				<Route exact path='/mainpage/' component={AuthComponent(MainPage)} />
 				<Route
 					exact
-					path='/workshop-single/'
-					component={AuthComponent(Workshop)}
-				/>
-				<Route
-					exact
 					path='/user-profile/'
 					component={AuthComponent(UserProfile)}
 				/>

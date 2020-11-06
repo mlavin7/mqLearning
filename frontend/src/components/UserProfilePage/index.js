@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import { Container } from '../../style/Container';
 import { TopProfileBar } from './styled';
@@ -35,7 +35,9 @@ const UserProfilePage = ({ user }) => {
 							{user.available_credit ? (
 								user.available_credit.total_available
 							) : (
-								<h1>loading...</h1>
+								<Fragment>
+									<h1>loading...</h1>
+								</Fragment>
 							)}
 						</p>
 						<p>expiry date: 20/03/2021</p>

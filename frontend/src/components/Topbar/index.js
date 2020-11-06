@@ -36,7 +36,7 @@ const TopBar = ({ user }) => {
 						{user.available_credit ? (
 							user.available_credit.total_available
 						) : (
-							<h1>loading...</h1>
+							<p>loading...</p>
 						)}
 						<br></br>
 						Valid Until: 31 / 12 / 2020
