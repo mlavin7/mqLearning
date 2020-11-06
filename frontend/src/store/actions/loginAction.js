@@ -6,7 +6,7 @@ export const loginAction = user => ({
     payload: user
 });
 
-export const login = data => async (dispatch, getState) => {
+export const login = (data, history) => async (dispatch, getState) => {
     console.log('data ', data);
     const headers = new Headers({
         'Content-Type': 'application/json'
@@ -24,12 +24,10 @@ export const login = data => async (dispatch, getState) => {
     const user = await response.json();
     const {access} = user;
 
-    console.log('User: ', user.user);
-    console.log('token: ', access);
-
     if(access) {
         localStorage.setItem('token', access)
         dispatch(loginAction({ user: user, authenticated: true }));
+        history.push('/mainpage')
     } else {
         dispatch(loginAction({ user: '', authenticated: false }));
     }
