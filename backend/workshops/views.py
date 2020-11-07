@@ -1,6 +1,8 @@
 from datetime import datetime
 import pytz
-from rest_framework.generics import ListAPIView, GenericAPIView, RetrieveAPIView
+from rest_framework import filters
+from rest_framework.generics import ListAPIView, GenericAPIView, RetrieveAPIView, CreateAPIView, DestroyAPIView
+from rest_framework.permissions import IsAdminUser
 from rest_framework.response import Response
 
 from workshops.models import Workshop
@@ -13,12 +15,18 @@ present = pytz.utc.localize(present)
 
 
 class ListWorkshopView(ListAPIView):
+    search_fields = ['title', 'description', 'location', 'date_start']
+    filter_backends = (filters.SearchFilter,)
     queryset = Workshop.objects.all()
     serializer_class = WorkshopSerializer
 
+    def get_queryset(self):
+        workshop = Workshop.objects.filter(date_start__gte=present).order_by('date_start')
+        return workshop
+
 
 class ListWorkshopByIDView(RetrieveAPIView):
-    queryset = Workshop.objects.all()
+    queryset = Workshop.objects.all().order_by('date_start')
     serializer_class = WorkshopSerializer
     lookup_url_kwarg = 'workshop_id'
     permission_classes = []
@@ -58,7 +66,7 @@ class ReserveWorkshopView(GenericAPIView):
 
 
 class ListUserRegisteredWorkshopsView(ListAPIView):
-    queryset = Workshop.objects.all()
+    queryset = Workshop.objects.all().order_by('date_start')
     serializer_class = WorkshopSerializer
     lookup_field = 'id'
     permission_classes = []
@@ -68,10 +76,23 @@ class ListUserRegisteredWorkshopsView(ListAPIView):
 
 
 class ListUserAttendedWorkshopsView(ListAPIView):
-    queryset = Workshop.objects.all()
+    queryset = Workshop.objects.all().order_by('date_start')
     serializer_class = WorkshopSerializer
     lookup_field = 'id'
     permission_classes = []
 
     def get_queryset(self):
         return Workshop.objects.filter(attendees=self.kwargs['id'], date_start__lt=present)
+
+
+class CreateWorkshopView(CreateAPIView):
+    queryset = Workshop.objects.all()
+    serializer_class = WorkshopSerializer
+    permission_classes = [IsAdminUser]
+
+
+class DeleteWorkshopByIDView(DestroyAPIView):
+    queryset = Workshop.objects.all()
+    serializer_class = WorkshopSerializer
+    lookup_url_kwarg = 'workshop_id'
+    permission_classes = [IsAdminUser]
