@@ -1,19 +1,27 @@
 import React, { Fragment, useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { ModalExtContainer, ModalIntContainer, ContentSection } from './styled';
 import { Button } from '../../style/Button';
+import ReservationAction from '../../store/actions/reservationAction';
 
 const ModalBox = ({ handleClose, workshop, user }) => {
-	console.log(user.available_credit.total_available);
-	console.log(workshop.cost);
+
+	const dispatch = useDispatch();
+    
+	// console.log(user.available_credit.total_available);
+	// console.log(workshop.id);
 
 	const [currentStage, setCurrentStage] = useState(0);
 
-	const handleReservation = () => {
-        
+	const handleReservation = e => {
+		e.preventDefault();
 		setCurrentStage(currentStage + 1);
+		const getData = async () => {
+			const data = await dispatch(ReservationAction(workshop.id));
+			console.log(data);
+		};
+		getData();
 	};
-
-	//todo IMPLEMENT TOKEN DEDUCTION FUNCTIONALITY
 
 	return (
 		<Fragment>
@@ -22,8 +30,8 @@ const ModalBox = ({ handleClose, workshop, user }) => {
 					<ContentSection>
 						{currentStage === 0 ? (
 							<p>
-								Are you sure you want to reserve? This action will consume * n
-								credits * from you!
+								Are you sure you want to reserve? This action will consume{' '}
+								{workshop.cost} credits from you!
 							</p>
 						) : null}
 

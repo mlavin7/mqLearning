@@ -1,14 +1,13 @@
 import baseUrl from '../../store/baseUrl';
 
-export const ReservationAction = props => async (dispatch, getState) => {
-	
+export const ReservationAction = workshopId => async (dispatch, getState) => {
 	const token = getState().loginReducer.token;
 
-	const url = `${baseUrl}/backend/api/workshops/${props}`;
+	const url = `${baseUrl}/backend/api/workshops/reserve/${workshopId}/`;
 	const config = {
-		method: 'GET',
+		method: 'POST',
 		headers: new Headers({
-			Accept: 'application/json',
+			'Content-type': 'application/json',
 			Authorization: `Bearer ${token}`,
 		}),
 	};

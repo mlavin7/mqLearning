@@ -8,6 +8,10 @@ import Modal from '../Modal';
 import moment from 'moment';
 
 const WorkshopPage = ({ singleWorkshop, user }) => {
+
+	console.log(user.id)
+	console.log(singleWorkshop.attendees);
+
 	const history = useHistory();
 	const [showModal, setShowModal] = useState(false);
 
@@ -23,6 +27,16 @@ const WorkshopPage = ({ singleWorkshop, user }) => {
 		// return moment(date).format('D MMM YYYY, h:mm A');
 		return moment(date).format('LLLL'); //localized timezone date and time format
 	};
+
+	// let button;
+	// const userId = user.id;
+	// const attendees = singleWorkshop.attendees;
+	// if (userId in attendees) {
+	// 	button = <Button reserveBtn onClick={openModal}>Unregister</Button>
+
+	// } else {
+	// 	button = <Button reserveBtn onClick={openModal}>Register</Button>
+	// }
 
 	return (
 		<Container workshop>
@@ -53,7 +67,7 @@ const WorkshopPage = ({ singleWorkshop, user }) => {
 						Back
 					</Button>
 					<Button reserveBtn onClick={openModal}>
-						Reserve
+						Register
 					</Button>
 					{showModal ? (
 						<Modal

@@ -29,20 +29,21 @@ const TopBar = ({ user }) => {
 				<TopBarLeft>
 					<MQLogoWrapper>
 						<MQLogo src={mqlogo} alt='logo' />
+						<div className='logo-text'>
+							<p>Meaning</p>
+							<p>Quotient &copy;</p>
+						</div>
 					</MQLogoWrapper>
 				</TopBarLeft>
 				<TopBarCenter>
 					<TokensValidText>
-						<p>
+						<span>
 							Tokens Remaining:{' '}
-							<span>
-								{user.available_credit
-									? user.available_credit.total_available
-									: null}
-							</span>
-						</p>
-
-						<p>Valid Until: 31 / 12 / 2020</p>
+							{user.available_credit
+								? user.available_credit.total_available
+								: null}
+						</span>
+						<span>Valid Until: 31 / 12 / 2020</span>
 					</TokensValidText>
 				</TopBarCenter>
 				<TopBarRight>
