@@ -19,7 +19,7 @@ import {
 	MQLogo,
 } from './styled';
 import { logoutAction } from '../../store/actions/logoutAction';
-import { connect, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 const TopBar = ({ user }) => {
 	const fullName = `${user.first_name} ${user.last_name}`;
