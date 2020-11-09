@@ -45,6 +45,9 @@ export const MQLogoWrapper = styled.div`
 
 		p:nth-child(2) {
 			margin-left: 1.8rem;
+			span {
+				font-size: ${fontSizes.small};
+			}
 		}
 	}
 `;

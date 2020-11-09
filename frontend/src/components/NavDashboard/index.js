@@ -16,19 +16,32 @@ const NavigateDashboard = ({
 		<Container>
 			<NavigationWrapper>
 				<NavbarDiV userProfile>
-					<Button btnNavDashboard onClick={() => setActive('workshop')}>
-						Select Workshop
+					<Button
+						btnNavDashboard
+						onClick={() => setActive('workshop')}
+						className={active === 'workshop' ? 'active' : null}
+					>
+						Workshops
 					</Button>
 					<Button
 						btnNavDashboard
 						onClick={() => setActive('scheduledWorkshop')}
+						className={active === 'scheduledWorkshop' ? 'active' : null}
 					>
-						Scheduled Workshop
+						Scheduled Workshops
 					</Button>
-					<Button btnNavDashboard onClick={() => setActive('attendedWorkshop')}>
-						Attended Workshop
+					<Button
+						btnNavDashboard
+						onClick={() => setActive('attendedWorkshop')}
+						className={active === 'attendedWorkshop' ? 'active' : null}
+					>
+						Attended Workshops
 					</Button>
-					<Button btnNavDashboard onClick={() => setActive('resources')}>
+					<Button
+						btnNavDashboard
+						onClick={() => setActive('resources')}
+						className={active === 'resources' ? 'active' : null}
+					>
 						Resources
 					</Button>
 				</NavbarDiV>
@@ -93,8 +106,8 @@ const NavigateDashboard = ({
 };
 
 const message = {
-	'margin-top': '100px',
-	'font-weigth': '500',
+	marginTop: '100px',
+	fontWeight: '500',
 };
 
 export default NavigateDashboard;
