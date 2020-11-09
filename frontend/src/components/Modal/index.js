@@ -4,10 +4,9 @@ import { ModalExtContainer, ModalIntContainer, ContentSection } from './styled';
 import { Button } from '../../style/Button';
 import ReservationAction from '../../store/actions/reservationAction';
 
-const ModalBox = ({ handleClose, workshop, user }) => {
-
+const Modal = ({ handleClose, workshop, user }) => {
 	const dispatch = useDispatch();
-    
+
 	// console.log(user.available_credit.total_available);
 	// console.log(workshop.id);
 
@@ -30,7 +29,7 @@ const ModalBox = ({ handleClose, workshop, user }) => {
 					<ContentSection>
 						{currentStage === 0 ? (
 							<p>
-								Are you sure you want to reserve? This action will consume{' '}
+								Are you sure you want to register? This action will consume{' '}
 								{workshop.cost} credits from you!
 							</p>
 						) : null}
@@ -76,4 +75,4 @@ const ModalBox = ({ handleClose, workshop, user }) => {
 	);
 };
 
-export default ModalBox;
+export default Modal;

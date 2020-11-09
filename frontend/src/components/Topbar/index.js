@@ -38,7 +38,7 @@ const TopBar = ({ user }) => {
 				<TopBarCenter>
 					<TokensValidText>
 						<span>
-							Tokens Remaining:{' '}
+							Credits remaining:{' '}
 							{user.available_credit
 								? user.available_credit.total_available
 								: null}

@@ -33,11 +33,15 @@ export const MQLogoWrapper = styled.div`
 	width: 100%;
 	display: flex;
 	align-items: center;
+	justify-content: flex-start;
+	background: ${colors.white};
+	border-bottom-right-radius: 2rem;
+	border-top-left-radius: 2rem;
 
 	.logo-text {
 		font-size: ${fontSizes.large};
 		font-weight: 400;
-		margin-left: 0.5rem;
+		margin-left: 1.5rem;
 
 		p:nth-child(2) {
 			margin-left: 1.8rem;
@@ -49,6 +53,7 @@ export const MQLogo = styled.img`
 	width: 7rem;
 	height: auto;
 	align-self: center;
+	border-top-left-radius: 2rem;
 `;
 
 export const AvatarContainer = styled.div`
