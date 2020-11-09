@@ -8,8 +8,20 @@ const WorkshopCard = ({ workshop }) => {
 	const history = useHistory();
 
 	const dateToFormat = (date) => {
-		return moment(date).format('DD MMMM YYYY, h:mm A');
+		return moment(date).format('D MMM YYYY, h:mm A');
 	}
+
+	const dateCheck = (date) => {
+		return moment(date).format('D MMM YYYY');
+	}
+
+	const dateToTime = (date) => {
+		return moment(date).format('h:mm A');
+	}
+
+	// const dateToDay = (date) => {
+	// 	return moment(date).format('dddd');
+	// }
 
 	return (
 		<>
@@ -19,7 +31,8 @@ const WorkshopCard = ({ workshop }) => {
 						<p>{workshop.title}</p>
 						<p>{workshop.location}</p>
 						<p>
-							{dateToFormat(workshop.date_start)} --- {dateToFormat(workshop.date_end)}
+							{dateToFormat(workshop.date_start)} --- {dateCheck(workshop.date_start) === dateCheck(workshop.date_end) ? dateToTime(workshop.date_end) : dateToFormat(workshop.date_end) }
+							{/* {dateToFormat(workshop.date_start)} --- {dateToFormat(workshop.date_end)} */}
 						</p>
 						<p>{workshop.subtitle}</p>
 					</div>
