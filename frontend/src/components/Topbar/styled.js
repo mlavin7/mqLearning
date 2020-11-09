@@ -95,6 +95,9 @@ export const ViewProfileBtn = styled.button`
 export const TokensValidText = styled.p`
 	font-size: ${fontSizes.medium};
 	align-self: center;
+	span {
+		margin-left: 0.2rem;
+	}
 `;
 
 export const CompanyText = styled.p`
