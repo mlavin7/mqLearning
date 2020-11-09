@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { Container } from '../../style/Container';
 import mqlogo from '../../assets/images/mq-logo.jpg';
 import avatar from '../../assets/images/avatar-placeholder.png';
@@ -19,9 +19,18 @@ import {
 	MQLogoWrapper,
 	MQLogo,
 } from './styled';
+import { logoutAction } from '../../store/actions/logoutAction';
+import { useDispatch } from 'react-redux';
 
 const TopBar = ({ user }) => {
 	const fullName = `${user.first_name} ${user.last_name}`;
+	const history = useHistory();
+	const dispatch = useDispatch(); 
+
+	const logOutHandler = () => {
+		history.push('/');
+		return dispatch(logoutAction());
+	}
 
 	return (
 		<Container mainPage>
@@ -59,9 +68,7 @@ const TopBar = ({ user }) => {
 							<ViewProfileBtn>
 								<Link to='/user-profile/'>Edit Profile</Link>
 							</ViewProfileBtn>
-							<ViewProfileBtn>
-								<Link to='#'>Logout</Link>
-							</ViewProfileBtn>
+							<ViewProfileBtn onClick={logOutHandler}>Logout</ViewProfileBtn>
 						</ViewProfileBtnWrapper>
 					</UserProfileContainer>
 				</TopBarRight>
