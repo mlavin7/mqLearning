@@ -92,6 +92,7 @@ export const Button = styled.button`
 		css`
 			padding: 0.5rem 1rem;
 			letter-spacing: 0.1rem;
+			margin: 0 0.6rem;
 			font-size: ${fontSizes.small};
 			font-weight: 300;
 			:hover {

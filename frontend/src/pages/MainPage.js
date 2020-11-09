@@ -2,7 +2,6 @@ import React, { Fragment, useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import TopBar from '../components/Topbar';
 import Footer from '../components/Footer';
-// import WorkshopCard from '../components/WorkshopCard';
 import NavigateDashboard from '../components/NavDashboard';
 import { Container } from '../style/Container';
 import workshopAction from '../store/actions/workshopAction';
@@ -21,7 +20,6 @@ const MainPage = () => {
 		getData();
 	}, [dispatch]);
 
-	//* Proably an error in the company serializer, joost is figuring it out
 	useEffect(() => {
 		const getData = async () => {
 			const data = await dispatch(userAction());
@@ -29,6 +27,8 @@ const MainPage = () => {
 		};
 		getData();
 	}, [dispatch]);
+
+	// todo - joost is going to change attended and scheduled to logged in user
 
 	return (
 		<Fragment>
