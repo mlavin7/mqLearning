@@ -3,13 +3,16 @@ import { Container } from '../../style/Container';
 import { Button } from '../../style/Button';
 import { NavbarDiV, SectionWorkshop, NavigationWrapper } from './styled';
 import WorkshopCard from '../WorkshopCard';
+import EmployeeCard from '../EmployeeCard';
 
 const NavigateDashboard = ({
 	workshops,
 	scheduledWorkshops,
 	attendedWorkshops,
 	user,
+	employees,
 }) => {
+	console.log(employees);
 	const [active, setActive] = useState('workshop');
 
 	return (
@@ -44,6 +47,35 @@ const NavigateDashboard = ({
 					>
 						Resources
 					</Button>
+
+					{user.isAdmin ? (
+						<Fragment>
+							<Button
+								btnNavDashboard
+								onClick={() => setActive('employees')}
+								className={active === 'employees' ? 'active' : null}
+							>
+								Employees
+							</Button>
+							<Button
+								btnNavDashboard
+								onClick={() => setActive('company')}
+								className={active === 'company' ? 'active' : null}
+							>
+								Company
+							</Button>
+						</Fragment>
+					) : null}
+
+					{user.is_staff ? (
+						<Button
+							btnNavDashboard
+							onClick={() => setActive('compAdmins')}
+							className={active === 'compAdmins' ? 'active' : null}
+						>
+							Company Administrators
+						</Button>
+					) : null}
 				</NavbarDiV>
 
 				<SectionWorkshop>
@@ -98,7 +130,19 @@ const NavigateDashboard = ({
 					) : null}
 
 					{/* todo: create resources component */}
-					{active === 'resources' ? <h1>Resources</h1> : null}
+					{active === 'resources' ? <h4 style={message}>Resources</h4> : null}
+
+					{active === 'employees' ? (
+						<Fragment>
+							{employees.length ? (
+								employees.map(employee => <EmployeeCard employee={employee} />)
+							) : (
+								<h4 style={message}>
+									There are no employees registered for this company.
+								</h4>
+							)}
+						</Fragment>
+					) : null}
 				</SectionWorkshop>
 			</NavigationWrapper>
 		</Container>

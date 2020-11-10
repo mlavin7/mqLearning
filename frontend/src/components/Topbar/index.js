@@ -68,9 +68,9 @@ const TopBar = ({ user }) => {
 						</CompanyText>
 						<ViewProfileBtnWrapper>
 							<ViewProfileBtn>
-								<Link to='/user-profile/'>Edit Profile</Link>
+								<Link to='/user-profile/'>edit profile</Link>
 							</ViewProfileBtn>
-							<ViewProfileBtn onClick={logOutHandler}>Logout</ViewProfileBtn>
+							<ViewProfileBtn onClick={logOutHandler}>logout</ViewProfileBtn>
 						</ViewProfileBtnWrapper>
 					</UserProfileContainer>
 				</TopBarRight>
