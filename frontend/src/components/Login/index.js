@@ -44,7 +44,7 @@ const LoginPage = (props) => {
 		
 	const handleRegistration = e => {
 		e.preventDefault();
-		if (regEmail.length === 0 || first_name.length === 0 || last_name.length === 0 || company.length === 0) {
+		if (regEmail.length === 0 || first_name.length === 0 || last_name.length === 0) {
 			alert('Please complete all fields!');
 		} else {
 			setCurrentStage(currentStage + 1);
@@ -107,7 +107,7 @@ const LoginPage = (props) => {
 								<Form type='text' value={last_name} onChange={e => setUserLastName(e.currentTarget.value)} placeholder='Last Name' required regHalfInput />
 							</div>
 							<Form type='text' value={regEmail} onChange={e => setRegEmail(e.currentTarget.value)} placeholder='Email' required/>
-							<Form type='text' value={company} onChange={e => setCompany(e.currentTarget.value)} placeholder='Company' required />
+							<Form type='text' value={company} onChange={e => setCompany(e.currentTarget.value)} placeholder='Company'/>
 							{/* If the button is pressed, first step is done and user
 								should see a message */}
 							<Button registerLoginBtn onClick={handleRegistration}>
