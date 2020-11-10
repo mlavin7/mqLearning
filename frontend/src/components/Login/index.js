@@ -32,12 +32,16 @@ const LoginPage = (props) => {
 
 	const loginBtnHandler = (e) => {
 		e.preventDefault();
-		props.dispatch(login({
-			email,
-			password
-		}, history));
+		if (email.length === 0 || password.length === 0) {
+			alert('Please input your email and password to login')
+		} else {
+			props.dispatch(login({
+				email,
+				password
+			}, history));
+		}
 	}
-
+		
 	const handleRegistration = e => {
 		e.preventDefault();
 		if (regEmail.length === 0 || first_name.length === 0 || last_name.length === 0 || company.length === 0) {

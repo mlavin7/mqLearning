@@ -12,7 +12,7 @@ const WrapperComponent = (WrappedComponent) => {
                 else history.push('/');
             };
             redirect()
-        }, [authenticated]); // eslint-disable-line react-hooks/exhaustive-deps
+        }, [authenticated]);
 
         return <WrappedComponent { ...props }/>
     }
