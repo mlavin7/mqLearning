@@ -1,9 +1,15 @@
 import React, { useState, Fragment } from 'react';
 import { Container } from '../../style/Container';
 import { Button } from '../../style/Button';
-import { NavbarDiV, SectionWorkshop, NavigationWrapper } from './styled';
+import {
+	NavbarDiV,
+	SectionWorkshop,
+	NavigationWrapper,
+	BtnContainer,
+} from './styled';
 import WorkshopCard from '../WorkshopCard';
 import EmployeeCard from '../EmployeeCard';
+import CompanyArea from '../CompanyArea';
 
 const NavigateDashboard = ({
 	workshops,
@@ -87,7 +93,6 @@ const NavigateDashboard = ({
 										Zoom
 										workshop={workshop}
 										key={workshop.id}
-										user={user}
 									/>
 								))
 							) : (
@@ -103,7 +108,6 @@ const NavigateDashboard = ({
 									<WorkshopCard
 										Zoom
 										key={scheduledWorkshop.id}
-										user={user}
 										workshop={scheduledWorkshop}
 									/>
 								))
@@ -112,6 +116,7 @@ const NavigateDashboard = ({
 							)}
 						</Fragment>
 					) : null}
+
 					{active === 'attendedWorkshop' ? (
 						<Fragment>
 							{attendedWorkshops.length ? (
@@ -119,7 +124,6 @@ const NavigateDashboard = ({
 									<WorkshopCard
 										Zoom
 										key={attendedWorkshop.id}
-										user={user}
 										workshop={attendedWorkshop}
 									/>
 								))
@@ -130,6 +134,7 @@ const NavigateDashboard = ({
 					) : null}
 
 					{/* todo: create resources component */}
+
 					{active === 'resources' ? <h4 style={message}>Resources</h4> : null}
 
 					{active === 'employees' ? (
@@ -141,6 +146,16 @@ const NavigateDashboard = ({
 									There are no employees registered for this company.
 								</h4>
 							)}
+						</Fragment>
+					) : null}
+
+					{active === 'company' ? (
+						<Fragment>
+							{user.company ? <CompanyArea user={user} /> : null}
+							<BtnContainer>
+								<Button>edit</Button>
+								<Button>save</Button>
+							</BtnContainer>
 						</Fragment>
 					) : null}
 				</SectionWorkshop>

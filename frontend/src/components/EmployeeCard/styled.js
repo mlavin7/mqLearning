@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { colors, fontSizes } from '../../style/theme';
 import cardBg from '../../assets/images/card-bg1.jpg';
 
@@ -29,6 +29,7 @@ export const AvatarContainer = styled.div`
 export const InfoContainer = styled.section`
 	width: 80%;
 	display: flex;
+
 	p {
 		font-weight: 300;
 		font-size: ${fontSizes.normal};
@@ -46,6 +47,8 @@ export const LeftSection = styled.section`
 	justify-content: space-between;
 	width: 60%;
 	padding: 1.2rem;
+
+	${props => props.company && css``}
 `;
 
 export const RightSection = styled.section`
@@ -55,6 +58,18 @@ export const RightSection = styled.section`
 	width: 40%;
 	padding: 1.2rem;
 	position: relative;
+	::before {
+		content: '';
+		position: absolute;
+		top: 50%;
+		left: -20%;
+		transform: translateY(-50%);
+		width: 2px;
+		height: 65%;
+		background: ${colors.white};
+		opacity: 0.7;
+	}
+
 	p {
 		margin: 0.5rem 0;
 	}
@@ -65,6 +80,8 @@ export const RightSection = styled.section`
 	span {
 		margin-right: 0.5rem;
 	}
+
+	${props => props.company && css``}
 `;
 
 export const TokenSection = styled.div`

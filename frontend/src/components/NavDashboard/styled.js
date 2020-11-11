@@ -76,3 +76,15 @@ export const SectionInfo = styled.section`
 	background-color: #fff !important;
 	border-radius: 5px;
 `;
+
+export const BtnContainer = styled.div`
+	width: 90%;
+	margin-top: 0.5rem;
+	text-align: right;
+	Button {
+		margin: 0 .8rem;
+	}
+	/* Button:last-child {
+		margin-right: 0;
+	} */
+`;

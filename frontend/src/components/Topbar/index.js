@@ -49,7 +49,9 @@ const TopBar = ({ user }) => {
 				<TopBarCenter>
 					<TokensValidText>
 						<span>
-							Credits remaining:{' '}
+							{user.isAdmin || user.is_staff
+								? 'Credits to distribute:'
+								: 'Credits remaining:'}{' '}
 							{user.available_credit
 								? user.available_credit.total_available
 								: null}
