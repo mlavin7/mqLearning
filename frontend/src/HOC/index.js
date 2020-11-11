@@ -3,15 +3,15 @@ import { connect } from 'react-redux'
 
 const WrapperComponent = (WrappedComponent) => {
     const AuthComponent = (props) => {
-        const { authenticated, history } = props;
-        
+        const { authenticated, history, location} = props;
+
         useEffect(() => {
-            const redirect = () => {
-                if (!localStorage.getItem('token') && !authenticated) history.push('/');
-                console.log("redirect -> authenticated", authenticated);
-                console.log("redirect -> localStorage.getItem('token')", localStorage.getItem('token'));
+            const userRedirect = () => {
+                const path = location.pathname;
+                if (localStorage.getItem('token') || authenticated) history.push(path);
+                else history.push('/');
             };
-            redirect()
+            userRedirect()
         }, [authenticated]);
 
         return <WrappedComponent { ...props }/>
