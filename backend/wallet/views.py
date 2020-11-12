@@ -1,8 +1,6 @@
 from datetime import timedelta
 
 from django.contrib.auth import get_user_model
-from django.db.models import F, DateField, ExpressionWrapper, IntegerField
-from django.db.models.functions import Cast
 from django.utils import timezone
 from rest_framework.generics import GenericAPIView, ListAPIView
 from rest_framework.permissions import IsAuthenticated, IsAdminUser
@@ -50,18 +48,19 @@ class CreditUserAccountView(GenericAPIView):
             return Response(status=403, data="Sorry, you don't have enough credit")
         else:
             transactions = CompanyAccount.objects.filter(company=company, debit=0)
-            # tokens = Token.objects.annotate(expired=F('created') + F(timedelta(days=365)) < F(timezone.now().date())).filter(companyToken__in=transactions, expired=False, status='valid', employeeToken__isnull=True).order_by('created')
-            tokens = Token.objects.annotate(
-                expired=ExpressionWrapper(F('created') + Cast(timedelta(days=365), output_field=IntegerField()), output_field=DateField())).filter(
-                companyToken__in=transactions, expired__lte=timezone.now().date(), status='valid', employeeToken__isnull=True).order_by(
-                'created')
-            for index in range(credit_amount):
-                pass
+            date = timezone.now().date() - timedelta(days=365)
+            tokens = Token.objects.filter(companyToken__in=transactions, created__gte=date, status='valid', employeeToken__isnull=True).order_by('created')
+
             credit = Account(owner=owner, company=company, credit=credit_amount)
             credit.save()
             debit = CompanyAccount(company=company, debit=credit_amount)
             debit.save()
-            return Response(status=200, data=f'You have credited {credit_amount} credits to {owner}')
+
+            for token in tokens[:credit_amount]:
+                token.employeeToken = credit
+                token.save()
+
+            return Response(status=200, data=f'You have credited {credit_amount} tokens to {owner}')
 
 
 class ListCompanyAccountView(ListAPIView):

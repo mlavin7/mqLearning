@@ -1,5 +1,6 @@
 from django.contrib.auth import get_user_model
 from django.core.exceptions import ObjectDoesNotExist
+from django.core.mail import send_mail
 
 from rest_framework.generics import GenericAPIView
 from rest_framework.response import Response
@@ -30,7 +31,15 @@ class RegistrationView(GenericAPIView):
         registration = RegistrationProfile(user=new_user)
         registration.save()
 
-        # sending email to be added
+        # send_mail(
+        #     'Validation code MQ learning',
+        #     f'Hello {new_user.first_name} {new_user.last_name},\n\n'
+        #     f'Please use the following code to validate your email address: {registration.code}.\n\n'
+        #     f'Thank you for joining MQ Learning',
+        #     'joost.motion@gmail.com',
+        #     [f'{new_user.email}'],
+        #     fail_silently=False,
+        # )
 
         return Response(status=200)
 

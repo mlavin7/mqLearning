@@ -69,7 +69,8 @@ class SetCompanyAdminView(GenericAPIView):
         if user.isAdmin:
             user.isAdmin = False
             user.save()
+            return Response(status=200, data=f'{user} has been unregistered as admin')
         else:
             user.isAdmin = True
             user.save()
-        return Response(status=200)
+            return Response(status=200, data=f'{user} has been set as admin')
