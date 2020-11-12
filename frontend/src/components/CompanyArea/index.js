@@ -14,7 +14,7 @@ const CompanyArea = ({ user }) => {
 			</LogoContainer>
 			<InfoContainer>
 				{/* Component comes from EmployeeCard component */}
-				{/* <LeftSection company>
+				<LeftSection company>
 					<p>{user.company.name}</p>
 					<p>{user.company.phone}</p>
 					<p>{user.company.website}</p>
@@ -24,7 +24,8 @@ const CompanyArea = ({ user }) => {
 					<p>{user.company.zip_code}</p>
 					<p>{user.company.city}</p>
 					<p>{user.company.country}</p>
-				</RightSection> */}
+					<p>{user.company.country}</p>
+				</RightSection>
 			</InfoContainer>
 		</CompanyAreaWrapper>
 	);

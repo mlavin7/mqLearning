@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import cardBg from '../../assets/images/card-bg1.jpg';
-import { colors, fontSizes } from '../../style/theme';
+import { colors } from '../../style/theme';
 
 export const CompanyAreaWrapper = styled.section`
 	width: 90%;

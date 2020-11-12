@@ -10,6 +10,7 @@ import {
 import WorkshopCard from '../WorkshopCard';
 import EmployeeCard from '../EmployeeCard';
 import CompanyArea from '../CompanyArea';
+import CompanyAdminCard from '../CompAdmCard';
 
 const NavigateDashboard = ({
 	workshops,
@@ -17,14 +18,14 @@ const NavigateDashboard = ({
 	attendedWorkshops,
 	user,
 	employees,
+	compAdmins,
 }) => {
-	console.log(employees);
 	const [active, setActive] = useState('workshop');
 
 	return (
 		<Container>
 			<NavigationWrapper>
-				<NavbarDiV userProfile>
+				<NavbarDiV>
 					<Button
 						btnNavDashboard
 						onClick={() => setActive('workshop')}
@@ -89,11 +90,7 @@ const NavigateDashboard = ({
 						<Fragment>
 							{workshops.length ? (
 								workshops.map(workshop => (
-									<WorkshopCard
-										Zoom
-										workshop={workshop}
-										key={workshop.id}
-									/>
+									<WorkshopCard Zoom workshop={workshop} key={workshop.id} />
 								))
 							) : (
 								<h1>loading..</h1>
@@ -137,7 +134,7 @@ const NavigateDashboard = ({
 
 					{active === 'resources' ? <h4 style={message}>Resources</h4> : null}
 
-					{active === 'employees' ? (
+					{active === 'employees' || active === 'compAdmin' ? (
 						<Fragment>
 							{employees.length ? (
 								employees.map(employee => <EmployeeCard employee={employee} />)
@@ -156,6 +153,18 @@ const NavigateDashboard = ({
 								<Button>edit</Button>
 								<Button>save</Button>
 							</BtnContainer>
+						</Fragment>
+					) : null}
+
+					{active === 'compAdmins' ? (
+						<Fragment>
+							{compAdmins.length ? (
+								compAdmins.map(compAdmin => (
+									<CompanyAdminCard compAdmin={compAdmin} />
+								))
+							) : (
+								<h4 style={message}>There are no registered Administrators.</h4>
+							)}
 						</Fragment>
 					) : null}
 				</SectionWorkshop>

@@ -39,10 +39,10 @@ const TopBar = ({ user }) => {
 					<MQLogoWrapper>
 						<MQLogo src={mqlogo} alt='logo' />
 						<div className='logo-text'>
-							<p>Meaning</p>
 							<p>
-								Quotient <span>&copy;</span>
+								Meaning<span>&reg;</span>
 							</p>
+							<p>Quotient</p>
 						</div>
 					</MQLogoWrapper>
 				</TopBarLeft>

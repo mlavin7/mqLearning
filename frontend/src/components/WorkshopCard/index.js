@@ -43,7 +43,7 @@ const WorkshopCard = ({ workshop }) => {
 
 	return (
 		<>
-			<CardWrapper>
+			<CardWrapper category={workshop.category}>
 				<ContentWrapper>
 					<div className='workshop-info'>
 						<p>{workshop.title}</p>
