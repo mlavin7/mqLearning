@@ -42,7 +42,7 @@ class ReserveWorkshopView(GenericAPIView):
         workshop = self.get_object()
         user = request.user
         if workshop in user.m2m_workshops.all():
-            if workshop.date_start < present + timedelta(days=1):
+            if workshop.date_start < present + timedelta(days=3):
                 return Response(status=403, data="Sorry, you're not allowed to unregister anymore")
             else:
                 user.m2m_workshops.remove(workshop)
