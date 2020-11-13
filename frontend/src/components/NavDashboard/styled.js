@@ -37,24 +37,10 @@ export const NavbarDiV = styled.div`
 	}
 `;
 
-export const SubNavbar = styled(NavbarDiV)`
-	margin-top: -2rem;
-
-	a {
-		background: none;
-		font-size: ${fontSizes.medium};
-		:hover {
-			background: none;
-			color: #d59bfa;
-		}
-	}
-`;
-
 export const SectionWorkshop = styled.div`
 	min-height: 40rem;
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: flex-start;
 	grid-row-gap: 3rem;
 	width: 100%;
 	height: 100%;
