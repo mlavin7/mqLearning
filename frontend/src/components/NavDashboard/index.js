@@ -2,13 +2,7 @@ import React, { useState, Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import { Container } from '../../style/Container';
 import { Button } from '../../style/Button';
-import {
-	NavbarDiV,
-	SectionWorkshop,
-	NavigationWrapper,
-	BtnContainer,
-	SubNavbar,
-} from './styled';
+import { NavbarDiV, SectionWorkshop, NavigationWrapper } from './styled';
 import WorkshopCard from '../WorkshopCard';
 import EmployeeCard from '../EmployeeCard';
 import CompanyArea from '../CompanyArea';
@@ -87,32 +81,6 @@ const NavigateDashboard = ({
 					) : null}
 				</NavbarDiV>
 
-				{/* SUBNAVBAR */}
-				{/* {active === 'workshop' ||
-				active === 'scheduledWorkshop' ||
-				active === 'attendedWorkshop' ? (
-					<SubNavbar>
-						<Link
-							onClick={() => setActive('self')}
-							className={active === 'self' ? 'active' : null}
-						>
-							Self
-						</Link>
-						<Link
-							onClick={() => setActive('work')}
-							className={active === 'work' ? 'active' : null}
-						>
-							Work
-						</Link>
-						<Link
-							onClick={() => setActive('relations')}
-							className={active === 'relations' ? 'active' : null}
-						>
-							Relations
-						</Link>
-					</SubNavbar>
-				) : null} */}
-
 				<SectionWorkshop>
 					{active === 'workshop' ? (
 						<Fragment>
@@ -173,7 +141,7 @@ const NavigateDashboard = ({
 						</Fragment>
 					) : null}
 
-					{user.company ? <CompanyArea user={user} /> : null}
+					{active === 'company' ? <CompanyArea user={user} /> : null}
 
 					{active === 'compAdmins' ? (
 						<Fragment>

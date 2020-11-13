@@ -67,15 +67,3 @@ export const SectionWorkshop = styled.div`
 		scroll-snap-align: start;
 	}
 `;
-
-export const BtnContainer = styled.div`
-	width: 90%;
-	margin-top: 0.5rem;
-	text-align: right;
-	Button {
-		margin: 0 0.8rem;
-	}
-	/* Button:last-child {
-		margin-right: 0;
-	} */
-`;
