@@ -1,6 +1,8 @@
 from datetime import datetime, timedelta
 import pytz
-from django.core.mail import send_mail
+from django.core.mail import send_mail, EmailMessage, EmailMultiAlternatives
+from django.template import Context
+from django.template.loader import render_to_string, get_template
 from rest_framework import filters
 from rest_framework.generics import ListAPIView, GenericAPIView, RetrieveAPIView, CreateAPIView, DestroyAPIView
 from rest_framework.permissions import IsAdminUser
@@ -74,6 +76,22 @@ class ReserveWorkshopView(GenericAPIView):
                 for token in tokens[:workshop.cost]:
                     token.status = 'used'
                     token.save()
+
+                msg_plain = get_template('reserve_workshop.txt')
+                msg_html = get_template('reserve_workshop.html')
+
+                context = Context({'first_name': user.first_name})
+
+                email = EmailMultiAlternatives(
+                    f'Registration for {workshop.title}',
+                    msg_plain.render(context),
+                    'joost.motion@gmail.com',
+                    [f'{user.email}']
+                )
+                email.attach_alternative(msg_html.render(context), "text/html")
+                email.send(fail_silently=False)
+
+
 
                 # send_mail(
                 #     f'Registration for {workshop.title}',
