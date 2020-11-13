@@ -15,8 +15,20 @@ class Token(models.Model):
     ]
     token_id = models.UUIDField(default=uuid.uuid4, editable=False, unique=True)
     created = models.DateField(auto_now=True)
-    companyToken = models.ForeignKey(to=CompanyAccount, related_name='fk_companyAccount_token', null=True, blank=True, on_delete=models.SET_NULL)
-    employeeToken = models.ForeignKey(to=Account, related_name='fk_account_token', null=True, blank=True, on_delete=models.SET_NULL)
+    companyToken = models.ForeignKey(
+        to=CompanyAccount,
+        related_name='fk_companyAccount_token',
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL
+    )
+    employeeToken = models.ForeignKey(
+        to=Account,
+        related_name='fk_account_token',
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL
+    )
     status = models.CharField(max_length=5, choices=token_status, default='valid')
 
     def __str__(self):

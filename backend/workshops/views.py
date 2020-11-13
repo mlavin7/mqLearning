@@ -75,7 +75,6 @@ class ReserveWorkshopView(GenericAPIView):
                     token.status = 'used'
                     token.save()
 
-                # link = 'https://www.mq-learning.com/events/how-to-make-inner-values-based-decisions-zurich'
                 # send_mail(
                 #     f'Registration for {workshop.title}',
                 #     f'Hello {user.first_name}, \n\nThank you for registering to our event!\n\n'
@@ -84,8 +83,7 @@ class ReserveWorkshopView(GenericAPIView):
                 #     f'{workshop.title}\n'
                 #     f'{workshop.date_start:%B %d, %Y, %H:%M} - {workshop.date_end:%H:%M}\n'
                 #     f'{workshop.location}\n\n'
-                #     # f'<a href={link}>click more info</a>'
-                #     f'For more information go to: {link}\n\n'
+                #     f'For more information go to: {workshop.link}\n\n'
                 #     'Kind regards\n'
                 #     'MQ Learning',
                 #     'joost.motion@gmail.com',

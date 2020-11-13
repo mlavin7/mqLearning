@@ -49,7 +49,8 @@ class CreditUserAccountView(GenericAPIView):
         else:
             transactions = CompanyAccount.objects.filter(company=company, debit=0)
             date = timezone.now().date() - timedelta(days=365)
-            tokens = Token.objects.filter(companyToken__in=transactions, created__gte=date, status='valid', employeeToken__isnull=True).order_by('created')
+            tokens = Token.objects.filter(companyToken__in=transactions, created__gte=date, status='valid',
+                                          employeeToken__isnull=True).order_by('created')
 
             credit = Account(owner=owner, company=company, credit=credit_amount)
             credit.save()
