@@ -17,5 +17,12 @@ from django.contrib import admin
 from django.urls import path
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('backend/admin/', admin.site.urls),
+    path('backend/api/auth/', include(authurls)),
+    path('backend/api/users/', include('users.urls')),
+    path('backend/api/registration/', include('registrations.urls')),
+    path('backend/api/companies/', include('companies.urls')),
+    path('backend/api/workshops/', include('workshops.urls')),
+    path('backend/api/accounts/', include('wallet.urls')),
+    path('backend/api/resources/', include('resources.urls')),
 ]

@@ -1,14 +1,31 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import { ThemeProvider } from 'styled-components';
+import { GlobalStyle } from './style/theme';
+import * as theme from './style/theme';
+import Routes from './routes';
+import { Provider } from 'react-redux';
+import store from './store';
+import { loginReducer } from './store/reducers/loginReducer';
+
+try {
+	const token = localStorage.getItem('token')
+	if (token) {
+		store.dispatch(loginReducer(token));
+	}
+} catch (error) {
+	
+}
+
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+	<Provider store={store}>
+		<ThemeProvider theme={theme}>
+			<GlobalStyle />
+			<Routes />
+		</ThemeProvider>
+	</Provider>,
+	root
 );
 
 // If you want to start measuring performance in your app, pass a function
