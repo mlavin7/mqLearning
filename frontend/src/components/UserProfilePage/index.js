@@ -101,7 +101,7 @@ const UserProfilePage = ({ user }) => {
 							</label>
 						</div>
 				</ProfileDetailsContainer>
-					<Button editProfileBtn>Save Changes</Button>
+				<Button editProfileBtn>Save Changes</Button>
 			</Container>
 		</Container>
 	);
