@@ -3,7 +3,7 @@
   <head>
     <meta name="viewport" content="width=device-width" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>Simple Transactional Email</title>
+    <title>Reservation Email</title>
     <style>
       /* -------------------------------------
           GLOBAL RESETS
@@ -141,7 +141,7 @@
       }
 
       a {
-        color: #3498db;
+        color: #ba3bbf;
         text-decoration: underline;
       }
 
@@ -163,10 +163,10 @@
       }
         .btn a {
           background-color: #ffffff;
-          border: solid 1px #3498db;
+          border: solid 1px #ba3bbf;
           border-radius: 5px;
           box-sizing: border-box;
-          color: #3498db;
+          color: #ba3bbf;
           cursor: pointer;
           display: inline-block;
           font-size: 14px;
@@ -178,12 +178,12 @@
       }
 
       .btn-primary table td {
-        background-color: #3498db;
+        background-color: #ba3bbf;
       }
 
       .btn-primary a {
-        background-color: #3498db;
-        border-color: #3498db;
+        background-color: #ba3bbf;
+        border-color: #ba3bbf;
         color: #ffffff;
       }
 
@@ -322,18 +322,18 @@
           line-height: inherit;
         }
         .btn-primary table td:hover {
-          background-color: #34495e !important;
+          background-color: #82298f !important;
         }
         .btn-primary a:hover {
-          background-color: #34495e !important;
-          border-color: #34495e !important;
+          background-color: #82298f !important;
+          border-color: #82298f !important;
         }
       }
 
     </style>
   </head>
   <body class="">
-    <span class="preheader">This is preheader text. Some clients will show this text as a preview.</span>
+    <span class="preheader">Validation code</span>
     <table role="presentation" border="0" cellpadding="0" cellspacing="0" class="body">
       <tr>
         <td>&nbsp;</td>
@@ -349,8 +349,11 @@
                   <table role="presentation" border="0" cellpadding="0" cellspacing="0">
                     <tr>
                       <td>
-                        <p>Hi {{first_name}},</p>
-                        <p>Sometimes you just want to send a simple HTML email with a simple design and clear call to action. This is it.</p>
+                        <img src="cid:mq_logo.jpg" alt="mq_logo"/>
+                        <p>Hello {{first_name}} {{last_name}},</p>
+                        <p>Welcome to MQ Learning!</p>
+                        <p>Please use the following code to validate your email address: {{code}}.</p>
+                        <p>Thank you for joining MQ Learning!</p>
                         <table role="presentation" border="0" cellpadding="0" cellspacing="0" class="btn btn-primary">
                           <tbody>
                             <tr>
@@ -358,7 +361,7 @@
                                 <table role="presentation" border="0" cellpadding="0" cellspacing="0">
                                   <tbody>
                                     <tr>
-                                      <td> <a href="http://htmlemail.io" target="_blank">Call To Action</a> </td>
+                                      <td> <a href="https://mq-learning.propulsion-learn.ch/" target="_blank">To login page</a> </td>
                                     </tr>
                                   </tbody>
                                 </table>
@@ -366,8 +369,7 @@
                             </tr>
                           </tbody>
                         </table>
-                        <p>This is a really simple email template. Its sole purpose is to get the recipient to click the button with no distractions.</p>
-                        <p>Good luck! Hope it works.</p>
+
                       </td>
                     </tr>
                   </table>
@@ -383,8 +385,7 @@
               <table role="presentation" border="0" cellpadding="0" cellspacing="0">
                 <tr>
                   <td class="content-block">
-                    <span class="apple-link">Company Inc, 3 Abbey Road, San Francisco CA 94102</span>
-                    <br> Don't like these emails? <a href="http://i.imgur.com/CScmqnj.gif">Unsubscribe</a>.
+                    <span class="apple-link">Meaning Quotient GmbH, Streulistrasse 32, 8032 Zürich, Switzerland</span>
                   </td>
                 </tr>
                 <tr>

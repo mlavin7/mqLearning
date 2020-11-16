@@ -1,8 +1,10 @@
+import os
 from datetime import datetime, timedelta
+from email.mime.image import MIMEImage
+
 import pytz
-from django.core.mail import send_mail, EmailMessage, EmailMultiAlternatives
-from django.template import Context
-from django.template.loader import render_to_string, get_template
+from django.core.mail import EmailMultiAlternatives
+from django.template.loader import get_template
 from rest_framework import filters
 from rest_framework.generics import ListAPIView, GenericAPIView, RetrieveAPIView, CreateAPIView, DestroyAPIView
 from rest_framework.permissions import IsAdminUser
@@ -77,10 +79,17 @@ class ReserveWorkshopView(GenericAPIView):
                     token.status = 'used'
                     token.save()
 
-                msg_plain = get_template('reserve_workshop.txt')
-                msg_html = get_template('reserve_workshop.html')
+                msg_plain = get_template('reserve_email.txt')
+                msg_html = get_template('reserve_email.html')
 
-                context = Context({'first_name': user.first_name})
+                context = ({
+                    'first_name': user.first_name,
+                    'title': workshop.title,
+                    'location': workshop.location,
+                    'link': workshop.link,
+                    'start_date': workshop.date_start,  # to append :%B %d, %Y, %H:%M
+                    'end_date': workshop.date_end,  # to append :%H:%M
+                })
 
                 email = EmailMultiAlternatives(
                     f'Registration for {workshop.title}',
@@ -89,25 +98,16 @@ class ReserveWorkshopView(GenericAPIView):
                     [f'{user.email}']
                 )
                 email.attach_alternative(msg_html.render(context), "text/html")
+                email.mixed_subtype = 'related'
+
+                for f in ['mq-logo.jpg']:
+                    fp = open(os.path.join(os.path.dirname('/opt/project/frontend/src/assets/images/'), f), 'rb')
+                    email_img = MIMEImage(fp.read())
+                    fp.close()
+                    email_img.add_header('Content-ID', '<{}>'.format(f))
+                    email.attach(email_img)
+
                 email.send(fail_silently=False)
-
-
-
-                # send_mail(
-                #     f'Registration for {workshop.title}',
-                #     f'Hello {user.first_name}, \n\nThank you for registering to our event!\n\n'
-                #     'We’re looking forward to seeing you there.\n\n'
-                #     'Here are the details: \n'
-                #     f'{workshop.title}\n'
-                #     f'{workshop.date_start:%B %d, %Y, %H:%M} - {workshop.date_end:%H:%M}\n'
-                #     f'{workshop.location}\n\n'
-                #     f'For more information go to: {workshop.link}\n\n'
-                #     'Kind regards\n'
-                #     'MQ Learning',
-                #     'joost.motion@gmail.com',
-                #     [f'{user.email}'],
-                #     fail_silently=False,
-                # )
 
         return Response(status=200, data=f'Thank for registering for workshop: {workshop.title}')
 
