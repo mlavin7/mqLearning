@@ -24,7 +24,6 @@ RUN mkdir -p /scripts
 COPY ./scripts /scripts
 RUN chmod +x ./scripts/*
 
-
 COPY ./backend /backend
 
 RUN mkdir -p /frontend
