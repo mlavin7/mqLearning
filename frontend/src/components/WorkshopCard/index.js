@@ -9,7 +9,7 @@ import { useHistory } from 'react-router-dom';
 import { Button } from '../../style/Button';
 import moment from 'moment';
 
-const WorkshopCard = ({ workshop }) => {
+const WorkshopCard = ({ workshop, user }) => {
 	console.log(workshop.attendees);
 
 	//todo remove seats available from card if attended workshop
