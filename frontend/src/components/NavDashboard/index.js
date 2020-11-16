@@ -1,12 +1,12 @@
 import React, { useState, Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import { Container } from '../../style/Container';
-import { Button } from '../../style/Button';
 import { NavbarDiV, SectionWorkshop, NavigationWrapper } from './styled';
 import WorkshopCard from '../WorkshopCard';
 import EmployeeCard from '../EmployeeCard';
 import CompanyArea from '../CompanyArea';
-import CompanyAdminCard from '../CompAdmCard';
+import CompaniesCard from '../CompaniesCard';
+import Spinner from '../Spinner';
 
 const NavigateDashboard = ({
 	workshops,
@@ -14,7 +14,7 @@ const NavigateDashboard = ({
 	attendedWorkshops,
 	user,
 	employees,
-	compAdmins,
+	companies,
 }) => {
 	const [active, setActive] = useState('workshop');
 
@@ -23,28 +23,28 @@ const NavigateDashboard = ({
 			<NavigationWrapper>
 				<NavbarDiV>
 					<Link
-						btnNavDashboard
+						to='#'
 						onClick={() => setActive('workshop')}
 						className={active === 'workshop' ? 'active' : null}
 					>
 						Workshops
 					</Link>
 					<Link
-						btnNavDashboard
+						to='#'
 						onClick={() => setActive('scheduledWorkshop')}
 						className={active === 'scheduledWorkshop' ? 'active' : null}
 					>
 						Scheduled Workshops
 					</Link>
 					<Link
-						btnNavDashboard
+						to='#'
 						onClick={() => setActive('attendedWorkshop')}
 						className={active === 'attendedWorkshop' ? 'active' : null}
 					>
 						Attended Workshops
 					</Link>
 					<Link
-						btnNavDashboard
+						to='#'
 						onClick={() => setActive('resources')}
 						className={active === 'resources' ? 'active' : null}
 					>
@@ -54,14 +54,14 @@ const NavigateDashboard = ({
 					{user.isAdmin ? (
 						<Fragment>
 							<Link
-								btnNavDashboard
+								to='#'
 								onClick={() => setActive('employees')}
 								className={active === 'employees' ? 'active' : null}
 							>
 								Employees
 							</Link>
 							<Link
-								btnNavDashboard
+								to='#'
 								onClick={() => setActive('company')}
 								className={active === 'company' ? 'active' : null}
 							>
@@ -72,11 +72,11 @@ const NavigateDashboard = ({
 
 					{user.is_staff ? (
 						<Link
-							btnNavDashboard
-							onClick={() => setActive('compAdmins')}
-							className={active === 'compAdmins' ? 'active' : null}
+							to='#'
+							onClick={() => setActive('companies')}
+							className={active === 'companies' ? 'active' : null}
 						>
-							Company Administrators
+							Companies
 						</Link>
 					) : null}
 				</NavbarDiV>
@@ -89,7 +89,7 @@ const NavigateDashboard = ({
 									<WorkshopCard Zoom workshop={workshop} key={workshop.id} />
 								))
 							) : (
-								<h1 style={message}>loading..</h1>
+								<Spinner style={message}>loading..</Spinner>
 							)}
 						</Fragment>
 					) : null}
@@ -132,7 +132,9 @@ const NavigateDashboard = ({
 					{active === 'employees' ? (
 						<Fragment>
 							{employees.length ? (
-								employees.map(employee => <EmployeeCard employee={employee} />)
+								employees.map(employee => (
+									<EmployeeCard employee={employee} key={employee.id} />
+								))
 							) : (
 								<h4 style={message}>
 									There are no employees registered for this company.
@@ -141,16 +143,18 @@ const NavigateDashboard = ({
 						</Fragment>
 					) : null}
 
-					{active === 'company' ? <CompanyArea user={user} /> : null}
+					{active === 'company' ? (
+						<CompanyArea user={user} key={user.id} />
+					) : null}
 
-					{active === 'compAdmins' ? (
+					{active === 'companies' ? (
 						<Fragment>
-							{compAdmins.length ? (
-								compAdmins.map(compAdmin => (
-									<CompanyAdminCard compAdmin={compAdmin} />
+							{companies.length ? (
+								companies.map(company => (
+									<CompaniesCard company={company} key={company.id} />
 								))
 							) : (
-								<h4 style={message}>There are no registered Administrators.</h4>
+								<h4 style={message}>There are no registered Companies.</h4>
 							)}
 						</Fragment>
 					) : null}

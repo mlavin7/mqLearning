@@ -1,5 +1,5 @@
-import styled, { css } from 'styled-components';
-import { colors, fontSizes } from '../../style/theme';
+import styled from 'styled-components';
+import { fontSizes } from '../../style/theme';
 
 export const NavigationWrapper = styled.section`
 	display: flex;
@@ -16,7 +16,6 @@ export const NavbarDiV = styled.div`
 	justify-content: flex-start;
 	align-items: center;
 	margin: 3rem 0 4rem;
-	padding-left: 1rem;
 
 	.active {
 		background: #d59bfa;
@@ -40,8 +39,8 @@ export const NavbarDiV = styled.div`
 export const SectionWorkshop = styled.div`
 	min-height: 40rem;
 	display: flex;
+	gap: 3.8rem;
 	flex-wrap: wrap;
-	grid-row-gap: 3rem;
 	width: 100%;
 	height: 100%;
 	margin-bottom: 3rem;
