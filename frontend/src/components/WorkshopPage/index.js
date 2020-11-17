@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { Container } from '../../style/Container';
 import { TopBarWrapper, Showcase, MainContent } from './styled';
@@ -9,6 +10,9 @@ import moment from 'moment';
 
 const WorkshopPage = ({ singleWorkshop, user }) => {
 	const history = useHistory();
+	const workshops = useSelector(state => state.workshop.workshop);
+	console.log(workshops);
+	// const singleWorkshop = workshops.map(workshop => workshop)
 	const [showModal, setShowModal] = useState(false);
 
 	const openModal = e => {
@@ -85,13 +89,12 @@ const WorkshopPage = ({ singleWorkshop, user }) => {
 							? attendees().includes(user.id)
 								? 'unregister'
 								: 'register'
-							: null}
+							: 'null'}
 					</Button>{' '}
 					{showModal ? (
 						<Modal
 							handleClose={hideModal}
 							workshop={singleWorkshop}
-							user={user}
 							attendees={attendees}
 						/>
 					) : null}

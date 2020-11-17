@@ -1,12 +1,13 @@
 import React, { Fragment, useState, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { ModalExtContainer, ModalIntContainer, ContentSection } from './styled';
 import { Button } from '../../style/Button';
 import ReservationAction from '../../store/actions/reservationAction';
 
-const Modal = ({ handleClose, workshop, user, attendees }) => {
+const Modal = ({ handleClose, workshop, attendees }) => {
 	const dispatch = useDispatch();
 
+	const user = useSelector(state => state.user.user);
 	const [currentStage, setCurrentStage] = useState(0);
 
 	const handleReservation = e => {
