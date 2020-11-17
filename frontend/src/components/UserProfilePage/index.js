@@ -42,12 +42,11 @@ const UserProfilePage = ({ user }) => {
 						<h2>{fullName}</h2>
 						<p>{user.email}</p>
 						<p>{user.company ? user.company.name : null}</p>
-						<p>{user.address}</p>
 					</div>
 					<div className='right-side'>
-						<p>{user.zip_code}</p>
+						{/* <p>{user.zip_code}</p>
 						<p>{user.city}</p>
-						<p>{user.country}</p>
+						<p>{user.country}</p> */}
 					</div>
 					<div className='tokens-container'>
 						<p>
@@ -64,7 +63,9 @@ const UserProfilePage = ({ user }) => {
 			</TopProfileBar>
 			<Container>
 				<ProfileDetailsContainer>
-					<h1>Profile Details</h1>
+					<div className='header-container'>
+						<h1>Profile Details</h1>
+					</div>
 						<div className='profile-fields'>
 							<p className='profile-field-title'>First Name</p>
 							<input type='text' onChange={e => setFirstName(e.currentTarget.value)} defaultValue={user.first_name} disabled={currentStage === true ? true : false} />
@@ -94,10 +95,9 @@ const UserProfilePage = ({ user }) => {
 							<input type='text' onChange={e => setCountry(e.currentTarget.value)} defaultValue={user.country} disabled={currentStage === true ? true : false} />
 						</div>
 						<div className='profile-fields'>
-							<p className='profile-field-title'>Profile Picture</p>
 							<label className='avatar-upload-btn'>
 								Change Profile Picture
-								<input type='file' onChange={e => setAvatar(e.currentTarget.value)} disabled={currentStage === true ? true : false} />
+								<input type='file' onChange={e => setAvatar(e.currentTarget.value)} />
 							</label>
 						</div>
 				</ProfileDetailsContainer>

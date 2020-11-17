@@ -8,6 +8,7 @@ const UserProfile = () => {
 	const dispatch = useDispatch();
 	const [user, setUser] = useState(null);
 
+	// const user = useSelector(state => state.user.user);
 	useEffect(() => {
 		const getData = async () => {
 			const data = await dispatch(userAction());

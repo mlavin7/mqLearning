@@ -127,7 +127,7 @@ export const ProfileDetailsContainer = styled.section`
 
 		.avatar-upload-btn {
 			padding: 0.5rem 1rem;
-			margin: 0 0.6rem;
+			margin: 0.6rem;
 			font-size: ${fontSizes.small};
 			font-weight: 300;
 			background: #ba3bbf;
