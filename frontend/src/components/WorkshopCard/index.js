@@ -10,8 +10,6 @@ import { Button } from '../../style/Button';
 import moment from 'moment';
 
 const WorkshopCard = ({ workshop, user }) => {
-	console.log(workshop.attendees);
-
 	//todo remove seats available from card if attended workshop
 	// const currentTime = new Date().dateNow
 	// console.log(currentTime);
@@ -82,13 +80,23 @@ const WorkshopCard = ({ workshop, user }) => {
 				<ReserveBtnWrapper>
 					<p>
 						{workshop.attendees.length === 1
-							? `Franziska is attending this workshop`
+							? `${
+									workshop.attendees ? workshop.attendees[0].first_name : null
+							  } is attending this workshop`
 							: workshop.attendees.length === 2
-							? `Franziska and Gregory are attending this workshop`
-							: workshop.attendees.length > 2
-							? `Franziska, Gregory and other ${
-									workshop.attendees.length - 2
+							? `${
+									workshop.attendees ? workshop.attendees[0].first_name : null
+							  } and ${
+									workshop.attendees ? workshop.attendees[1].first_name : null
 							  } are attending this workshop`
+							: workshop.attendees.length > 2
+							? `${
+									workshop.attendees ? workshop.attendees[0].first_name : null
+							  }, ${
+									workshop.attendees ? workshop.attendees[1].first_name : null
+							  } and ${
+									workshop.attendees.length - 2
+							  } other(s) are attending this workshop`
 							: 'No one has registered for this workshop yet'}
 					</p>
 					<Button

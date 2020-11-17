@@ -86,7 +86,7 @@ const NavigateDashboard = ({
 						<Fragment>
 							{workshops.length ? (
 								workshops.map(workshop => (
-									<WorkshopCard Zoom workshop={workshop} user={user} key={workshop.id} />
+									<WorkshopCard Zoom workshop={workshop} key={workshop.id} />
 								))
 							) : (
 								<Spinner style={message}>loading..</Spinner>
@@ -165,7 +165,6 @@ const NavigateDashboard = ({
 };
 
 const message = {
-	marginTop: '9rem',
 	marginLeft: '40%',
 	fontWeight: '400',
 };
