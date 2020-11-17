@@ -4,7 +4,7 @@ import cardBg from '../../assets/images/card-bg1.jpg';
 
 export const CardWrapper = styled.section`
 	display: flex;
-	width: 70%;
+	width: 78%;
 	height: 12rem;
 	background: url(${cardBg});
 	background-position: 100%;
