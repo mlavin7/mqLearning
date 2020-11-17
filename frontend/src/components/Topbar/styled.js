@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { colors, fontSizes, borderRadius } from '../../style/theme';
+import avatar from '../../assets/images/avatar-placeholder.png';
 
 export const TopBarHeader = styled.div`
 	width: 100%;
@@ -29,6 +30,7 @@ export const TopBarRight = styled.div`
 	display: flex;
 	flex-direction: row-reverse;
 	justify-content: flex-start;
+	align-items: center;
 `;
 
 export const MQLogoWrapper = styled.div`
@@ -65,14 +67,21 @@ export const MQLogo = styled.img`
 export const AvatarContainer = styled.div`
 	display: flex;
 	align-items: center;
+	background: url(${props => (props.user.avatar ? props.user.avatar : avatar)});
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	width: 5rem;
+	height: 5rem;
+	border-radius: 50%;
 `;
 
-export const Avatar = styled.img`
-	width: 6rem;
-	height: 6rem;
-	border-radius: 50%;
-	align-self: center;
-`;
+// export const Avatar = styled.img`
+// 	width: 4rem;
+// 	height: 4rem;
+// 	border-radius: 50%;
+// 	vertical-align: middle;
+// `;
 
 export const UserProfileContainer = styled.div`
 	display: flex;
@@ -92,7 +101,7 @@ export const UserWelcome = styled.p`
 export const ViewProfileBtnWrapper = styled.div`
 	display: flex;
 	justify-content: center;
-	margin-top: 1rem;
+	margin-top: .5rem;
 `;
 
 export const ViewProfileBtn = styled.button`
@@ -111,12 +120,16 @@ export const ViewProfileBtn = styled.button`
 	}
 `;
 
-export const TokensValidText = styled.p`
+export const TokensValidText = styled.div`
 	font-size: ${fontSizes.normal};
 	margin-left: 3rem;
 	align-self: center;
 	display: flex;
 	flex-direction: column;
+
+	.hide {
+		display: none;
+	}
 `;
 
 export const CompanyText = styled.p`

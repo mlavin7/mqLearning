@@ -1,55 +1,39 @@
 import React, { Fragment, useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import TopBar from '../components/Topbar';
 import Footer from '../components/Footer';
 import NavigateDashboard from '../components/NavDashboard';
 import { Container } from '../style/Container';
 import workshopAction from '../store/actions/workshopAction';
-import userAction from '../store/actions/userAction';
-import scheduledWorkshopAction from '../store/actions/scheduledWorkshopAction';
-import attendedWorkshopAction from '../store/actions/attendedWorkshopAction';
-import employeesAction from '../store/actions/employeesAction';
-import companyAdminAction from '../store/actions/companyAdminAction';
+import companiesAction from '../store/actions/companiesAction';
 
 const MainPage = () => {
 	const dispatch = useDispatch();
-	const [workshops, setWorkshops] = useState([]);
-	const [user, setUser] = useState([]);
-	const [scheduledWorkshops, setScheduledWorkshops] = useState([]);
-	const [attendedWorkshops, setAttendedWorkshops] = useState([]);
-	const [employees, setEmployees] = useState([]);
-	const [compAdmins, setCompAdmins] = useState([]);
+
+	const user = useSelector(state => state.user.user);
+	const companies = useSelector(state => state.company.company);
+	const workshops = useSelector(state => state.workshop.workshop);
+
+	console.log('user', user);
+	console.log('company', companies);
+	console.log('workshop', workshops);
 
 	useEffect(() => {
-		const getData = async () => {
-			const workshopData = await dispatch(workshopAction());
-			const userData = await dispatch(userAction());
-			const scheduledWorkshopsData = await dispatch(scheduledWorkshopAction());
-			const attendedWorkshopsData = await dispatch(attendedWorkshopAction());
-			const employeesData = await dispatch(employeesAction());
-			const compAdminsData = await dispatch(companyAdminAction());
-			setWorkshops(workshopData);
-			setUser(userData);
-			setScheduledWorkshops(scheduledWorkshopsData);
-			setAttendedWorkshops(attendedWorkshopsData);
-			setEmployees(employeesData);
-			setCompAdmins(compAdminsData);
-			console.log('fetching');
+		const getData = () => {
+			dispatch(workshopAction());
+			dispatch(companiesAction());
 		};
 		getData();
-	}, [dispatch]);
+	}, [dispatch, user]);
 
 	return (
 		<Fragment>
-			<TopBar user={user} />
+			{user ? <TopBar user={user} /> : null}
 			<Container>
-				{workshops ? (
+				{workshops && companies ? (
 					<NavigateDashboard
 						workshops={workshops}
-						scheduledWorkshops={scheduledWorkshops}
-						attendedWorkshops={attendedWorkshops}
-						employees={employees}
-						compAdmins={compAdmins}
+						companies={companies}
 						user={user}
 					/>
 				) : null}

@@ -81,6 +81,8 @@ export const Button = styled.button`
 			position: absolute;
 			bottom: 0.5rem;
 			right: 0.5rem;
+			letter-spacing: .05rem;
+
 			:hover {
 				background: #d59bfa;
 			}
@@ -117,14 +119,14 @@ export const Button = styled.button`
 		${props =>
 		props.save &&
 		css`
-			font-size: ${fontSizes.normal};
-			padding: 0.5rem 2rem;
+			font-size: ${fontSizes.small};
+			padding: 0.5rem 1.5rem;
 			background: transparent;
 			border: 0.1rem solid ${colors.white};
 			position: absolute;
 			bottom: 1rem;
 			color: ${colors.white};
-			right: 3rem;
+			right: 1rem;
 			:hover {
 				background: none;
 			}
