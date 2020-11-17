@@ -32,7 +32,7 @@ class Token(models.Model):
     status = models.CharField(max_length=5, choices=token_status, default='valid')
 
     def __str__(self):
-        return f'{self.token_id} - {self.companyToken.company.name}'
+        return f'{self.token_id}'
 
     @property
     def expired(self):
