@@ -12,11 +12,11 @@ const UserProfilePage = ({ user }) => {
 	const history = useHistory();
 	const dispatch = useDispatch();
 
-	const [currentStage, setcurrentStage] = useState('show-user-profile');
+	const [currentStage, setcurrentStage] = useState(true);
 	const [email, setEmail] = useState(user.email);
 	const [first_name, setFirstName] = useState(user.first_name);
 	const [last_name, setLastName] = useState(user.last_name);
-	// const [company, setCompany] = useState(user.company.name);
+	const [company, setCompany] = useState(user.company.name);
 	const [address, setAddress] = useState(user.address);
 	const [zip_code, setZip] = useState(user.zip_code);
 	const [city, setCity] = useState(user.city);
@@ -34,7 +34,7 @@ const UserProfilePage = ({ user }) => {
 						<Button editProfileBtn onClick={() => history.push('/mainpage/')}>
 							Back
 						</Button>
-						<Button editProfileBtn>Edit profile</Button>
+						<Button editProfileBtn onClick={() => setcurrentStage(!currentStage)}>Edit profile</Button>
 					</Link>
 				</div>
 				<div className='user-details-container'>
@@ -67,37 +67,37 @@ const UserProfilePage = ({ user }) => {
 					<h1>Profile Details</h1>
 						<div className='profile-fields'>
 							<p className='profile-field-title'>First Name</p>
-							<input type='text' onChange={e => setFirstName(e.currentTarget.value)} defaultValue={user.first_name} />
+							<input type='text' onChange={e => setFirstName(e.currentTarget.value)} defaultValue={user.first_name} disabled={currentStage === true ? true : false} />
 						</div>
 						<div className='profile-fields'>
 							<p className='profile-field-title'>Last Name</p>
-							<input type='text' onChange={e => setLastName(e.currentTarget.value)} defaultValue={user.last_name} />
+							<input type='text' onChange={e => setLastName(e.currentTarget.value)} defaultValue={user.last_name} disabled={currentStage === true ? true : false} />
 						</div>
 						<div className='profile-fields'>
 							<p className='profile-field-title'>Company</p>
-							{/* <input type='text' onChange={e => setCompany(e.currentTarget.value)} defaultValue={user.company.name} /> */}
+							<input type='text' onChange={e => setCompany(e.currentTarget.value)} defaultValue={user.company.name} disabled={currentStage === true ? true : false} />
 						</div>
 						<div className='profile-fields'>
 							<p className='profile-field-title'>Address</p>
-							<input type='text' onChange={e => setAddress(e.currentTarget.value)} defaultValue={user.address} />
+							<input type='text' onChange={e => setAddress(e.currentTarget.value)} defaultValue={user.address} disabled={currentStage === true ? true : false} />
 						</div>
 						<div className='profile-fields'>
 							<p className='profile-field-title'>Zip / Postcode</p>
-							<input type='text' onChange={e => setZip(e.currentTarget.value)} defaultValue={user.zip_code} />
+							<input type='text' onChange={e => setZip(e.currentTarget.value)} defaultValue={user.zip_code} disabled={currentStage === true ? true : false} />
 						</div>
 						<div className='profile-fields'>
 							<p className='profile-field-title'>City</p>
-							<input type='text' onChange={e => setCity(e.currentTarget.value)} defaultValue={user.city} />
+							<input type='text' onChange={e => setCity(e.currentTarget.value)} defaultValue={user.city} disabled={currentStage === true ? true : false} />
 						</div>
 						<div className='profile-fields'>
 							<p className='profile-field-title'>Country</p>
-							<input type='text' onChange={e => setCountry(e.currentTarget.value)} defaultValue={user.country} />
+							<input type='text' onChange={e => setCountry(e.currentTarget.value)} defaultValue={user.country} disabled={currentStage === true ? true : false} />
 						</div>
 						<div className='profile-fields'>
 							<p className='profile-field-title'>Profile Picture</p>
 							<label className='avatar-upload-btn'>
 								Change Profile Picture
-								<input type='file' onChange={e => setAvatar(e.currentTarget.value)} />
+								<input type='file' onChange={e => setAvatar(e.currentTarget.value)} disabled={currentStage === true ? true : false} />
 							</label>
 						</div>
 				</ProfileDetailsContainer>

@@ -6,7 +6,7 @@ import userAction from '../store/actions/userAction';
 
 const UserProfile = () => {
 	const dispatch = useDispatch();
-	const [user, setUser] = useState([]);
+	const [user, setUser] = useState(null);
 
 	useEffect(() => {
 		const getData = async () => {
@@ -14,11 +14,11 @@ const UserProfile = () => {
 			setUser(data);
 		};
 		getData();
-	}, [dispatch]);
+	}, [dispatch]); 
 
 	return (
 		<Fragment>
-			<UserProfilePage user={user} />
+			{ user && <UserProfilePage user={user} /> }
 			<Footer />
 		</Fragment>
 	);
