@@ -65,14 +65,14 @@ const CompaniesCard = ({ company }) => {
 				<RightSection>
 					<TokenSection>
 						<p>
-							<span>Token amount:</span>{' '}
+							<span>Tokens available:</span>{' '}
 							{company.available_credit.total_available
 								? company.available_credit.total_available
 								: 0}
 						</p>
 					</TokenSection>
 					<AllocateTokenSection>
-						<span>Allocate credits:</span>
+						<span>Allocate tokens:</span>
 						<input
 							onChange={updateField}
 							type='number'

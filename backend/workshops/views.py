@@ -98,14 +98,14 @@ class ReserveWorkshopView(GenericAPIView):
                     [f'{user.email}']
                 )
                 email.attach_alternative(msg_html.render(context), "text/html")
-                email.mixed_subtype = 'related'
+                # email.mixed_subtype = 'related'
 
-                for f in ['mq-logo.jpg']:
-                    fp = open(os.path.join(os.path.dirname('/opt/project/frontend/src/assets/images/'), f), 'rb')
-                    email_img = MIMEImage(fp.read())
-                    fp.close()
-                    email_img.add_header('Content-ID', '<{}>'.format(f))
-                    email.attach(email_img)
+                # for f in ['mq-logo.jpg']:
+                #     fp = open(os.path.join(os.path.dirname('/opt/project/frontend/src/assets/images/'), f), 'rb')
+                #     email_img = MIMEImage(fp.read())
+                #     fp.close()
+                #     email_img.add_header('Content-ID', '<{}>'.format(f))
+                #     email.attach(email_img)
 
                 email.send(fail_silently=False)
 

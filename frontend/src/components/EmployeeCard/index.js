@@ -60,14 +60,15 @@ const EmployeeCard = ({ employee }) => {
 				<RightSection>
 					<TokenSection>
 						<p>
-							<span>Token amount:</span>{' '}
+							<span>Tokens available:</span>{' '}
 							{employee.available_credit.total_available
 								? employee.available_credit.total_available
-								: 0}
+								: 0}{' '}
+							tokens
 						</p>
 					</TokenSection>
 					<AllocateTokenSection>
-						<span>Allocate credits:</span>
+						<span>Allocate tokens:</span>
 						<input
 							onChange={updateField}
 							type='number'
