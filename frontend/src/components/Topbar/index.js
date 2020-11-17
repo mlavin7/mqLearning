@@ -49,10 +49,10 @@ const TopBar = ({ user }) => {
 						<span className={user.is_staff ? 'hide' : null}>
 							{user.available_credit && user.company.available_credit
 								? user.isAdmin
-									? `Company credits to distribute: ${user.company.available_credit.total_available}`
+									? `Company tokens to distribute: ${user.company.available_credit.total_available}`
 									: user.is_staff
 									? null
-									: `Credits remaining: ${user.available_credit.total_available}`
+									: `Tokens remaining: ${user.available_credit.total_available}`
 								: null}
 						</span>
 						<span className={user.is_staff ? 'hide' : null}>

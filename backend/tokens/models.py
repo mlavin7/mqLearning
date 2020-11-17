@@ -14,7 +14,7 @@ class Token(models.Model):
         ('used', 'Used'),
     ]
     token_id = models.UUIDField(default=uuid.uuid4, editable=False, unique=True)
-    created = models.DateField(auto_now=True)
+    created = models.DateField(auto_now_add=True)
     companyToken = models.ForeignKey(
         to=CompanyAccount,
         related_name='fk_companyAccount_token',
