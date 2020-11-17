@@ -165,7 +165,6 @@ const NavigateDashboard = ({
 };
 
 const message = {
-	marginTop: '9rem',
 	marginLeft: '40%',
 	fontWeight: '400',
 };
