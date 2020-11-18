@@ -66,6 +66,7 @@ const UserProfilePage = ({ user }) => {
 					<div className='header-container'>
 						<h1>Profile Details</h1>
 					</div>
+					<div className='left-container'>
 						<div className='profile-fields'>
 							<p className='profile-field-title'>First Name</p>
 							<input type='text' onChange={e => setFirstName(e.currentTarget.value)} defaultValue={user.first_name} disabled={currentStage === true ? true : false} />
@@ -82,6 +83,8 @@ const UserProfilePage = ({ user }) => {
 							<p className='profile-field-title'>Address</p>
 							<input type='text' onChange={e => setAddress(e.currentTarget.value)} defaultValue={user.address} disabled={currentStage === true ? true : false} />
 						</div>
+					</div>
+					<div className='right-container'>
 						<div className='profile-fields'>
 							<p className='profile-field-title'>Zip / Postcode</p>
 							<input type='text' onChange={e => setZip(e.currentTarget.value)} defaultValue={user.zip_code} disabled={currentStage === true ? true : false} />
@@ -94,14 +97,17 @@ const UserProfilePage = ({ user }) => {
 							<p className='profile-field-title'>Country</p>
 							<input type='text' onChange={e => setCountry(e.currentTarget.value)} defaultValue={user.country} disabled={currentStage === true ? true : false} />
 						</div>
+					</div>
 						<div className='profile-fields'>
 							<label className='avatar-upload-btn'>
 								Change Profile Picture
 								<input type='file' onChange={e => setAvatar(e.currentTarget.value)} />
 							</label>
 						</div>
+				<div className='save-changes-btn-container'>
+					<Button editProfileBtn>Save Changes</Button>
+				</div>
 				</ProfileDetailsContainer>
-				<Button editProfileBtn>Save Changes</Button>
 			</Container>
 		</Container>
 	);

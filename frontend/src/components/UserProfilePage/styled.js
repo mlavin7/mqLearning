@@ -85,13 +85,31 @@ export const ProfileDetailsContainer = styled.section`
 	flex-direction: column;
 	/* align-items: center; */
 
-	h1 {
-		color: black;
-		font-size: ${fontSizes.large};
+	.header-container {
+		display: flex;
 		align-self: center;
-		font-weight: 500;
-		letter-spacing: 0.2rem;
-		margin-bottom: 1rem;
+
+			h1 {
+			color: black;
+			font-size: ${fontSizes.large};
+			align-self: center;
+			font-weight: 500;
+			letter-spacing: 0.2rem;
+			margin-bottom: 1rem;
+			}
+		}
+	
+	.left-container {
+		display: flex;
+	}
+
+	.right-container {
+		display: flex;
+	}
+
+	.save-changes-btn-container {
+		display: flex;
+		align-self: center;
 	}
 
 	.profile-fields {
@@ -99,7 +117,7 @@ export const ProfileDetailsContainer = styled.section`
 		width: 70%;
 		height: 45%;
 		margin: 0rem auto;
-		/* padding: 0.5rem; */
+		padding: 0.5rem;
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
@@ -111,7 +129,7 @@ export const ProfileDetailsContainer = styled.section`
 		
 		input {
 			border: 1px solid rgba(0,0,0,0.35);
-			width: 30%;
+			width: 60%;
 			height: 2.55rem;
 			padding: 0.9rem;
 			outline: none;
@@ -138,4 +156,7 @@ export const ProfileDetailsContainer = styled.section`
 			}
 		}
 	}
+
+	
+
 `;
