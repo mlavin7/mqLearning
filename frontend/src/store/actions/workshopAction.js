@@ -1,21 +1,23 @@
+import { WORKSHOP_INFO } from '../actionTypes';
 import baseUrl from '../baseUrl';
 
-export const workshopAction = props => async (dispatch, getState) => {
+export const workshopAction = token => async (dispatch, getState) => {
+	const userToken = token ? token : getState().user.token;
 	
-	// const token = getState().loginReducer.token;
-	const token = getState().loginReducer.token || localStorage.getItem('token');
-
 	const url = `${baseUrl}/backend/api/workshops/`;
 	const config = {
 		method: 'GET',
 		headers: new Headers({
 			Accept: 'application/json',
-			Authorization: `Bearer ${token}`,
+			Authorization: `Bearer ${userToken}`,
 		}),
 	};
 	const response = await fetch(url, config);
 	const data = await response.json();
-	return data;
+	dispatch({
+		type: WORKSHOP_INFO,
+		payload: data,
+	});
 };
 
 export default workshopAction;

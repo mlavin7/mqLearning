@@ -8,15 +8,44 @@ import CompanyArea from '../CompanyArea';
 import CompaniesCard from '../CompaniesCard';
 import Spinner from '../Spinner';
 
-const NavigateDashboard = ({
-	workshops,
-	scheduledWorkshops,
-	attendedWorkshops,
-	user,
-	employees,
-	companies,
-}) => {
+const NavigateDashboard = ({ workshops, user, companies }) => {
 	const [active, setActive] = useState('workshop');
+
+	const currentTime = new Date();
+	const formattedTime = currentTime.toISOString();
+
+	const checkPrivileges = () => {
+		if (user.isAdmin) {
+			return (
+				<Fragment>
+					<Link
+						to='#'
+						onClick={() => setActive('employees')}
+						className={active === 'employees' ? 'active' : null}
+					>
+						Employees
+					</Link>
+					<Link
+						to='#'
+						onClick={() => setActive('company')}
+						className={active === 'company' ? 'active' : null}
+					>
+						Company
+					</Link>
+				</Fragment>
+			);
+		} else if (user.is_staff) {
+			return (
+				<Link
+					to='#'
+					onClick={() => setActive('companies')}
+					className={active === 'companies' ? 'active' : null}
+				>
+					Companies
+				</Link>
+			);
+		}
+	};
 
 	return (
 		<Container>
@@ -51,34 +80,7 @@ const NavigateDashboard = ({
 						Resources
 					</Link>
 
-					{user.isAdmin ? (
-						<Fragment>
-							<Link
-								to='#'
-								onClick={() => setActive('employees')}
-								className={active === 'employees' ? 'active' : null}
-							>
-								Employees
-							</Link>
-							<Link
-								to='#'
-								onClick={() => setActive('company')}
-								className={active === 'company' ? 'active' : null}
-							>
-								Company
-							</Link>
-						</Fragment>
-					) : null}
-
-					{user.is_staff ? (
-						<Link
-							to='#'
-							onClick={() => setActive('companies')}
-							className={active === 'companies' ? 'active' : null}
-						>
-							Companies
-						</Link>
-					) : null}
+					{user ? checkPrivileges() : null}
 				</NavbarDiV>
 
 				<SectionWorkshop>
@@ -96,14 +98,16 @@ const NavigateDashboard = ({
 
 					{active === 'scheduledWorkshop' ? (
 						<Fragment>
-							{scheduledWorkshops.length ? (
-								scheduledWorkshops.map(scheduledWorkshop => (
-									<WorkshopCard
-										Zoom
-										key={scheduledWorkshop.id}
-										workshop={scheduledWorkshop}
-									/>
-								))
+							{workshops.length ? (
+								user.m2m_workshops.map(scheduledWorkshop =>
+									scheduledWorkshop.date_start > formattedTime ? (
+										<WorkshopCard
+											Zoom
+											key={scheduledWorkshop.id}
+											workshop={scheduledWorkshop}
+										/>
+									) : null
+								)
 							) : (
 								<h4 style={message}>You are not registered in any event.</h4>
 							)}
@@ -112,14 +116,16 @@ const NavigateDashboard = ({
 
 					{active === 'attendedWorkshop' ? (
 						<Fragment>
-							{attendedWorkshops.length ? (
-								attendedWorkshops.map(attendedWorkshop => (
-									<WorkshopCard
-										Zoom
-										key={attendedWorkshop.id}
-										workshop={attendedWorkshop}
-									/>
-								))
+							{workshops.length ? (
+								user.m2m_workshops.map(attendedWorkshop =>
+									attendedWorkshop.date_start < formattedTime ? (
+										<WorkshopCard
+											Zoom
+											key={attendedWorkshop.id}
+											workshop={attendedWorkshop}
+										/>
+									) : null
+								)
 							) : (
 								<h4 style={message}>You haven't attended any event.</h4>
 							)}
@@ -131,8 +137,8 @@ const NavigateDashboard = ({
 
 					{active === 'employees' ? (
 						<Fragment>
-							{employees.length ? (
-								employees.map(employee => (
+							{companies.length ? (
+								user.company.fk_user_company.map(employee => (
 									<EmployeeCard employee={employee} key={employee.id} />
 								))
 							) : (
