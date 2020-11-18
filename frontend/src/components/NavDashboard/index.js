@@ -91,44 +91,46 @@ const NavigateDashboard = ({ workshops, user, companies }) => {
 									<WorkshopCard Zoom workshop={workshop} key={workshop.id} />
 								))
 							) : (
-								<Spinner style={message}>loading..</Spinner>
+								<Spinner style={message} />
 							)}
 						</Fragment>
 					) : null}
 
 					{active === 'scheduledWorkshop' ? (
 						<Fragment>
-							{workshops.length ? (
-								user.m2m_workshops.map(scheduledWorkshop =>
-									scheduledWorkshop.date_start > formattedTime ? (
-										<WorkshopCard
-											Zoom
-											key={scheduledWorkshop.id}
-											workshop={scheduledWorkshop}
-										/>
-									) : null
-								)
-							) : (
-								<h4 style={message}>You are not registered in any event.</h4>
-							)}
+							{workshops.length
+								? user.m2m_workshops.map(scheduledWorkshop =>
+										scheduledWorkshop.date_start > formattedTime ? (
+											<WorkshopCard
+												Zoom
+												key={scheduledWorkshop.id}
+												workshop={scheduledWorkshop}
+											/>
+										) : (
+											<h4 style={message}>
+												You are not registered in any event.
+											</h4>
+										)
+								  )
+								: null}
 						</Fragment>
 					) : null}
 
 					{active === 'attendedWorkshop' ? (
 						<Fragment>
-							{workshops.length ? (
-								user.m2m_workshops.map(attendedWorkshop =>
-									attendedWorkshop.date_start < formattedTime ? (
-										<WorkshopCard
-											Zoom
-											key={attendedWorkshop.id}
-											workshop={attendedWorkshop}
-										/>
-									) : null
-								)
-							) : (
-								<h4 style={message}>You haven't attended any event.</h4>
-							)}
+							{workshops.length
+								? user.m2m_workshops.map(attendedWorkshop =>
+										attendedWorkshop.date_start < formattedTime ? (
+											<WorkshopCard
+												Zoom
+												key={attendedWorkshop.id}
+												workshop={attendedWorkshop}
+											/>
+										) : (
+											<h4 style={message}>You haven't attended any event.</h4>
+										)
+								  )
+								: null}
 						</Fragment>
 					) : null}
 
@@ -171,6 +173,7 @@ const NavigateDashboard = ({ workshops, user, companies }) => {
 };
 
 const message = {
+	marginTop: '10%',
 	marginLeft: '40%',
 	fontWeight: '400',
 };

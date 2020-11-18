@@ -1,5 +1,19 @@
 import styled from 'styled-components';
 import { fontSizes } from '../../style/theme';
+import avatar from '../../assets/images/avatar-placeholder.png';
+
+export const Avatar = styled.div`
+	display: flex;
+	align-items: center;
+	background: url(${props => (props.user.avatar ? props.user.avatar : avatar)});
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	width: 8rem;
+	height: 8rem;
+	border-radius: 50%;
+	margin-bottom: 0.5rem;
+`;
 
 export const TopProfileBar = styled.section`
 	width: 100%;
@@ -16,13 +30,6 @@ export const TopProfileBar = styled.section`
 		justify-content: center;
 		width: 20%;
 		height: 100%;
-
-		img {
-			width: 9rem;
-			height: 9rem;
-			border-radius: 50%;
-			margin-bottom: 0.8rem;
-		}
 	}
 
 	.user-details-container {
@@ -59,7 +66,7 @@ export const TopProfileBar = styled.section`
 		}
 
 		.tokens-container {
-			width: 30%;
+			width: 40%;
 			padding: 1rem 2rem;
 			display: flex;
 			flex-direction: column;

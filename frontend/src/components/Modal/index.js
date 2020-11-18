@@ -16,7 +16,6 @@ const Modal = ({ handleClose, workshop, attendees }) => {
 		const getData = () => {
 			dispatch(ReservationAction(workshop.id));
 		};
-		console.log(currentStage);
 		getData();
 	};
 
@@ -24,7 +23,6 @@ const Modal = ({ handleClose, workshop, attendees }) => {
 		const timer = setTimeout(() => {
 			if (currentStage === 1) {
 				handleClose();
-				window.location.reload();
 			}
 		}, 2000);
 		return () => clearTimeout(timer);
