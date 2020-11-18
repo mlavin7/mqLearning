@@ -1,5 +1,19 @@
 import styled from 'styled-components';
 import { colors, fontSizes, borderRadius } from '../../style/theme';
+import avatar from '../../assets/images/avatar-placeholder.png';
+
+export const Avatar = styled.div`
+	display: flex;
+	align-items: center;
+	background: url(${props => (props.user.avatar ? props.user.avatar : avatar)});
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	width: 8rem;
+	height: 8rem;
+	border-radius: 50%;
+	margin-bottom: 0.5rem;
+`;
 
 export const TopProfileBar = styled.section`
 	width: 100%;
@@ -16,13 +30,6 @@ export const TopProfileBar = styled.section`
 		justify-content: center;
 		width: 20%;
 		height: 100%;
-
-		img {
-			width: 9rem;
-			height: 9rem;
-			border-radius: 50%;
-			margin-bottom: 0.8rem;
-		}
 	}
 
 	.user-details-container {
@@ -59,7 +66,7 @@ export const TopProfileBar = styled.section`
 		}
 
 		.tokens-container {
-			width: 30%;
+			width: 40%;
 			padding: 1rem 2rem;
 			display: flex;
 			flex-direction: column;
@@ -89,16 +96,16 @@ export const ProfileDetailsContainer = styled.section`
 		display: flex;
 		align-self: center;
 
-			h1 {
+		h1 {
 			color: black;
 			font-size: ${fontSizes.large};
 			align-self: center;
 			font-weight: 500;
 			letter-spacing: 0.2rem;
 			margin-bottom: 1rem;
-			}
 		}
-	
+	}
+
 	.left-container {
 		display: flex;
 	}
@@ -126,15 +133,15 @@ export const ProfileDetailsContainer = styled.section`
 			color: black;
 			font-size: ${fontSizes.normal};
 		}
-		
+
 		input {
-			border: 1px solid rgba(0,0,0,0.35);
+			border: 1px solid rgba(0, 0, 0, 0.35);
 			width: 60%;
 			height: 2.55rem;
 			padding: 0.9rem;
 			outline: none;
 			border-radius: 0.3rem;
-			color: rgba(0,0,0,.85);
+			color: rgba(0, 0, 0, 0.85);
 			margin: 0.7rem 0;
 			font-size: ${fontSizes.normal};
 		}
@@ -156,7 +163,4 @@ export const ProfileDetailsContainer = styled.section`
 			}
 		}
 	}
-
-	
-
 `;

@@ -4,7 +4,6 @@ import baseUrl from '../baseUrl';
 export const companiesAction = token => async (dispatch, getState) => {
 	// const token = getState().loginReducer.token;
 	const userToken = token ? token : getState().user.token;
-	console.log(getState().user);
 
 	const url = `${baseUrl}/backend/api/companies/`;
 	const config = {
