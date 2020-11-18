@@ -8,7 +8,7 @@ const UserProfile = () => {
 
 	return (
 		<Fragment>
-			<UserProfilePage user={user} />
+			{ user && <UserProfilePage user={user} /> }
 			<Footer />
 		</Fragment>
 	);
