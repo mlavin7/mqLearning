@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { ModalExtContainer, ModalIntContainer, ContentSection } from './styled';
 import { Button } from '../../style/Button';
 import ReservationAction from '../../store/actions/reservationAction';
+import workshopAction from '../../store/actions/workshopAction';
+import userAction from '../../store/actions/userAction';
 
 const Modal = ({ handleClose, workshop, attendees }) => {
 	const dispatch = useDispatch();
@@ -15,6 +17,8 @@ const Modal = ({ handleClose, workshop, attendees }) => {
 		setCurrentStage(currentStage + 1);
 		const getData = () => {
 			dispatch(ReservationAction(workshop.id));
+			dispatch(workshopAction());
+			dispatch(userAction());	
 		};
 		getData();
 	};
@@ -23,6 +27,7 @@ const Modal = ({ handleClose, workshop, attendees }) => {
 		const timer = setTimeout(() => {
 			if (currentStage === 1) {
 				handleClose();
+				console.log(currentStage);
 			}
 		}, 2000);
 		return () => clearTimeout(timer);
@@ -59,7 +64,7 @@ const Modal = ({ handleClose, workshop, attendees }) => {
 										Sorry, you don't have enough tokens. Please, contact
 										administrator.
 									</p>
-								) : attendees().includes(user.id) ? (
+								) : !attendees().includes(user.id) ? (
 									<p>You have successfully unregistered from the workshop!</p>
 								) : (
 									<p>

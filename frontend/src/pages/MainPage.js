@@ -14,10 +14,6 @@ const MainPage = () => {
 	const companies = useSelector(state => state.company.company);
 	const workshops = useSelector(state => state.workshop.workshop);
 
-	// console.log('user', user);
-	// console.log('company', companies);
-	// console.log('workshop', workshops);
-
 	useEffect(() => {
 		const getData = () => {
 			dispatch(workshopAction());
