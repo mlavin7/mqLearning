@@ -7,7 +7,7 @@ export const CardWrapper = styled.div`
 	width: 30%;
 	height: 35rem;
 	background: ${colors.white};
-	border-radius: ${borderRadius.borderRadius};
+	// border-radius: ${borderRadius.borderRadius};
 	border-top: 1.5rem solid
 		${props =>
 			props.category === `work`
@@ -16,8 +16,12 @@ export const CardWrapper = styled.div`
 				? `${colors.workshopSelf}`
 				: props.category === 'rela'
 				? `${colors.workshopRelations}`
-				: `${colors.dimGray}`};
-	box-shadow: 0px 0px 8px -1px rgba(0, 0, 0, 0.75);
+				: `${colors.workshopOther}`};
+	border-left: 1.5px solid #d6d6d6;
+	border-bottom: 1.5px solid #d6d6d6;
+	border-right: 1.5px solid #d6d6d6;
+	// box-shadow: 0px 0px 8px -1px rgba(0, 0, 0, 0.75);
+	
 `;
 
 export const BannerWrapper = styled.div`
@@ -52,14 +56,15 @@ export const ContentWrapper = styled.div`
 			margin: 0.2rem 0;
 		}
 
-		i {
+		i {	
+			width: 6%;
 			font-size: ${fontSizes.normal};
-			margin-right: 0.7rem;
+			margin-right: 1.2rem;
 			color: #a95edb;
 		}
 
 		.description {
-			padding: 0 1rem;
+			// padding: 0 1rem;
 			text-align: justify;
 			height: 100%;
 			color: rgba(0, 0, 0, 0.45);

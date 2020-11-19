@@ -1,4 +1,4 @@
-import { USER_INFO, USER_LOGIN, USER_LOGOUT } from '../actionTypes';
+import { USER_INFO, USER_LOGIN, USER_LOGOUT, USER_UPDATE } from '../actionTypes';
 
 const initialState = {
 	user: null,
@@ -27,6 +27,12 @@ const userReducer = (state = initialState, action) => {
 				user: null,
 				token: null,
 				authenticated: false,
+			};
+		}
+		case USER_UPDATE: {
+			return {
+				...state,
+				user: action.payload,
 			};
 		}
 		default:

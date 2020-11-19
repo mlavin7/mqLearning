@@ -11,6 +11,7 @@ export const Avatar = styled.div`
 	background-repeat: no-repeat;
 	width: 8rem;
 	height: 8rem;
+	border: 0.13rem solid #ba3bbf;
 	border-radius: 50%;
 	margin-bottom: 0.5rem;
 `;
@@ -35,9 +36,7 @@ export const TopProfileBar = styled.section`
 	.user-details-container {
 		width: 80%;
 		height: 100%;
-		padding: 2.5rem 1.5rem;
-		border-radius: 0.5rem;
-		/* background: rgba(255, 255, 255, 0.5); */
+		padding: 0rem 0.5rem 2.5rem;
 		display: flex;
 		align-items: flex-start;
 		p {
@@ -66,18 +65,28 @@ export const TopProfileBar = styled.section`
 		}
 
 		.tokens-container {
-			width: 40%;
-			padding: 1rem 2rem;
+			width: 30%;
+			padding: 1.2rem;
+			background: ${colors.purpleMain};
 			display: flex;
 			flex-direction: column;
 			align-items: flex-start;
 			justify-content: center;
 
 			p {
-				margin: 0.2rem 0;
-				font-size: ${fontSizes.normal};
+				/* margin: 0.2rem 0;
+				font-size: ${fontSizes.normal}; */
+				font-size: 0.7rem;
+        		letter-spacing: 0.02rem;
+        		font-weight: 700;
+        		text-transform: uppercase;
 				span {
-					margin-left: 0.2rem;
+					/* margin-left: 0.2rem; */
+					font-size: 1.05rem;
+					font-weight: 300;
+					padding-left: 0.2rem;
+					color: #82298f;
+					text-transform: lowercase;
 				}
 			}
 		}
@@ -90,10 +99,11 @@ export const ProfileDetailsContainer = styled.section`
 	padding: 1rem;
 	display: flex;
 	flex-direction: column;
-	/* align-items: center; */
+	align-items: center;
 
 	.header-container {
 		display: flex;
+		flex-direction: column;
 		align-self: center;
 
 		h1 {
@@ -106,31 +116,25 @@ export const ProfileDetailsContainer = styled.section`
 		}
 	}
 
-	.left-container {
+	.profile-field-container {
 		display: flex;
-	}
-
-	.right-container {
-		display: flex;
-	}
-
-	.save-changes-btn-container {
-		display: flex;
-		align-self: center;
-	}
-
-	.profile-fields {
-		display: flex;
-		width: 70%;
-		height: 45%;
-		margin: 0rem auto;
-		padding: 0.5rem;
 		flex-direction: column;
-		align-items: center;
-		justify-content: center;
+		width: 50%;
 
+		.profile-fields {
+			display: flex;
+			width: 70%;
+			height: 45%;
+			margin: 0rem auto;
+			/* padding: 0.5rem; */
+			flex-direction: row;
+			align-items: center;
+			justify-content: center;
+		}
 		.profile-field-title {
 			color: black;
+			margin: 1rem;
+			width: 100%;
 			font-size: ${fontSizes.normal};
 		}
 
@@ -162,5 +166,10 @@ export const ProfileDetailsContainer = styled.section`
 				background: #82298f;
 			}
 		}
+	}
+
+	.save-changes-btn-container {
+		display: flex;
+		align-self: center;
 	}
 `;

@@ -9,6 +9,7 @@ import { CompanyAreaWrapper, LogoContainer } from './styled';
 import { Button } from '../../style/Button';
 
 const CompanyArea = ({ user }) => {
+	console.log(user.company);
 	return (
 		<CompanyAreaWrapper>
 			<LogoContainer>
@@ -16,12 +17,7 @@ const CompanyArea = ({ user }) => {
 					<img src={user.company.logo} alt='company_logo' />
 				</div>
 				<div className='company-description'>
-					<p>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum
-						officia placeat, eveniet nulla, iste ipsam, ab id incidunt porro
-						tenetur alias sint accusamus amet architecto quos. Tempore tenetur
-						adipisci impedit.
-					</p>
+					<p>{user.company.about}</p>
 				</div>
 			</LogoContainer>
 			<InfoContainer company>
