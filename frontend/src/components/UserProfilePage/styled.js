@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { colors, fontSizes, borderRadius } from '../../style/theme';
-import { avatar } from '../../assets/images/avatar-placeholder.png';
+import avatar from '../../assets/images/avatar-placeholder.png';
 
 export const Avatar = styled.div`
 	display: flex;
@@ -11,6 +11,7 @@ export const Avatar = styled.div`
 	background-repeat: no-repeat;
 	width: 8rem;
 	height: 8rem;
+	border: 0.13rem solid #ba3bbf;
 	border-radius: 50%;
 	margin-bottom: 0.5rem;
 `;
@@ -114,6 +115,7 @@ export const ProfileDetailsContainer = styled.section`
 			margin-bottom: 1rem;
 		}
 	}
+
 	.profile-field-container {
 		display: flex;
 		flex-direction: column;
@@ -128,7 +130,7 @@ export const ProfileDetailsContainer = styled.section`
 			flex-direction: row;
 			align-items: center;
 			justify-content: center;
-
+		}
 		.profile-field-title {
 			color: black;
 			margin: 1rem;
@@ -170,5 +172,4 @@ export const ProfileDetailsContainer = styled.section`
 		display: flex;
 		align-self: center;
 	}
-
 `;
