@@ -5,7 +5,7 @@ import { Container } from '../../style/Container';
 import { TopProfileBar, ProfileDetailsContainer } from './styled';
 import { Button } from '../../style/Button';
 import { Avatar } from './styled';
-import avatar from '../../assets/images/avatar-placeholder.png';
+import { avatar } from '../../assets/images/avatar-placeholder.png';
 import {useDispatch, useSelector} from "react-redux";
 import { userUpdateAction } from '../../store/actions/userUpdateAction';
 

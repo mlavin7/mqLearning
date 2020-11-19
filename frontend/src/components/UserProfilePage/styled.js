@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { colors, fontSizes, borderRadius } from '../../style/theme';
-import avatar from '../../assets/images/avatar-placeholder.png';
+import { avatar } from '../../assets/images/avatar-placeholder.png';
 
 export const Avatar = styled.div`
 	display: flex;
@@ -113,13 +113,6 @@ export const ProfileDetailsContainer = styled.section`
 			letter-spacing: 0.2rem;
 			margin-bottom: 1rem;
 		}
-<<<<<<< HEAD
-=======
-	}
-
-	.left-container {
-		display: flex;
->>>>>>> development
 	}
 	.profile-field-container {
 		display: flex;
@@ -172,7 +165,6 @@ export const ProfileDetailsContainer = styled.section`
 			}
 		}
 	}
-<<<<<<< HEAD
 
 	.save-changes-btn-container {
 		display: flex;
@@ -180,6 +172,3 @@ export const ProfileDetailsContainer = styled.section`
 	}
 
 `;
-=======
-`;
->>>>>>> development
