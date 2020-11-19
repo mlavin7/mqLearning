@@ -19,7 +19,7 @@ User = get_user_model()
 
 
 class RegistrationView(GenericAPIView):
-    permission_classes = []
+    # permission_classes = []
 
     def post(self, request, *args, **kwargs):
         email = request.data['email']
