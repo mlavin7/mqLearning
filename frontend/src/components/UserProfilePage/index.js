@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom';
 import { Container } from '../../style/Container';
 import { TopProfileBar, ProfileDetailsContainer } from './styled';
 import { Button } from '../../style/Button';
-// import avatar from '../../assets/images/avatar-placeholder.png';
+import { Avatar } from './styled';
+import avatar from '../../assets/images/avatar-placeholder.png';
 import {useDispatch, useSelector} from "react-redux";
 import { userUpdateAction } from '../../store/actions/userUpdateAction';
 
@@ -44,7 +45,7 @@ const UserProfilePage = ({ user }) => {
 		<Container>
 			<TopProfileBar>
 				<div className='avatar-container'>
-					<img src={user.avatar ? user.avatar : avatar} alt='avatar' />
+					<Avatar user={user ? user : null} />
 					<Link to='#'>
 						<Button editProfileBtn onClick={() => history.push('/mainpage/')}>
 							Back
@@ -65,11 +66,12 @@ const UserProfilePage = ({ user }) => {
 					</div>
 					<div className='tokens-container'>
 						<p>
-							Tokens Remaining:  
+							Company tokens:
 							<span>
-								{user.available_credit
-									? user.available_credit.total_available
-									: null}
+								{user.company.available_credit
+									? user.company.available_credit.total_available
+									: null}{' '}
+								tokens
 							</span>
 						</p>
 						<p>
