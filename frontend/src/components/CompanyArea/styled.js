@@ -10,7 +10,7 @@ export const CompanyAreaWrapper = styled.section`
 	background-position: 95%;
 	background-size: cover;
 	background-repeat: no-repeat;
-	border-radius: ${borderRadius.borderRadius};
+	border-radius: ${borderRadius.borderRadiusS};
 	display: flex;
 	color: ${colors.white};
 `;

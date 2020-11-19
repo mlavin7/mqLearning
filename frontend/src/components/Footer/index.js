@@ -1,6 +1,7 @@
 import React from 'react';
 import { FooterWrapper, LeftSide, RightSide } from './styled';
 import { Container } from '../../style/Container';
+import proplogo3 from '../../assets/images/proplogo3.png';
 
 const Footer = () => {
 	return (
@@ -8,12 +9,16 @@ const Footer = () => {
 			<FooterWrapper>
 				<LeftSide>
 					<p>
-						MQ Learning <span>&reg;</span> 2020
+						MQ Learning <span>&reg;</span> 2020  Powered by
+						<a href="https://propulsion.academy/"><img src={proplogo3} alt="prop_logo" height = "30" /></a>
 					</p>
+					{/*<p>*/}
+					{/*	Powered by <img src={proplogo3} alt="prop_logo" height = "26" />*/}
+					{/*</p>*/}
 				</LeftSide>
 				<RightSide>
 					<a
-						href='https://www.linkedin.com/mynetwork/'
+						href='https://www.linkedin.com/company/mq-learning/'
 						rel='noreferrer'
 						target='_blank'
 					>

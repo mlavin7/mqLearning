@@ -51,13 +51,13 @@ const EmployeeCard = ({ employee }) => {
 			<AvatarContainer employee={employee} />
 			<InfoContainer>
 				<LeftSection>
-					<p>
+					<h3>
 						{employee.first_name} {employee.last_name}
-					</p>
+					</h3>
+					<h4>{employee.company ? employee.company.name : null}</h4>
 					<p>{employee.email}</p>
-					<p>{employee.company ? employee.company.name : null}</p>
 					<p>
-						{employee.address}, {employee.zip_code} - {employee.city}
+						{employee.address} {employee.zip_code} {employee.city}
 					</p>
 					<p>{employee.country}</p>
 				</LeftSection>

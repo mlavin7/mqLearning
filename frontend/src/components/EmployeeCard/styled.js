@@ -11,7 +11,7 @@ export const CardWrapper = styled.section`
 	background-position: 100%;
 	background-size: cover;
 	background-repeat: no-repeat;
-	border-radius: ${borderRadius.borderRadius};
+	border-radius: ${borderRadius.borderRadiusS};
 	color: ${colors.white};
 `;
 
@@ -22,8 +22,8 @@ export const AvatarContainer = styled.div`
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
-	border-top-left-radius: ${borderRadius.borderRadius};
-	border-bottom-left-radius: ${borderRadius.borderRadius};
+	border-top-left-radius: ${borderRadius.borderRadiusS};
+	border-bottom-left-radius: ${borderRadius.borderRadiusS};
 `;
 
 export const InfoContainer = styled.section`

@@ -18,6 +18,10 @@ export const LeftSide = styled.div`
 	span {
 		font-size: ${fontSizes.medium};
 	}
+	img {
+	    vertical-align: top;
+	    cursor: pointer;
+	}
 `;
 
 export const RightSide = styled.div`

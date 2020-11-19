@@ -17,10 +17,7 @@ const CompanyArea = ({ user }) => {
 				</div>
 				<div className='company-description'>
 					<p>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum
-						officia placeat, eveniet nulla, iste ipsam, ab id incidunt porro
-						tenetur alias sint accusamus amet architecto quos. Tempore tenetur
-						adipisci impedit.
+						{user.company.about}
 					</p>
 				</div>
 			</LogoContainer>
