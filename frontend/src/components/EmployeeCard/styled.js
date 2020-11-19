@@ -13,6 +13,7 @@ export const CardWrapper = styled.section`
 	background-repeat: no-repeat;
 	border-radius: ${borderRadius.borderRadiusS};
 	color: ${colors.white};
+	padding: 0.4rem;
 `;
 
 export const AvatarContainer = styled.div`
@@ -22,8 +23,7 @@ export const AvatarContainer = styled.div`
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
-	border-top-left-radius: ${borderRadius.borderRadiusS};
-	border-bottom-left-radius: ${borderRadius.borderRadiusS};
+	border-radius: ${borderRadius.borderRadiusS};
 `;
 
 export const InfoContainer = styled.section`

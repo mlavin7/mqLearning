@@ -95,16 +95,19 @@ const TopBar = () => {
 					<AvatarContainer user={user} />
 					<UserProfileContainer>
 						<UserWelcome>
-							Welcome, <span>{user.first_name} </span>
+							Welcome,{' '}
+							<span>
+								{user.first_name} {user.last_name}
+							</span>
 							{''}
-							{user.isAdmin ? '[Admin]' : user.is_staff ? '[Staff]' : ''}
+							{user.isAdmin ? ' [Admin]' : user.is_staff ? '[Staff]' : ''}
 						</UserWelcome>
 						<CompanyText>Propulsion Academy</CompanyText>
 						<ViewProfileBtnWrapper>
 							<Link to='/user-profile/'>
-								<ViewProfileBtn>profile</ViewProfileBtn>
+								<ViewProfileBtn>Profile</ViewProfileBtn>
 							</Link>
-							<ViewProfileBtn onClick={logOutHandler}>logout</ViewProfileBtn>
+							<ViewProfileBtn onClick={logOutHandler}>Logout</ViewProfileBtn>
 						</ViewProfileBtnWrapper>
 					</UserProfileContainer>
 				</TopBarRight>

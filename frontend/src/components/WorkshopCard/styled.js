@@ -56,9 +56,10 @@ export const ContentWrapper = styled.div`
 			margin: 0.2rem 0;
 		}
 
-		i {
+		i {	
+			width: 6%;
 			font-size: ${fontSizes.normal};
-			margin-right: 0.7rem;
+			margin-right: 1.2rem;
 			color: #a95edb;
 		}
 

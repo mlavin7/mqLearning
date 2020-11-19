@@ -113,7 +113,7 @@ export const ViewProfileBtnWrapper = styled.div`
 `;
 
 export const ViewProfileBtn = styled.button`
-	padding: 0.3rem 1.2rem;
+	padding: 0.4rem 1.2rem;
 	font-size: ${fontSizes.small};
 	outline: none;
 	border: none;
