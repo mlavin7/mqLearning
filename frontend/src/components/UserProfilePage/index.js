@@ -66,10 +66,10 @@ const UserProfilePage = ({ user }) => {
 					</div>
 					<div className='tokens-container'>
 						<p>
-							Company tokens:
+							Personal tokens:
 							<span>
-								{user.company.available_credit
-									? user.company.available_credit.total_available
+								{user.available_credit
+									? user.available_credit.total_available
 									: null}{' '}
 								tokens
 							</span>
@@ -87,6 +87,7 @@ const UserProfilePage = ({ user }) => {
 				<ProfileDetailsContainer>
 					<div className='header-container'>
 						<h1>Profile Details</h1>
+						<p>Click on "Edit profile" to change your details</p>
 					</div>
 					<div className='profile-field-container'>
 						<div className='profile-fields'>
