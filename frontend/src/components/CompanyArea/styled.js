@@ -24,7 +24,7 @@ export const LogoContainer = styled.div`
 
 	img {
 		padding: .5rem;
-		border-radius: ${borderRadius.borderRadiusM};
+		border-radius: ${borderRadius.borderRadiusS};
 		width: 100%;
 		height: 100%;
 	}
