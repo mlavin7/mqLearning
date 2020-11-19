@@ -9,7 +9,7 @@ const Footer = () => {
 			<FooterWrapper>
 				<LeftSide>
 					<p>
-						MQ Learning <span>&reg;</span> 2020  Powered by
+						MQ Learning <span>&reg;</span> 2020  | Powered by
 						<a href="https://propulsion.academy/"><img src={proplogo3} alt="prop_logo" height = "30" /></a>
 					</p>
 					{/*<p>*/}
