@@ -102,8 +102,8 @@ const WorkshopPage = () => {
 							<Button backBtn onClick={openModal}>
 								{attendees()
 									? attendees().includes(user.id)
-										? 'unregister'
-										: 'register'
+										? 'Unregister'
+										: 'Register'
 									: 'null'}
 							</Button>{' '}
 							{showModal ? (

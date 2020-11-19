@@ -7,7 +7,7 @@ export const Button = styled.button`
 	background: ${colors.purpleMain};
 	outline: none;
 	border: none;
-	border-radius: ${borderRadius.borderRadiusS};
+	/* border-radius: ${borderRadius.borderRadiusS}; */
 	letter-spacing: 0.1rem;
 	transition: linear 0.15s;
 	cursor: pointer;

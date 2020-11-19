@@ -11,10 +11,10 @@ export const TopBarWrapper = styled.section`
 	display: flex;
 
 	.logo-container {
-		width: 10%;
+		width: 8%;
 		display: flex;
 		align-items: flex-start;
-		justify-content: center;
+		justify-content: flex-start;
 
 		img {
 			margin-top: 0.5rem;
@@ -23,7 +23,7 @@ export const TopBarWrapper = styled.section`
 	}
 
 	.workshop-info-container {
-		width: 90%;
+		width: 92%;
 		text-align: left;
 		position: relative;
 
@@ -63,8 +63,6 @@ export const Showcase = styled.section`
 	background-repeat: no-repeat;
 	background-size: cover;
 	position: relative;
-	border-radius: ${borderRadius.borderRadiusS};
-	box-shadow: 0px 0px 12px -2px rgba(0, 0, 0, 0.75);
 `;
 
 export const MainContent = styled.section`
@@ -75,7 +73,6 @@ export const MainContent = styled.section`
 	padding: 2rem;
 	color: ${colors.dimGray};
 	background: #f2f2f2;
-	box-shadow: 0px 0px 12px -2px rgba(0, 0, 0, 0.75);
 
 	h1 {
 		font-size: ${fontSizes.medium};

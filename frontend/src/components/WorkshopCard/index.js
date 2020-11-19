@@ -10,7 +10,6 @@ import { Button } from '../../style/Button';
 import moment from 'moment';
 
 const WorkshopCard = ({ workshop }) => {
-
 	const history = useHistory();
 
 	const dateToFormat = date => {
@@ -50,7 +49,7 @@ const WorkshopCard = ({ workshop }) => {
 							<div className='right'>
 								<p>
 									<i className='far fa-money-bill-alt'></i>
-									{workshop.cost} credits
+									{workshop.cost} tokens
 								</p>
 								<p>
 									<i className='fas fa-chair'></i>

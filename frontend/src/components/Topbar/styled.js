@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { colors, fontSizes, borderRadius } from '../../style/theme';
 import avatar from '../../assets/images/avatar-placeholder.png';
 
@@ -12,7 +12,8 @@ export const TopBarHeader = styled.div`
 `;
 
 export const TopBarLeft = styled.div`
-	width: 20%;
+	width: 15%;
+	height: 100%;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -22,12 +23,13 @@ export const TopBarCenter = styled.div`
 	width: 55%;
 	height: 100%;
 	display: flex;
-	justify-content: center;
+	justify-content: flex-end;
 	align-items: center;
 `;
 
 export const TopBarRight = styled.div`
-	width: 25%;
+	width: 30%;
+	height: 100%;
 	display: flex;
 	flex-direction: row-reverse;
 	justify-content: flex-start;
@@ -67,45 +69,57 @@ export const MQLogo = styled.img`
 
 export const AvatarContainer = styled.div`
 	display: flex;
-	align-items: center;
 	background: url(${props => (props.user.avatar ? props.user.avatar : avatar)});
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
 	width: 7rem;
 	height: 5rem;
+	margin-top: -0.4rem;
 	border-radius: 50%;
+	border: 0.13rem solid #ba3bbf;
 `;
 
 export const UserProfileContainer = styled.div`
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
-	align-items: flex-end;
+	align-items: center;
 	margin-right: 0.8rem;
 	width: 100%;
+	height: 100%;
+	p {
+		margin: 0.1rem 0;
+	}
 `;
 
 export const UserWelcome = styled.p`
-	font-size: ${fontSizes.normal};
+	text-align: right;
+	font-size: 0.8rem;
 	padding-top: 2rem;
 	line-height: 1.5rem;
+	width: 100%;
+	span {
+		font-size: 1rem;
+		font-weight: 500;
+	}
 `;
 
 export const ViewProfileBtnWrapper = styled.div`
 	display: flex;
-	justify-content: center;
+	justify-content: flex-end;
+	align-items: center;
 	margin-top: 0.5rem;
+	width: 100%;
 `;
 
 export const ViewProfileBtn = styled.button`
-	padding: 0.5rem 0.8rem;
+	padding: 0.3rem 1.2rem;
 	font-size: ${fontSizes.small};
 	outline: none;
 	border: none;
 	border-radius: ${borderRadius.borderRadiusS};
 	transition: linear 0.15s;
-	margin: 0.2rem;
+	margin: 0 0.2rem;
 	cursor: pointer;
 	background: #ba3bbf;
 	color: ${colors.white};
@@ -115,14 +129,35 @@ export const ViewProfileBtn = styled.button`
 `;
 
 export const TokensValidText = styled.div`
-	width: 100%;
-	font-size: ${fontSizes.normal};
-	justify-self: flex-end;
-	display: flex;
+	width: ${props => (props.user ? (props.user.isAdmin ? '39%' : '50%') : null)};
+	padding: 1.2rem;
+	font-size: 0.8rem;
+	font-weight: 500;
+	display: ${props =>
+		props.user ? (props.user.isAdmin ? 'flex' : 'none') : null};
+	align-items: center;
 	flex-direction: column;
-	text-align: right;
-	:nth-child(2) {
-		padding-right: 2rem;
+	margin: ${props =>
+		props.user ? (props.user.isAdmin ? '0 0 0 .8rem' : '0 6rem 0 0 ') : null};
+	background: ${colors.purpleMain};
+	:nth-child(1) {
+		display: ${props =>
+			props.user ? (props.user.is_staff ? 'none	' : 'flex') : null};
+	}
+
+	p {
+		font-size: 0.7rem;
+		letter-spacing: 0.02rem;
+		font-weight: 700;
+		text-transform: uppercase;
+	}
+
+	span {
+		font-size: 1.06rem;
+		font-weight: 300;
+		padding-left: 0.2rem;
+		color: #82298f;
+		text-transform: lowercase;
 	}
 
 	.hide {
@@ -131,5 +166,7 @@ export const TokensValidText = styled.div`
 `;
 
 export const CompanyText = styled.p`
-	font-size: ${fontSizes.normal};
+	text-align: right;
+	font-size: 0.85rem;
+	width: 100%;
 `;

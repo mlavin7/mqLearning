@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+import { useSelector } from 'react-redux';
 import { Link, useHistory } from 'react-router-dom';
 import { Container } from '../../style/Container';
 import mqlogo from '../../assets/images/mq-logo.jpg';
@@ -20,11 +21,12 @@ import {
 import { logoutAction } from '../../store/actions/logoutAction';
 import { useDispatch } from 'react-redux';
 
-const TopBar = ({ user }) => {
-	const fullName = user ? `${user.first_name} ${user.last_name}` : 'loading..';
-
+const TopBar = () => {
 	const history = useHistory();
 	const dispatch = useDispatch();
+
+	const user = useSelector(state => state.user.user);
+	console.log(user);
 
 	const logOutHandler = () => {
 		history.push('/');
@@ -47,33 +49,44 @@ const TopBar = ({ user }) => {
 				</TopBarLeft>
 				<TopBarCenter>
 					{user ? (
-						<TokensValidText>
-							<span className={user.is_staff ? 'hide' : null}>
-								{user.available_credit && user.company.available_credit
-									? user.isAdmin
-										? `Company tokens to distribute: ${user.company.available_credit.total_available}`
-										: user.is_staff
-										? null
-										: `Tokens remaining: ${user.available_credit.total_available}`
-									: null}
-							</span>
-							<span className={user.is_staff ? 'hide' : null}>
-								Valid Until: 31 / 12 / 2020
-							</span>
+						<TokensValidText user={user}>
+							<p className={user.is_staff ? 'hide' : null}>
+								{user.isAdmin
+									? 'Company Tokens to distribute: '
+									: user.is_staff
+									? null
+									: 'Personal Tokens remaining: '}
+								{user.available_credit && user.company.available_credit ? (
+									user.isAdmin ? (
+										<span>{user.company.available_credit.total_available}</span>
+									) : user.is_staff ? null : (
+										<span>{user.available_credit.total_available}</span>
+									)
+								) : (
+									'0'
+								)}
+							</p>
+							<p className={user.is_staff ? 'hide' : 'expiry-date'}>
+								Valid until:<span> December 31, 2020</span>
+							</p>
 						</TokensValidText>
 					) : (
 						'loading...'
 					)}
-					<TokensValidText>
+					<TokensValidText user={user}>
 						{user.isAdmin ? (
 							<Fragment>
 								<p>
 									Personal tokens remaining:{' '}
-									{user.available_credit
-										? user.available_credit.total_available
-										: null}
+									<span>
+										{user.available_credit
+											? user.available_credit.total_available
+											: '0'}
+									</span>
 								</p>
-								<span>Valid Until: 31 / 12 / 2020</span>
+								<p className='expiry-date'>
+									Valid until:<span> December 31, 2020</span>
+								</p>
 							</Fragment>
 						) : null}
 					</TokensValidText>
@@ -81,15 +94,17 @@ const TopBar = ({ user }) => {
 				<TopBarRight>
 					<AvatarContainer user={user} />
 					<UserProfileContainer>
-						<UserWelcome>Welcome, {fullName}</UserWelcome>
-						<CompanyText>
-							Company: {user.company ? user.company.name : 'No info provided'}
-						</CompanyText>
+						<UserWelcome>
+							Welcome, <span>{user.first_name} </span>
+							{''}
+							{user.isAdmin ? '[Admin]' : user.is_staff ? '[Staff]' : ''}
+						</UserWelcome>
+						<CompanyText>Propulsion Academy</CompanyText>
 						<ViewProfileBtnWrapper>
 							<Link to='/user-profile/'>
-								<ViewProfileBtn>Profile</ViewProfileBtn>
+								<ViewProfileBtn>profile</ViewProfileBtn>
 							</Link>
-							<ViewProfileBtn onClick={logOutHandler}>Logout</ViewProfileBtn>
+							<ViewProfileBtn onClick={logOutHandler}>logout</ViewProfileBtn>
 						</ViewProfileBtnWrapper>
 					</UserProfileContainer>
 				</TopBarRight>

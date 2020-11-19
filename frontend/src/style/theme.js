@@ -77,7 +77,7 @@ export const fontSizes = {
 
 //border-radius
 export const borderRadius = {
-	borderRadiusS: '.3rem',
+	borderRadiusS: '.1rem',
 	borderRadius: '.6rem',
 	borderRadiusM: '1rem',
 	borderRadiusL: '1.5rem',
