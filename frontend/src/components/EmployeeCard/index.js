@@ -19,7 +19,6 @@ const EmployeeCard = ({ employee }) => {
 	const [showModal, setShowModal] = useState(false);
 	const [currentStage, setCurrentStage] = useState(0);
 
-	console.log(tokenInput);
 
 	const modalRef = useRef();
 
