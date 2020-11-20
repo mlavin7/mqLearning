@@ -33,7 +33,7 @@ const CompanyArea = ({ user }) => {
 					</p>
 					<p>
 						<span>Website</span>
-						<a href='https://google.com'>{user.company.website}</a>
+						<a href={user.company.website} target="_blank">{user.company.website}</a>
 					</p>
 					<p>
 						<span>Address</span>
