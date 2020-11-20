@@ -26,6 +26,7 @@ const TopBar = () => {
 	const dispatch = useDispatch();
 
 	const user = useSelector(state => state.user.user);
+	// console.log(user);
 
 	const logOutHandler = () => {
 		history.push('/');

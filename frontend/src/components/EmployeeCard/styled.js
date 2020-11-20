@@ -13,7 +13,7 @@ export const CardWrapper = styled.section`
 	background-repeat: no-repeat;
 	border-radius: ${borderRadius.borderRadiusS};
 	color: ${colors.white};
-	padding: 0.4rem;
+	// padding: 0.4rem;
 `;
 
 export const AvatarContainer = styled.div`
@@ -74,7 +74,7 @@ export const LeftSection = styled.section`
 	${props =>
 		props.company &&
 		css`
-			width: 50%;
+			width: 65%;
 			display: flex;
 			justify-content: flex-start;
 			align-items: flex-start;
@@ -131,7 +131,7 @@ export const RightSection = styled.section`
 					padding: 0.7rem 2.4rem;
 					background: transparent;
 					border: 0.1rem solid ${colors.white};
-					margin: 0 1rem;
+					margin: 0 2rem 0 0.4rem;
 					color: ${colors.white};
 					right: 1rem;
 					:hover {

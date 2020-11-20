@@ -27,6 +27,7 @@ const Modal = ({ handleClose, workshop, attendees }) => {
 		const timer = setTimeout(() => {
 			if (currentStage === 1) {
 				handleClose();
+				// console.log(currentStage);
 			}
 		}, 2000);
 		return () => clearTimeout(timer);
