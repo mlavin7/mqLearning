@@ -28,9 +28,9 @@ const CompaniesCard = ({ company }) => {
 		};
 		getData();
 		setTimeout(() => {
+			setTokenInput(0);
 			hideModal();
 			setCurrentStage(0);
-			setTokenInput(0);
 		}, 2000);
 	};
 

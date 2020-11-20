@@ -8,7 +8,7 @@ import CompanyArea from '../CompanyArea';
 import CompaniesCard from '../CompaniesCard';
 import Spinner from '../Spinner';
 
-const NavigateDashboard = ({ workshops, user, companies }) => {
+const NavigateDashboard = ({ workshops, user, companies, resources }) => {
 	const [active, setActive] = useState('workshop');
 
 	const currentTime = new Date();
@@ -133,7 +133,7 @@ const NavigateDashboard = ({ workshops, user, companies }) => {
 					) : null}
 
 					{/* todo: create resources component */}
-					{active === 'resources' ? <h4>Resources</h4> : null}
+					{active === 'resources' ? <h4 style={message}>Resources</h4> : null}
 
 					{active === 'employees' ? (
 						<Fragment>
