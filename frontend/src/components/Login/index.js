@@ -10,12 +10,7 @@ import { registrationAction } from '../../store/actions/registrationAction';
 import { validationAction } from '../../store/actions/validationAction';
 import { connect } from 'react-redux';
 
-import {
-	LoginContainer,
-	Title,
-	InputsContainer,
-	RegMessage,
-} from './styled';
+import { LoginContainer, Title, InputsContainer, RegMessage } from './styled';
 
 const LoginPage = props => {
 	const [showReg, setShowReg] = useState('');
@@ -280,11 +275,13 @@ const LoginPage = props => {
 						</InputsContainer>
 					</Fragment>
 				)}
+				<div className='cta'>
+					<div className='top'>Token Based</div>
+					<div className='bottom'>Workshop Booking System</div>
+				</div>
 			</LoginContainer>
 		</Container>
 	);
 };
-
-//todo login and registration functionality
 
 export default connect()(LoginPage);

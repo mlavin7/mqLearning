@@ -19,6 +19,8 @@ const EmployeeCard = ({ employee }) => {
 	const [showModal, setShowModal] = useState(false);
 	const [currentStage, setCurrentStage] = useState(0);
 
+	console.log(tokenInput);
+
 	const modalRef = useRef();
 
 	const handleAllocateTokenUser = e => {
@@ -29,6 +31,7 @@ const EmployeeCard = ({ employee }) => {
 		};
 		getData();
 		setTimeout(() => {
+			setTokenInput(0);
 			hideModal();
 			setCurrentStage(0);
 		}, 2000);

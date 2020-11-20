@@ -105,6 +105,8 @@ export const ProfileDetailsContainer = styled.section`
 		display: flex;
 		flex-direction: column;
 		align-self: center;
+		margin-bottom: 1rem;
+
 
 		h1 {
 			color: black;
@@ -114,19 +116,22 @@ export const ProfileDetailsContainer = styled.section`
 			letter-spacing: 0.2rem;
 			margin-bottom: 1rem;
 		}
+
+		p {
+			font-size: ${fontSizes.small};
+		}
 	}
 
 	.profile-field-container {
 		display: flex;
 		flex-direction: column;
-		width: 50%;
+		width: 100%;
 
 		.profile-fields {
 			display: flex;
-			width: 70%;
+			width: 40%;
 			height: 45%;
 			margin: 0rem auto;
-			/* padding: 0.5rem; */
 			flex-direction: row;
 			align-items: center;
 			justify-content: center;
@@ -140,11 +145,10 @@ export const ProfileDetailsContainer = styled.section`
 
 		input {
 			border: 1px solid rgba(0, 0, 0, 0.35);
-			width: 60%;
+			width: 100%;
 			height: 2.55rem;
 			padding: 0.9rem;
 			outline: none;
-			border-radius: 0.3rem;
 			color: rgba(0, 0, 0, 0.85);
 			margin: 0.7rem 0;
 			font-size: ${fontSizes.normal};
