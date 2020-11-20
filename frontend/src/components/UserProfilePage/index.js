@@ -1,4 +1,4 @@
-import {React, useState} from 'react';
+import { React, useState } from 'react';
 import { useHistory } from 'react-router';
 import { Link } from 'react-router-dom';
 import { Container } from '../../style/Container';
@@ -6,7 +6,7 @@ import { TopProfileBar, ProfileDetailsContainer } from './styled';
 import { Button } from '../../style/Button';
 import { Avatar } from './styled';
 import { avatar } from '../../assets/images/avatar-placeholder.png';
-import {useDispatch, useSelector} from "react-redux";
+import { useDispatch, useSelector } from 'react-redux';
 import { userUpdateAction } from '../../store/actions/userUpdateAction';
 
 const UserProfilePage = ({ user }) => {
@@ -23,21 +23,23 @@ const UserProfilePage = ({ user }) => {
 	const [zip_code, setZip] = useState(user.zip_code);
 	const [city, setCity] = useState(user.city);
 	const [country, setCountry] = useState(user.country);
-	const [avatar, setAvatar] = useState(user.avatar)
+	const [avatar, setAvatar] = useState(user.avatar);
 
 	const handleSubmit = e => {
 		e.preventDefault();
-		dispatch(userUpdateAction({
-			first_name,
-			last_name,
-			company,
-			address,
-			zip_code,
-			city,
-			country,
-		}));
+		dispatch(
+			userUpdateAction({
+				first_name,
+				last_name,
+				company,
+				address,
+				zip_code,
+				city,
+				country,
+			})
+		);
 		setcurrentStage(true);
-	}
+	};
 
 	const fullName = `${user.first_name} ${user.last_name}`;
 
@@ -50,7 +52,12 @@ const UserProfilePage = ({ user }) => {
 						<Button editProfileBtn onClick={() => history.push('/mainpage/')}>
 							Back
 						</Button>
-						<Button editProfileBtn onClick={() => setcurrentStage(!currentStage)}>Edit profile</Button>
+						<Button
+							editProfileBtn
+							onClick={() => setcurrentStage(!currentStage)}
+						>
+							Edit profile
+						</Button>
 					</Link>
 				</div>
 				<div className='user-details-container'>
@@ -76,9 +83,7 @@ const UserProfilePage = ({ user }) => {
 						</p>
 						<p>
 							Expiry date:
-							<span>
-								December 31, 2020
-							</span>
+							<span>December 31, 2020</span>
 						</p>
 					</div>
 				</div>
@@ -92,42 +97,86 @@ const UserProfilePage = ({ user }) => {
 					<div className='profile-field-container'>
 						<div className='profile-fields'>
 							<p className='profile-field-title'>First Name</p>
-							<input type='text' onChange={e => setFirstName(e.currentTarget.value)} defaultValue={user.first_name} disabled={currentStage === true ? true : false} />
+							<input
+								type='text'
+								onChange={e => setFirstName(e.currentTarget.value)}
+								defaultValue={user.first_name}
+								disabled={currentStage === true ? true : false}
+							/>
 						</div>
 						<div className='profile-fields'>
 							<p className='profile-field-title'>Last Name</p>
-							<input type='text' onChange={e => setLastName(e.currentTarget.value)} defaultValue={user.last_name} disabled={currentStage === true ? true : false} />
+							<input
+								type='text'
+								onChange={e => setLastName(e.currentTarget.value)}
+								defaultValue={user.last_name}
+								disabled={currentStage === true ? true : false}
+							/>
 						</div>
 						<div className='profile-fields'>
 							<p className='profile-field-title'>Company</p>
-							<input type='text' onChange={e => setCompany(e.currentTarget.value)} defaultValue={user.company.name} disabled={currentStage === true ? true : false} />
+							<input
+								type='text'
+								onChange={e => setCompany(e.currentTarget.value)}
+								defaultValue={user.company.name}
+								disabled={currentStage === true ? true : false}
+							/>
 						</div>
 						<div className='profile-fields'>
 							<p className='profile-field-title'>Address</p>
-							<input type='text' onChange={e => setAddress(e.currentTarget.value)} defaultValue={user.address} disabled={currentStage === true ? true : false} />
+							<input
+								type='text'
+								onChange={e => setAddress(e.currentTarget.value)}
+								defaultValue={user.address}
+								disabled={currentStage === true ? true : false}
+							/>
 						</div>
 						<div className='profile-fields'>
 							<p className='profile-field-title'>Postcode</p>
-							<input type='text' onChange={e => setZip(e.currentTarget.value)} defaultValue={user.zip_code} disabled={currentStage === true ? true : false} />
+							<input
+								type='text'
+								onChange={e => setZip(e.currentTarget.value)}
+								defaultValue={user.zip_code}
+								disabled={currentStage === true ? true : false}
+							/>
 						</div>
 						<div className='profile-fields'>
 							<p className='profile-field-title'>City</p>
-							<input type='text' onChange={e => setCity(e.currentTarget.value)} defaultValue={user.city} disabled={currentStage === true ? true : false} />
+							<input
+								type='text'
+								onChange={e => setCity(e.currentTarget.value)}
+								defaultValue={user.city}
+								disabled={currentStage === true ? true : false}
+							/>
 						</div>
 						<div className='profile-fields'>
 							<p className='profile-field-title'>Country</p>
-							<input type='text' onChange={e => setCountry(e.currentTarget.value)} defaultValue={user.country} disabled={currentStage === true ? true : false} />
+							<input
+								type='text'
+								onChange={e => setCountry(e.currentTarget.value)}
+								defaultValue={user.country}
+								disabled={currentStage === true ? true : false}
+							/>
 						</div>
 						<div className='profile-fields'>
 							<label className='avatar-upload-btn'>
 								Change Profile Picture
-								<input type='file' onChange={e => setAvatar(e.currentTarget.file[0])} />
+								<input
+									type='file'
+									onChange={e => setAvatar(e.currentTarget.file[0])}
+								/>
 							</label>
 						</div>
 					</div>
-				<div className='save-changes-btn-container'>
-					<Button editProfileBtn style={currentStage === true ? {display:'none'} : {}} onClick={handleSubmit}>Save Changes</Button>
-				</div>
+					<div className='save-changes-btn-container'>
+						<Button
+							editProfileBtn
+							style={currentStage === true ? { display: 'none' } : {}}
+							onClick={handleSubmit}
+						>
+							Save Changes
+						</Button>
+					</div>
 				</ProfileDetailsContainer>
 			</Container>
 		</Container>
