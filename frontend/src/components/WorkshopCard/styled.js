@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { colors, borderRadius, fontSizes } from '../../style/theme';
 
 export const CardWrapper = styled.div`
@@ -24,6 +24,12 @@ export const CardWrapper = styled.div`
 	border-bottom: 1.5px solid #d6d6d6;
 	border-right: 1.5px solid #d6d6d6;
 	// box-shadow: 0px 0px 8px -1px rgba(0, 0, 0, 0.75);
+
+	/* ${props =>
+		props.resources &&
+		css`
+			height: 32rem;
+		`} */
 `;
 
 export const BannerWrapper = styled.div`
@@ -79,6 +85,17 @@ export const ContentWrapper = styled.div`
 			font-size: ${fontSizes.small};
 		}
 	}
+
+	${props =>
+		props.resources &&
+		css`
+			.description {
+				padding: 1rem 0;
+				text-align: justify;
+				height: 100%;
+				color: rgba(0, 0, 0, 0.45);
+			}
+		`}
 `;
 
 export const ReserveBtnWrapper = styled.div`
@@ -94,6 +111,7 @@ export const ReserveBtnWrapper = styled.div`
 		padding-left: 0.5rem;
 		width: 70%;
 		font-size: ${fontSizes.small};
-		color: rgba(0, 0, 0, 0.65);
+		color: rgba(0, 0, 0, 0.75);
+		font-weight: 600;
 	}
 `;

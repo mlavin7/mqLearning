@@ -3,7 +3,6 @@ import { USER_UPDATE } from '../actionTypes';
 
 export const userUpdateAction = updatedUserProfile => async (dispatch, getState) => {
 	const userToken = getState().user.token || localStorage.item('token')
-	console.log('updatedUserProfile: ', updatedUserProfile);
 	const url = `${baseUrl}/backend/api/users/me/`;
 	const body = JSON.stringify(updatedUserProfile);
 	
@@ -18,7 +17,6 @@ export const userUpdateAction = updatedUserProfile => async (dispatch, getState)
 	
 	const response = await fetch(url, config);
 	const data = await response.json();
-	console.log('data: ', data);
 	dispatch({
 		type: USER_UPDATE,
 		payload: data

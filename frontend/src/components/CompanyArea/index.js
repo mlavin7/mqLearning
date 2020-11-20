@@ -9,7 +9,6 @@ import { CompanyAreaWrapper, LogoContainer } from './styled';
 import { Button } from '../../style/Button';
 
 const CompanyArea = ({ user }) => {
-	console.log(user.company);
 	return (
 		<CompanyAreaWrapper>
 			<LogoContainer>

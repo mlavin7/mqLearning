@@ -18,7 +18,6 @@ const WorkshopPage = () => {
 
 	const token = useSelector(state => state.user.token);
 	const user = useSelector(state => state.user.user);
-	console.log(token);
 
 	useEffect(() => {
 		const getData = async () => {

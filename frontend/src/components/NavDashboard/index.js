@@ -1,4 +1,5 @@
-import React, { useState, Fragment } from 'react';
+import React, { useState, Fragment, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { Container } from '../../style/Container';
 import { NavbarDiV, SectionWorkshop, NavigationWrapper } from './styled';
@@ -7,12 +8,24 @@ import EmployeeCard from '../EmployeeCard';
 import CompanyArea from '../CompanyArea';
 import CompaniesCard from '../CompaniesCard';
 import Spinner from '../Spinner';
+import ResourcesCard from '../ResourcesCard';
+import resourcesAction from '../../store/actions/resourcesAction';
 
-const NavigateDashboard = ({ workshops, user, companies, resources }) => {
+const NavigateDashboard = ({ workshops, user, companies }) => {
+	const dispatch = useDispatch();
 	const [active, setActive] = useState('workshop');
+	const [resources, setResources] = useState([]);
 
 	const currentTime = new Date();
 	const formattedTime = currentTime.toISOString();
+
+	useEffect(() => {
+		const getData = async () => {
+			const data = await dispatch(resourcesAction());
+			setResources(data);
+		};
+		getData();
+	}, [dispatch]);
 
 	const checkPrivileges = () => {
 		if (user.isAdmin) {
@@ -133,7 +146,11 @@ const NavigateDashboard = ({ workshops, user, companies, resources }) => {
 					) : null}
 
 					{/* todo: create resources component */}
-					{active === 'resources' ? <h4 style={message}>Resources</h4> : null}
+					{active === 'resources'
+						? resources.length
+							? resources.map(resource => <ResourcesCard resource={resource} />)
+							: null
+						: null}
 
 					{active === 'employees' ? (
 						<Fragment>
