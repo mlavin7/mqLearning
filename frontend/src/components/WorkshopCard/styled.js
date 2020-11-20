@@ -61,7 +61,7 @@ export const ContentWrapper = styled.div`
 		i {
 			width: 6%;
 			font-size: ${fontSizes.normal};
-			margin-right: 0.9rem;
+			padding-right: 1.7rem;
 			color: #a95edb;
 		}
 
