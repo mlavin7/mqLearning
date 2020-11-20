@@ -11,6 +11,7 @@ export const LoginContainer = styled.section`
 		display: flex;
 		flex-direction: column;
 		align-items: flex-start;
+		justify-content: flex-end;
 		margin: 0 auto;
 		width: 100%;
 		height: 10rem;
