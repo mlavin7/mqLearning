@@ -5,7 +5,7 @@ import { colors, borderRadius } from '../../style/theme';
 export const CompanyAreaWrapper = styled.section`
 	width: 90%;
 	min-height: 27rem;
-	margin: 0 1.2rem;
+	margin: 0 1.2rem 0 0;
 	background: url(${cardBg});
 	background-position: 95%;
 	background-size: cover;
@@ -23,7 +23,7 @@ export const LogoContainer = styled.div`
 	align-items: flex-start;
 
 	img {
-		padding: .5rem;
+		padding: 1.6rem 0.5rem 0 1.6rem;
 		border-radius: ${borderRadius.borderRadiusS};
 		width: 100%;
 		height: 100%;
@@ -31,7 +31,7 @@ export const LogoContainer = styled.div`
 
 	.company-description {
 		text-align: justify;
-		padding: .8rem 1rem;
+		padding: .8rem 1rem 1.6rem 2rem;
 		font-weight: 300;
 	}
 `;

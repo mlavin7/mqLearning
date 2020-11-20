@@ -34,7 +34,7 @@ const WorkshopCard = ({ workshop }) => {
 								<p>
 									<i
 										className={
-											workshop.location.toLowerCase() === 'online'
+											workshop.location.toLowerCase() === 'online' || workshop.location.toLowerCase() === 'zoom'
 												? 'fas fa-laptop'
 												: 'fas fa-map-marker-alt'
 										}
